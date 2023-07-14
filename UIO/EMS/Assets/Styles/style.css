@@ -1,0 +1,110 @@
+
+html, body {
+    /*background-image: url(../Images/bg.jpg);*/
+    background-repeat: repeat-x;
+    /*background-color: #F6F6F8!important;*/
+}
+
+/*.center { text-align: center!important; }*/
+.right { text-align: right!important; }
+
+.header {
+	position:relative;
+	height: 100px;
+}
+
+.header .logo { position:absolute; left:15px; top: 22px; }
+
+
+.welcome-note {
+	padding: 20px;
+	margin-bottom: 10px;
+	text-align:	center;
+}
+
+
+.box-row { width: 100%; overflow: hidden; }
+.box-cont { float: left; margin-left: 60px; width: 220px; height: 220px; }
+.box {
+    float: left; 
+    width: 220px; 
+    height: 220px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+
+.box .agent { display:block; margin:0 auto; width:130px; height:130px; background:url(../Images/icon-agent.png) no-repeat; }
+.box:hover .agent { background-position:0 -130px; }
+.box .customer { display:block; margin:0 auto; width:130px; height:130px; background:url(../Images/icon-customer.png) no-repeat; }
+.box:hover .customer { background-position:0 -130px; }
+.box .transactinon { display:block; margin:0 auto; width:130px; height:130px; background:url(../Images/icon-transactinon.png) no-repeat; }
+.box:hover .transactinon { background-position:0 -130px; }
+
+.box span { margin: 15px auto 10px!important; }
+
+.footer {
+	/*margin-top:45px;*/
+	padding: 35px 0 36px;
+	border-top: 1px solid #E5E5E5;
+}
+
+
+.login-form { width: 550px; margin: 50px auto; }
+.login-form form { margin: 0; }
+.login-form legend { margin-bottom: 0; border-color:#dddddd; }
+.login-form .form-actions { margin-bottom:0; padding-bottom:0; }
+
+
+#UserRegistrationForm legend,
+#ChangePasswordForm legend,
+#ProfileForm legend { margin-bottom: 0; border-color:#dddddd; }
+
+#UserRegistrationForm select,
+#ChangePasswordForm select,
+#ProfileForm select { width: auto; }
+
+#user-management table .center { text-align:center; }
+
+
+#NewStudyDiv { width: 100%; overflow: hidden; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.inclusion-box { float: left; width: 45%; padding-left: 2%; }
+.parameter-box { float: right; width: 45%; padding-right: 2%; }
+.inclusion-box h3, 
+.parameter-box h3 { width: 98%; padding: 0 1%; overflow: hidden; margin-bottom: 5px; }
+.inclusion-box h3 span,
+.parameter-box h3 span { float: right; }
+.inclusion-box input[type="text"],
+.inclusion-box select,
+.parameter-box input[type="text"],
+.parameter-box select { width: 100%; }
+.inclusion-box input[type="text"],
+.parameter-box input[type="text"]  { width: 98%; }
+.inclusion-box .action,
+.parameter-box .action { text-align: right; }
+
+
+
+button.close { background: none; border: 0; padding: 0; }
+
+
+
+.ui-autocomplete {
+	max-height: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right: 20px;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+	height: 200px;
+}
+
+
+
+/*-----------------------------------------NEW-------------------------------------------*/
+
+.navbar { /*margin-top: 15px;*/ }
+h2.page-title {margin-bottom: 25px; font-size: 21px; font-weight: normal; border-bottom: 1px solid #E5E5E5; }
