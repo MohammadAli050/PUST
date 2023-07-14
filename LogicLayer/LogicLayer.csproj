@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{043A8C32-DF32-4242-B175-C11A5ABB58F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LogicLayer</RootNamespace>
+    <AssemblyName>LogicLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\AcademicCalenderManager.cs" />
+    <Compile Include="BusinessLogic\AcademicCalenderSectionManager.cs" />
+    <Compile Include="BusinessLogic\AddressManager.cs" />
+    <Compile Include="BusinessLogic\BatchManager.cs" />
+    <Compile Include="BusinessLogic\BillHistoryManager.cs" />
+    <Compile Include="BusinessLogic\BillHistoryMasterManager.cs" />
+    <Compile Include="BusinessLogic\CalCourseProgNodeManager.cs" />
+    <Compile Include="BusinessLogic\CalenderUnitDistributionManager.cs" />
+    <Compile Include="BusinessLogic\CalenderUnitMasterManager.cs" />
+    <Compile Include="BusinessLogic\CalenderUnitTypeManager.cs" />
+    <Compile Include="BusinessLogic\CollectionHistoryManager.cs" />
+    <Compile Include="BusinessLogic\ContactDetailsManager.cs" />
+    <Compile Include="BusinessLogic\CourseExtendOneManager.cs" />
+    <Compile Include="BusinessLogic\CourseListByNodeDTOManager.cs" />
+    <Compile Include="BusinessLogic\CourseManager.cs" />
+    <Compile Include="BusinessLogic\CourseStatusManager.cs" />
+    <Compile Include="BusinessLogic\DataTableManager.cs" />
+    <Compile Include="BusinessLogic\DepartmentManager.cs" />
+    <Compile Include="BusinessLogic\EmployeeManager.cs" />
+    <Compile Include="BusinessLogic\EmployeeTypeManager.cs" />
+    <Compile Include="BusinessLogic\ExamDefinitionManager.cs" />
+    <Compile Include="BusinessLogic\ExaminerSetupStudentWiseManager.cs" />
+    <Compile Include="BusinessLogic\ExaminorSetupsManager.cs" />
+    <Compile Include="BusinessLogic\ExamMarkDetailsManager.cs" />
+    <Compile Include="BusinessLogic\ExamMarkEquationColumnOrderManager.cs" />
+    <Compile Include="BusinessLogic\ExamMarkFirstSecondThirdExaminerManager.cs" />
+    <Compile Include="BusinessLogic\ExamMarkMasterManager.cs" />
+    <Compile Include="BusinessLogic\ExamMarkQuestionManager.cs" />
+    <Compile Include="BusinessLogic\ExamMarkSubmissionDateManager.cs" />
+    <Compile Include="BusinessLogic\ExamMetaTypeManager.cs" />
+    <Compile Include="BusinessLogic\ExamSetupDetailManager.cs" />
+    <Compile Include="BusinessLogic\ExamSetupManager.cs" />
+    <Compile Include="BusinessLogic\ExamSetupWithExamCommitteesManager.cs" />
+    <Compile Include="BusinessLogic\ExamTemplateBasicItemDetailsManager.cs" />
+    <Compile Include="BusinessLogic\ExamTemplateCalculationTypeManager.cs" />
+    <Compile Include="BusinessLogic\ExamTemplateCalculativeFormulaManager.cs" />
+    <Compile Include="BusinessLogic\ExamTemplateItemManager.cs" />
+    <Compile Include="BusinessLogic\ExamTemplateManager.cs" />
+    <Compile Include="BusinessLogic\ExamTemplateMasterManager.cs" />
+    <Compile Include="BusinessLogic\FeeGroupDetailManager.cs" />
+    <Compile Include="BusinessLogic\FeeGroupMasterManager.cs" />
+    <Compile Include="BusinessLogic\FeeSetupManager.cs" />
+    <Compile Include="BusinessLogic\FileConversion.cs" />
+    <Compile Include="BusinessLogic\FundTypeManager.cs" />
+    <Compile Include="BusinessLogic\GradeDetailsManager.cs" />
+    <Compile Include="BusinessLogic\GradeManager.cs" />
+    <Compile Include="BusinessLogic\GradeSheetTemplateManager.cs" />
+    <Compile Include="BusinessLogic\LogGeneralManager.cs" />
+    <Compile Include="BusinessLogic\LogLoginLogoutManager.cs" />
+    <Compile Include="BusinessLogic\MenuManager.cs" />
+    <Compile Include="BusinessLogic\NodeManager.cs" />
+    <Compile Include="BusinessLogic\Node_CourseManager.cs" />
+    <Compile Include="BusinessLogic\OfferedCourseManager.cs" />
+    <Compile Include="BusinessLogic\OperatorManager.cs" />
+    <Compile Include="BusinessLogic\PasswordResetURLInfoManager.cs" />
+    <Compile Include="BusinessLogic\PersonAdditionalInfoManager.cs" />
+    <Compile Include="BusinessLogic\PersonManager.cs" />
+    <Compile Include="BusinessLogic\PersonPreviousExamManager.cs" />
+    <Compile Include="BusinessLogic\PreviousEducationManager.cs" />
+    <Compile Include="BusinessLogic\PreviousExamManager.cs" />
+    <Compile Include="BusinessLogic\PreviousExamTypeManager.cs" />
+    <Compile Include="BusinessLogic\ProgramManager.cs" />
+    <Compile Include="BusinessLogic\RegistrationWorksheetManager.cs" />
+    <Compile Include="BusinessLogic\RoleManager.cs" />
+    <Compile Include="BusinessLogic\RoleMenuManager.cs" />
+    <Compile Include="BusinessLogic\RoomInformationManager.cs" />
+    <Compile Include="BusinessLogic\SemesterManager.cs" />
+    <Compile Include="BusinessLogic\ShareBatchInSectionManager.cs" />
+    <Compile Include="BusinessLogic\ShareProgramInSectionManager.cs" />
+    <Compile Include="BusinessLogic\StudentAdditionalInfoManager.cs" />
+    <Compile Include="BusinessLogic\StudentApplicationFormManager.cs" />
+    <Compile Include="BusinessLogic\StudentCourseHistoryManager.cs" />
+    <Compile Include="BusinessLogic\StudentManager.cs" />
+    <Compile Include="BusinessLogic\TimeSlotPlanManager.cs" />
+    <Compile Include="BusinessLogic\TreeCalendarDetailManager.cs" />
+    <Compile Include="BusinessLogic\TreeCalendarMasterManager.cs" />
+    <Compile Include="BusinessLogic\TreeDetailManager.cs" />
+    <Compile Include="BusinessLogic\TreeMasterManager.cs" />
+    <Compile Include="BusinessLogic\TypeDefinitionManager.cs" />
+    <Compile Include="BusinessLogic\UserAccessProgramManager.cs" />
+    <Compile Include="BusinessLogic\UserInPersonManager.cs" />
+    <Compile Include="BusinessLogic\UserManager.cs" />
+    <Compile Include="BusinessLogic\UserMenuManager.cs" />
+    <Compile Include="BusinessLogic\UsrPermsnManager.cs" />
+    <Compile Include="BusinessLogic\ValueManager.cs" />
+    <Compile Include="BusinessLogic\ValueSetManager.cs" />
+    <Compile Include="BusinessLogic\VNodeSetManager.cs" />
+    <Compile Include="BusinessLogic\VNodeSetMasterManager.cs" />
+    <Compile Include="BusinessLogic\YearManager.cs" />
+    <Compile Include="BusinessLogic\YearSectionManager.cs" />
+    <Compile Include="BusinessObjects\AcademicCalender.cs" />
+    <Compile Include="BusinessObjects\AcademicCalenderSection.cs" />
+    <Compile Include="BusinessObjects\Address.cs" />
+    <Compile Include="BusinessObjects\Batch.cs" />
+    <Compile Include="BusinessObjects\BillCounter.cs" />
+    <Compile Include="BusinessObjects\BillHistory.cs" />
+    <Compile Include="BusinessObjects\BillHistoryMaster.cs" />
+    <Compile Include="BusinessObjects\CalCourseProgNode.cs" />
+    <Compile Include="BusinessObjects\CalenderUnitDistribution.cs" />
+    <Compile Include="BusinessObjects\CalenderUnitMaster.cs" />
+    <Compile Include="BusinessObjects\CalenderUnitType.cs" />
+    <Compile Include="BusinessObjects\CollectionHistory.cs" />
+    <Compile Include="BusinessObjects\ContactDetails.cs" />
+    <Compile Include="BusinessObjects\DTO\CountinousMarkTeacherInfoAPI_DTO.cs" />
+    <Compile Include="BusinessObjects\Course.cs" />
+    <Compile Include="BusinessObjects\CourseExtendOne.cs" />
+    <Compile Include="BusinessObjects\CourseStatus.cs" />
+    <Compile Include="BusinessObjects\Department.cs" />
+    <Compile Include="BusinessObjects\DTO\AcademicCalenderSectionWithTeacherId.cs" />
+    <Compile Include="BusinessObjects\DTO\AddressByRoll.cs" />
+    <Compile Include="BusinessObjects\DTO\BillDeleteDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\BillPaymentHistoryDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\BillPaymentHistoryMasterDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\CourseListByNodeDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamCommitteeDashboardDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExaminerQuestionWiseMarkDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExaminerSetupStudentWiseDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExaminorSetupsDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamMarkColumnWiseDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamMarkDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamMarkEntryDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamMarkFirstSecondThirdDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamMarkGridViewDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamMarkGridViewShoetInfoDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamMarkNewDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamResultDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamResultTabulationDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamSetupDetailDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamSetupDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\ExamTemplateBasicCalculativeItemDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\MessageModelDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\NodeCoursesDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\OfferedCourseDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\SemesterDistinctDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\StudentACUDetailDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\StudentBillDetailsDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\StudentCourseGradeDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\StudentCourseHistoryDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\StudentCourseHistoryNewDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\StudentExcelUploader.cs" />
+    <Compile Include="BusinessObjects\DTO\YearDistinctDTO.cs" />
+    <Compile Include="BusinessObjects\DTO\YearSemesterDTO.cs" />
+    <Compile Include="BusinessObjects\Employee.cs" />
+    <Compile Include="BusinessObjects\EmployeeInfo.cs" />
+    <Compile Include="BusinessObjects\EmployeeType.cs" />
+    <Compile Include="BusinessObjects\ExamDefinition.cs" />
+    <Compile Include="BusinessObjects\ExaminerSetupStudentWise.cs" />
+    <Compile Include="BusinessObjects\ExaminorSetups.cs" />
+    <Compile Include="BusinessObjects\ExamMark.cs" />
+    <Compile Include="BusinessObjects\ExamMarkDetails.cs" />
+    <Compile Include="BusinessObjects\ExamMarkEquationColumnOrder.cs" />
+    <Compile Include="BusinessObjects\ExamMarkFirstSecondThirdExaminer.cs" />
+    <Compile Include="BusinessObjects\ExamMarkMaster.cs" />
+    <Compile Include="BusinessObjects\ExamMarkQuestion.cs" />
+    <Compile Include="BusinessObjects\ExamMarkSubmissionDate.cs" />
+    <Compile Include="BusinessObjects\ExamMetaType.cs" />
+    <Compile Include="BusinessObjects\ExamSetup.cs" />
+    <Compile Include="BusinessObjects\ExamSetupDetail.cs" />
+    <Compile Include="BusinessObjects\ExamSetupWithExamCommittees.cs" />
+    <Compile Include="BusinessObjects\ExamTemplate.cs" />
+    <Compile Include="BusinessObjects\ExamTemplateBasicItemDetails.cs" />
+    <Compile Include="BusinessObjects\ExamTemplateCalculationType.cs" />
+    <Compile Include="BusinessObjects\ExamTemplateCalculativeFormula.cs" />
+    <Compile Include="BusinessObjects\ExamTemplateItem.cs" />
+    <Compile Include="BusinessObjects\ExamTemplateMaster.cs" />
+    <Compile Include="BusinessObjects\FeeGroupDetail.cs" />
+    <Compile Include="BusinessObjects\FeeGroupMaster.cs" />
+    <Compile Include="BusinessObjects\FeeSetup.cs" />
+    <Compile Include="BusinessObjects\FundType.cs" />
+    <Compile Include="BusinessObjects\Grade.cs" />
+    <Compile Include="BusinessObjects\GradeDetails.cs" />
+    <Compile Include="BusinessObjects\GradeSheetTemplate.cs" />
+    <Compile Include="BusinessObjects\IPreviousEducation.cs" />
+    <Compile Include="BusinessObjects\LogGeneral.cs" />
+    <Compile Include="BusinessObjects\LogLoginLogout.cs" />
+    <Compile Include="BusinessObjects\Marks.cs" />
+    <Compile Include="BusinessObjects\Menu.cs" />
+    <Compile Include="BusinessObjects\Node.cs" />
+    <Compile Include="BusinessObjects\Node_Course.cs" />
+    <Compile Include="BusinessObjects\OfferedCourse.cs" />
+    <Compile Include="BusinessObjects\Operator.cs" />
+    <Compile Include="BusinessObjects\PasswordResetURLInfo.cs" />
+    <Compile Include="BusinessObjects\Person.cs" />
+    <Compile Include="BusinessObjects\PersonAdditionalInfo.cs" />
+    <Compile Include="BusinessObjects\PersonPreviousExam.cs" />
+    <Compile Include="BusinessObjects\PreviousExam.cs" />
+    <Compile Include="BusinessObjects\PreviousExamType.cs" />
+    <Compile Include="BusinessObjects\Program.cs" />
+    <Compile Include="BusinessObjects\RegistrationWorksheet.cs" />
+    <Compile Include="BusinessObjects\ResponseAPI.cs" />
+    <Compile Include="BusinessObjects\Role.cs" />
+    <Compile Include="BusinessObjects\RoleMenu.cs" />
+    <Compile Include="BusinessObjects\RoomInformation.cs" />
+    <Compile Include="BusinessObjects\RoomList.cs" />
+    <Compile Include="BusinessObjects\RO\rContinuousAssessmentMark.cs" />
+    <Compile Include="BusinessObjects\RO\rCourseDistribution.cs" />
+    <Compile Include="BusinessObjects\RO\rExamCommitteePersonInfo.cs" />
+    <Compile Include="BusinessObjects\RO\rStudentList.cs" />
+    <Compile Include="BusinessObjects\RO\RTabulationData.cs" />
+    <Compile Include="BusinessObjects\RO\StudentAppliFormAppliedCourseRO.cs" />
+    <Compile Include="BusinessObjects\RO\StudentAppliFormEducationInfoRO.cs" />
+    <Compile Include="BusinessObjects\RO\StudentAppliFormOfficialAndPersonalRO.cs" />
+    <Compile Include="BusinessObjects\RO\StudentAppliFromPreviousSemesterInfoRO.cs" />
+    <Compile Include="BusinessObjects\Semester.cs" />
+    <Compile Include="BusinessObjects\ShareBatchInSection.cs" />
+    <Compile Include="BusinessObjects\ShareProgramInSection.cs" />
+    <Compile Include="BusinessObjects\Student.cs" />
+    <Compile Include="BusinessObjects\StudentAdditionalInfo.cs" />
+    <Compile Include="BusinessObjects\StudentCourseHistory.cs" />
+    <Compile Include="BusinessObjects\StudentMigrationObj.cs" />
+    <Compile Include="BusinessObjects\StudentsCourseMarks.cs" />
+    <Compile Include="BusinessObjects\TeacherInfo.cs" />
+    <Compile Include="BusinessObjects\TempStudentExamMarkColumnWise.cs" />
+    <Compile Include="BusinessObjects\TimeSlotPlan.cs" />
+    <Compile Include="BusinessObjects\TreeCalendarDetail.cs" />
+    <Compile Include="BusinessObjects\TreeCalendarMaster.cs" />
+    <Compile Include="BusinessObjects\TreeDetail.cs" />
+    <Compile Include="BusinessObjects\TreeMaster.cs" />
+    <Compile Include="BusinessObjects\TypeDefinition.cs" />
+    <Compile Include="BusinessObjects\User.cs" />
+    <Compile Include="BusinessObjects\UserAccessProgram.cs" />
+    <Compile Include="BusinessObjects\UserInPerson.cs" />
+    <Compile Include="BusinessObjects\UserMenu.cs" />
+    <Compile Include="BusinessObjects\UsrPermsn.cs" />
+    <Compile Include="BusinessObjects\Value.cs" />
+    <Compile Include="BusinessObjects\ValueSet.cs" />
+    <Compile Include="BusinessObjects\VNodeSet.cs" />
+    <Compile Include="BusinessObjects\VNodeSetMaster.cs" />
+    <Compile Include="BusinessObjects\Year.cs" />
+    <Compile Include="BusinessObjects\YearSection.cs" />
+    <Compile Include="DataEntity\Education.cs" />
+    <Compile Include="DataEntity\EducationBoard.cs" />
+    <Compile Include="DataEntity\Nationality.cs" />
+    <Compile Include="DataEntity\StudentApplicationFormAppliedCourse.cs" />
+    <Compile Include="DataEntity\StudentApplicationFormEducationInfo.cs" />
+    <Compile Include="DataEntity\StudentApplicationFormModel.cs" />
+    <Compile Include="DataEntity\StudentApplicationFormPersonalInformation.cs" />
+    <Compile Include="DataEntity\StudentApplicationFormPreviousSemesterInfo.cs" />
+    <Compile Include="DataEntity\StudentApplicationOfficialInformation.cs" />
+    <Compile Include="DataLogic\CreateDB.cs" />
+    <Compile Include="DataLogic\IRepository\IAcademicCalenderRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IAcademicCalenderSectionRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IAddressRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IBatchRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IBillCounterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IBillHistoryMasterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IBillHistoryRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ICalCourseProgNodeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ICalenderUnitDistributionRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ICalenderUnitMasterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ICalenderUnitTypeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ICollectionHistoryRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IContactDetailsRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ICourseExtendOneRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ICourseListByNodeDTORepository.cs" />
+    <Compile Include="DataLogic\IRepository\ICourseRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ICourseStatusRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IDataTableRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IDepartmentRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IEmployeeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IEmployeeTypeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamDefinitionRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExaminerSetupStudentWiseRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExaminorSetupRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamMarkDetailsRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamMarkEquationColumnOrderRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamMarkFirstSecondThirdExaminerRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamMarkMasterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamMarkQuestionRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamMarkRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamMarkSubmissionDateRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamMetaTypeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamSetupDetailRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamSetupRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamSetupWithExamCommitteesRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamTemplateBasicItemDetailsRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamTemplateCalculationTypeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamTemplateCalculativeFormulaRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamTemplateItemRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamTemplateMasterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IExamTemplateRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IFeeGroupDetailRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IFeeGroupMasterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IFeeSetupRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IFundTypeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IGradeDetailsRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IGradeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IGradeSheetTemplateRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ILogGeneralRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ILogLoginLogoutRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IMenuRepository.cs" />
+    <Compile Include="DataLogic\IRepository\INodeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\INode_CourseRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IOfferedCourseRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IOperatorRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IPasswordResetURLInfoRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IPersonAdditionalInfoRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IPersonPreviousExamRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IPersonRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IPreviousEducationRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IPreviousExamRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IPreviousExamTypeRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IProgramRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IRegistrationWorksheetRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IRoleMenuRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IRoleRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IRoomInformationRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ISemesterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IShareBatchInSectionRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IShareProgramInSectionRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IStudentAdditionalInfoRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IStudentApplicationFormRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IStudentCourseHistoryRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IStudentRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ITimeSlotPlanRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ITreeCalendarDetailRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ITreeCalendarMasterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ITreeDetailRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ITreeMasterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\ITypeDefinitionRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IUserAccessProgramRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IUserInPersonRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IUserMenuRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IUserRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IUsrPermsnRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IValueRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IValueSetRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IVNodeSetMasterRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IVNodeSetRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IYearRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IYearSectionRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLAcademicCalenderRepository.cs" />
+    <Compile Include="DataLogic\DAFactory\RepositoryManager.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLAcademicCalenderSectionRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLAddressRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLBatchRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLBillCounterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlBillHistoryMasterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlBillHistoryRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLCalCourseProgNodeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlCalenderUnitDistributionRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLCalenderUnitMasterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLCalenderUnitTypeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLCollectionHistoryRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLContactDetailsRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlCourseExtendOneRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLCourseListByNodeDTORepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLCourseRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLCourseStatusRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlDataTableRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLDepartmentRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLEmployeeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlEmployeeTypeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamDefinitionRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExaminerSetupStudentWiseRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLExaminorSetupRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamMarkDetailsRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLExamMarkEquationColumnOrderRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamMarkFirstSecondThirdExaminerRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamMarkMasterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamMarkQuestionRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamMarkSubmissionDateRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamMetaTypeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamSetupDetailRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLExamSetupRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamSetupWithExamCommitteesRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamTemplateBasicItemDetailsRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamTemplateCalculationTypeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamTemplateCalculativeFormulaRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamTemplateItemRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamTemplateMasterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlExamTemplateRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlFeeGroupDetailRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlFeeGroupMasterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlFeeSetupRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlFundTypeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLGradeDetailsRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLGradeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLGradeSheetTemplateRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLLogGeneralRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlLogLoginLogoutRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLMenuRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLNodeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLNode_CourseRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLOfferedCourseRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLOperatorRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlPasswordResetURLInfoRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlPersonAdditionalInfoRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLPersonPreviousExamRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLPersonRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlPreviousEducationRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLPreviousExamRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLPreviousExamTypeRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLProgramRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlRegistrationWorksheetRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLRoleMenuRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLRoleRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLRoomInformationRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlSemesterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLShareBatchInSectionRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLShareProgramInSectionRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlStudentAdditionalInfoRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLStudentApplicationFormRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLStudentCourseHistoryRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLStudentRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLTimeSlotPlanRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLTreeCalendarDetailRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLTreeCalendarMasterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLTreeDetailRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLTreeMasterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLTypeDefinitionRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlUserAccessProgramRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLUserInPersonRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLUserMenuRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLUserRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLUsrPermsnRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLValueRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLValueSetRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLVNodeSetMasterRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SQLVNodeSetRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlYearRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlYearSectionRepository.cs" />
+    <Compile Include="Migrations\202106231654018_ipaddress.cs" />
+    <Compile Include="Migrations\202106231654018_ipaddress.Designer.cs">
+      <DependentUpon>202106231654018_ipaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\packages\IMP DLL\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\packages\IMP DLL\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\UCAM\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\UCAM\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IMP DLL\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IMP DLL\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\IMP DLL\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IMP DLL\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\IMP DLL\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IMP DLL\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\packages\IMP DLL\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtility\CommonUtility.csproj">
+      <Project>{8744be67-8320-45de-a8b3-67822c5c12c5}</Project>
+      <Name>CommonUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106231654018_ipaddress.resx">
+      <DependentUpon>202106231654018_ipaddress.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
