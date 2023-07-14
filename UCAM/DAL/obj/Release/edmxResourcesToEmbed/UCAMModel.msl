@@ -1,0 +1,1344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BRUR_UCAMModelStoreContainer" CdmEntityContainer="MBSTU_UCAMEntities">
+    <EntitySetMapping Name="AcademicCalenders">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.AcademicCalender">
+        <MappingFragment StoreEntitySet="AcademicCalender">
+          <ScalarProperty Name="AcademicCalenderID" ColumnName="AcademicCalenderID" />
+          <ScalarProperty Name="CalenderUnitTypeID" ColumnName="CalenderUnitTypeID" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="TotalWeek" ColumnName="TotalWeek" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IsCurrent" ColumnName="IsCurrent" />
+          <ScalarProperty Name="IsNext" ColumnName="IsNext" />
+          <ScalarProperty Name="AdmissionStartDate" ColumnName="AdmissionStartDate" />
+          <ScalarProperty Name="AdmissionEndDate" ColumnName="AdmissionEndDate" />
+          <ScalarProperty Name="IsActiveAdmission" ColumnName="IsActiveAdmission" />
+          <ScalarProperty Name="RegistrationStartDate" ColumnName="RegistrationStartDate" />
+          <ScalarProperty Name="RegistrationEndDate" ColumnName="RegistrationEndDate" />
+          <ScalarProperty Name="IsActiveRegistration" ColumnName="IsActiveRegistration" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Batches">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.Batch">
+        <MappingFragment StoreEntitySet="Batch">
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="AcaCalId" ColumnName="AcaCalId" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="BatchNO" ColumnName="BatchNO" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalenderUnitMasters">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.CalenderUnitMaster">
+        <MappingFragment StoreEntitySet="CalenderUnitMaster">
+          <ScalarProperty Name="CalenderUnitMasterID" ColumnName="CalenderUnitMasterID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalenderUnitTypes">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.CalenderUnitType">
+        <MappingFragment StoreEntitySet="CalenderUnitType">
+          <ScalarProperty Name="CalenderUnitTypeID" ColumnName="CalenderUnitTypeID" />
+          <ScalarProperty Name="CalenderUnitMasterID" ColumnName="CalenderUnitMasterID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+          <ScalarProperty Name="FormalCode" ColumnName="FormalCode" />
+          <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CourseGroupId" ColumnName="CourseGroupId" />
+          <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+          <ScalarProperty Name="TypeDefinitionID" ColumnName="TypeDefinitionID" />
+          <ScalarProperty Name="AssocCourseID" ColumnName="AssocCourseID" />
+          <ScalarProperty Name="AssocVersionID" ColumnName="AssocVersionID" />
+          <ScalarProperty Name="StartAcademicCalenderID" ColumnName="StartAcademicCalenderID" />
+          <ScalarProperty Name="CourseContent" ColumnName="CourseContent" />
+          <ScalarProperty Name="IsCreditCourse" ColumnName="IsCreditCourse" />
+          <ScalarProperty Name="Credits" ColumnName="Credits" />
+          <ScalarProperty Name="IsSectionMandatory" ColumnName="IsSectionMandatory" />
+          <ScalarProperty Name="HasEquivalents" ColumnName="HasEquivalents" />
+          <ScalarProperty Name="HasMultipleACUSpan" ColumnName="HasMultipleACUSpan" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="TranscriptCode" ColumnName="TranscriptCode" />
+          <ScalarProperty Name="CourseGroup" ColumnName="CourseGroup" />
+          <ScalarProperty Name="BillTypeDefinitionID" ColumnName="BillTypeDefinitionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OpeningDate" ColumnName="OpeningDate" />
+          <ScalarProperty Name="DetailedName" ColumnName="DetailedName" />
+          <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="BanglaName" ColumnName="BanglaName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MatrialStatus" ColumnName="MatrialStatus" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="FatherProfession" ColumnName="FatherProfession" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="MotherProfession" ColumnName="MotherProfession" />
+          <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="SMSContactSelf" ColumnName="SMSContactSelf" />
+          <ScalarProperty Name="SMSContactGuardian" ColumnName="SMSContactGuardian" />
+          <ScalarProperty Name="GuardianEmail" ColumnName="GuardianEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AcademicCalenderGetAll" FunctionName="BRUR_UCAMModel.Store.AcademicCalenderGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MBSTU_UCAMModel.AcademicCalenderGetAll_Result">
+          <ScalarProperty Name="AcademicCalenderID" ColumnName="AcademicCalenderID" />
+          <ScalarProperty Name="CalenderUnitTypeID" ColumnName="CalenderUnitTypeID" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="TotalWeek" ColumnName="TotalWeek" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IsCurrent" ColumnName="IsCurrent" />
+          <ScalarProperty Name="IsNext" ColumnName="IsNext" />
+          <ScalarProperty Name="AdmissionStartDate" ColumnName="AdmissionStartDate" />
+          <ScalarProperty Name="AdmissionEndDate" ColumnName="AdmissionEndDate" />
+          <ScalarProperty Name="IsActiveAdmission" ColumnName="IsActiveAdmission" />
+          <ScalarProperty Name="RegistrationStartDate" ColumnName="RegistrationStartDate" />
+          <ScalarProperty Name="RegistrationEndDate" ColumnName="RegistrationEndDate" />
+          <ScalarProperty Name="IsActiveRegistration" ColumnName="IsActiveRegistration" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AcademicCalenderGetById" FunctionName="BRUR_UCAMModel.Store.AcademicCalenderGetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MBSTU_UCAMModel.AcademicCalenderGetById_Result">
+          <ScalarProperty Name="AcademicCalenderID" ColumnName="AcademicCalenderID" />
+          <ScalarProperty Name="CalenderUnitTypeID" ColumnName="CalenderUnitTypeID" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="TotalWeek" ColumnName="TotalWeek" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IsCurrent" ColumnName="IsCurrent" />
+          <ScalarProperty Name="IsNext" ColumnName="IsNext" />
+          <ScalarProperty Name="AdmissionStartDate" ColumnName="AdmissionStartDate" />
+          <ScalarProperty Name="AdmissionEndDate" ColumnName="AdmissionEndDate" />
+          <ScalarProperty Name="IsActiveAdmission" ColumnName="IsActiveAdmission" />
+          <ScalarProperty Name="RegistrationStartDate" ColumnName="RegistrationStartDate" />
+          <ScalarProperty Name="RegistrationEndDate" ColumnName="RegistrationEndDate" />
+          <ScalarProperty Name="IsActiveRegistration" ColumnName="IsActiveRegistration" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BatchGetAll" FunctionName="BRUR_UCAMModel.Store.BatchGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MBSTU_UCAMModel.BatchGetAll_Result">
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="AcaCalId" ColumnName="AcaCalId" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="BatchNO" ColumnName="BatchNO" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BatchGetById" FunctionName="BRUR_UCAMModel.Store.BatchGetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MBSTU_UCAMModel.BatchGetById_Result">
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="AcaCalId" ColumnName="AcaCalId" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="BatchNO" ColumnName="BatchNO" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ExaminerSetups">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExaminerSetup">
+        <MappingFragment StoreEntitySet="ExaminerSetup">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="ExamSetupDetailId" ColumnName="ExamSetupDetailId" />
+          <ScalarProperty Name="ThirdExaminor" ColumnName="ThirdExaminor" />
+          <ScalarProperty Name="SecondExaminor" ColumnName="SecondExaminor" />
+          <ScalarProperty Name="FirstExaminer" ColumnName="FirstExaminer" />
+          <ScalarProperty Name="AcaCalSectionId" ColumnName="AcaCalSectionId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExaminerSetupStudentWises">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExaminerSetupStudentWise">
+        <MappingFragment StoreEntitySet="ExaminerSetupStudentWise">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="ThirdExaminer" ColumnName="ThirdExaminer" />
+          <ScalarProperty Name="SecondExaminer" ColumnName="SecondExaminer" />
+          <ScalarProperty Name="FirstExaminer" ColumnName="FirstExaminer" />
+          <ScalarProperty Name="ExamSetupDetailId" ColumnName="ExamSetupDetailId" />
+          <ScalarProperty Name="StudentCourseHistoryId" ColumnName="StudentCourseHistoryId" />
+          <ScalarProperty Name="AcaCalSectionId" ColumnName="AcaCalSectionId" />
+          <ScalarProperty Name="ExaminerSetupStudentWiseId" ColumnName="ExaminerSetupStudentWiseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamSetups">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamSetup">
+        <MappingFragment StoreEntitySet="ExamSetup">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ResultPublishDate" ColumnName="ResultPublishDate" />
+          <ScalarProperty Name="LastDateOfResultSubmission" ColumnName="LastDateOfResultSubmission" />
+          <ScalarProperty Name="ExamEndDate" ColumnName="ExamEndDate" />
+          <ScalarProperty Name="ExamStartDate" ColumnName="ExamStartDate" />
+          <ScalarProperty Name="ExamShortName" ColumnName="ExamShortName" />
+          <ScalarProperty Name="ExamName" ColumnName="ExamName" />
+          <ScalarProperty Name="Shal" ColumnName="Shal" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="AcaCalId" ColumnName="AcaCalId" />
+          <ScalarProperty Name="SemesterNo" ColumnName="SemesterNo" />
+          <ScalarProperty Name="YearNo" ColumnName="YearNo" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamSetupDetails">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamSetupDetail">
+        <MappingFragment StoreEntitySet="ExamSetupDetail">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ResultPublishDate" ColumnName="ResultPublishDate" />
+          <ScalarProperty Name="LastDateOfResultSubmission" ColumnName="LastDateOfResultSubmission" />
+          <ScalarProperty Name="ExamEndDate" ColumnName="ExamEndDate" />
+          <ScalarProperty Name="ExamStartDate" ColumnName="ExamStartDate" />
+          <ScalarProperty Name="ExamShortName" ColumnName="ExamShortName" />
+          <ScalarProperty Name="ExamName" ColumnName="ExamName" />
+          <ScalarProperty Name="SemesterNo" ColumnName="SemesterNo" />
+          <ScalarProperty Name="ExamSetupId" ColumnName="ExamSetupId" />
+          <ScalarProperty Name="ExamSetupDetailId" ColumnName="ExamSetupDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamTemplates">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamTemplate">
+        <MappingFragment StoreEntitySet="ExamTemplate">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ExamTemplateMarks" ColumnName="ExamTemplateMarks" />
+          <ScalarProperty Name="ExamTemplateName" ColumnName="ExamTemplateName" />
+          <ScalarProperty Name="ExamTemplateId" ColumnName="ExamTemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamTemplateItems">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamTemplateItem">
+        <MappingFragment StoreEntitySet="ExamTemplateItem">
+          <ScalarProperty Name="ShowAllInGrandTotal" ColumnName="ShowAllInGrandTotal" />
+          <ScalarProperty Name="ShowAllContinuousInSubTotal" ColumnName="ShowAllContinuousInSubTotal" />
+          <ScalarProperty Name="SingleQuestionAnswer" ColumnName="SingleQuestionAnswer" />
+          <ScalarProperty Name="NumberOfExaminer" ColumnName="NumberOfExaminer" />
+          <ScalarProperty Name="IsFinalExam" ColumnName="IsFinalExam" />
+          <ScalarProperty Name="MultipleExaminer" ColumnName="MultipleExaminer" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="TabulationTitle" ColumnName="TabulationTitle" />
+          <ScalarProperty Name="ShowInTabulation" ColumnName="ShowInTabulation" />
+          <ScalarProperty Name="MultiplyBy" ColumnName="MultiplyBy" />
+          <ScalarProperty Name="DivideBy" ColumnName="DivideBy" />
+          <ScalarProperty Name="CalculationType" ColumnName="CalculationType" />
+          <ScalarProperty Name="ColumnType" ColumnName="ColumnType" />
+          <ScalarProperty Name="PrintColumnSequence" ColumnName="PrintColumnSequence" />
+          <ScalarProperty Name="ColumnSequence" ColumnName="ColumnSequence" />
+          <ScalarProperty Name="PassMark" ColumnName="PassMark" />
+          <ScalarProperty Name="ExamMark" ColumnName="ExamMark" />
+          <ScalarProperty Name="ExamName" ColumnName="ExamName" />
+          <ScalarProperty Name="ExamTemplateId" ColumnName="ExamTemplateId" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamHeldInAndProgramRelations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamHeldInAndProgramRelation">
+        <MappingFragment StoreEntitySet="ExamHeldInAndProgramRelation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute5" ColumnName="Attribute5" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="SemesterNo" ColumnName="SemesterNo" />
+          <ScalarProperty Name="YearNo" ColumnName="YearNo" />
+          <ScalarProperty Name="ExamHeldInId" ColumnName="ExamHeldInId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamSetupWithExamCommittees">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamSetupWithExamCommittee">
+        <MappingFragment StoreEntitySet="ExamSetupWithExamCommittees">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ExamCommitteeExternalMemberId" ColumnName="ExamCommitteeExternalMemberId" />
+          <ScalarProperty Name="ExamCommitteeExternalMemberDeptId" ColumnName="ExamCommitteeExternalMemberDeptId" />
+          <ScalarProperty Name="ExamCommitteeMemberTwoId" ColumnName="ExamCommitteeMemberTwoId" />
+          <ScalarProperty Name="ExamCommitteeMemberTwoDeptId" ColumnName="ExamCommitteeMemberTwoDeptId" />
+          <ScalarProperty Name="ExamCommitteeMemberOneId" ColumnName="ExamCommitteeMemberOneId" />
+          <ScalarProperty Name="ExamCommitteeMemberOneDeptId" ColumnName="ExamCommitteeMemberOneDeptId" />
+          <ScalarProperty Name="ExamCommitteeChairmanId" ColumnName="ExamCommitteeChairmanId" />
+          <ScalarProperty Name="ExamCommitteeChairmanDeptId" ColumnName="ExamCommitteeChairmanDeptId" />
+          <ScalarProperty Name="HeldInProgramRelationId" ColumnName="HeldInProgramRelationId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentYearSemesterHistories">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.StudentYearSemesterHistory">
+        <MappingFragment StoreEntitySet="StudentYearSemesterHistory">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute5" ColumnName="Attribute5" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsClosed" ColumnName="IsClosed" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="HeldInProgramRelationId" ColumnName="HeldInProgramRelationId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentCourseHistories">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.StudentCourseHistory">
+        <MappingFragment StoreEntitySet="StudentCourseHistory">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="EqCourseHistoryId" ColumnName="EqCourseHistoryId" />
+          <ScalarProperty Name="SemesterId" ColumnName="SemesterId" />
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+          <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+          <ScalarProperty Name="YearNo" ColumnName="YearNo" />
+          <ScalarProperty Name="SemesterNo" ColumnName="SemesterNo" />
+          <ScalarProperty Name="CourseWavTransfrID" ColumnName="CourseWavTransfrID" />
+          <ScalarProperty Name="IsConsiderGPA" ColumnName="IsConsiderGPA" />
+          <ScalarProperty Name="IsMultipleACUSpan" ColumnName="IsMultipleACUSpan" />
+          <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+          <ScalarProperty Name="Node_CourseID" ColumnName="Node_CourseID" />
+          <ScalarProperty Name="CompletedCredit" ColumnName="CompletedCredit" />
+          <ScalarProperty Name="CourseCredit" ColumnName="CourseCredit" />
+          <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="AcaCalID" ColumnName="AcaCalID" />
+          <ScalarProperty Name="CourseStatusDate" ColumnName="CourseStatusDate" />
+          <ScalarProperty Name="CourseStatusID" ColumnName="CourseStatusID" />
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="ObtainedGrade" ColumnName="ObtainedGrade" />
+          <ScalarProperty Name="ObtainedGPA" ColumnName="ObtainedGPA" />
+          <ScalarProperty Name="ObtainedTotalMarks" ColumnName="ObtainedTotalMarks" />
+          <ScalarProperty Name="RetakeNo" ColumnName="RetakeNo" />
+          <ScalarProperty Name="HeldInRelationId" ColumnName="HeldInRelationId" />
+          <ScalarProperty Name="AcaCalSectionID" ColumnName="AcaCalSectionID" />
+          <ScalarProperty Name="CalCourseProgNodeID" ColumnName="CalCourseProgNodeID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistrationWorksheets">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.RegistrationWorksheet">
+        <MappingFragment StoreEntitySet="RegistrationWorksheet">
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="IsCreditCourse" ColumnName="IsCreditCourse" />
+          <ScalarProperty Name="PostMajorNodeLevel" ColumnName="PostMajorNodeLevel" />
+          <ScalarProperty Name="CourseResultAcaCalID" ColumnName="CourseResultAcaCalID" />
+          <ScalarProperty Name="IsOfferedCourse" ColumnName="IsOfferedCourse" />
+          <ScalarProperty Name="SequenceNo" ColumnName="SequenceNo" />
+          <ScalarProperty Name="ConflictedCourse" ColumnName="ConflictedCourse" />
+          <ScalarProperty Name="IsAdd" ColumnName="IsAdd" />
+          <ScalarProperty Name="IsRegistered" ColumnName="IsRegistered" />
+          <ScalarProperty Name="CourseStatusId" ColumnName="CourseStatusId" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CourseCredit" ColumnName="CourseCredit" />
+          <ScalarProperty Name="CompletedCredit" ColumnName="CompletedCredit" />
+          <ScalarProperty Name="IsMultipleACUSpan" ColumnName="IsMultipleACUSpan" />
+          <ScalarProperty Name="CalCrsProgNdIsMajorRelated" ColumnName="CalCrsProgNdIsMajorRelated" />
+          <ScalarProperty Name="CalCrsProgNdCredits" ColumnName="CalCrsProgNdCredits" />
+          <ScalarProperty Name="AcaCalTypeName" ColumnName="AcaCalTypeName" />
+          <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+          <ScalarProperty Name="AcaCalYear" ColumnName="AcaCalYear" />
+          <ScalarProperty Name="ObtainedGrade" ColumnName="ObtainedGrade" />
+          <ScalarProperty Name="ObtainedGPA" ColumnName="ObtainedGPA" />
+          <ScalarProperty Name="RetakeNo" ColumnName="RetakeNo" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+          <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+          <ScalarProperty Name="AcaCal_SectionID" ColumnName="AcaCal_SectionID" />
+          <ScalarProperty Name="CourseTitle" ColumnName="CourseTitle" />
+          <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+          <ScalarProperty Name="FormalCode" ColumnName="FormalCode" />
+          <ScalarProperty Name="NodeLinkName" ColumnName="NodeLinkName" />
+          <ScalarProperty Name="IsMajorRelated" ColumnName="IsMajorRelated" />
+          <ScalarProperty Name="IsMinorRelated" ColumnName="IsMinorRelated" />
+          <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+          <ScalarProperty Name="Node_CourseID" ColumnName="Node_CourseID" />
+          <ScalarProperty Name="Credits" ColumnName="Credits" />
+          <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="CalendarDetailName" ColumnName="CalendarDetailName" />
+          <ScalarProperty Name="CalendarMasterName" ColumnName="CalendarMasterName" />
+          <ScalarProperty Name="TreeMasterID" ColumnName="TreeMasterID" />
+          <ScalarProperty Name="TreeCalendarMasterID" ColumnName="TreeCalendarMasterID" />
+          <ScalarProperty Name="TreeCalendarDetailID" ColumnName="TreeCalendarDetailID" />
+          <ScalarProperty Name="IsManualOpen" ColumnName="IsManualOpen" />
+          <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+          <ScalarProperty Name="IsRequisitioned" ColumnName="IsRequisitioned" />
+          <ScalarProperty Name="IsAutoOpen" ColumnName="IsAutoOpen" />
+          <ScalarProperty Name="IsAutoAssign" ColumnName="IsAutoAssign" />
+          <ScalarProperty Name="HeldInRelationId" ColumnName="HeldInRelationId" />
+          <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+          <ScalarProperty Name="SemesterNo" ColumnName="SemesterNo" />
+          <ScalarProperty Name="YearNo" ColumnName="YearNo" />
+          <ScalarProperty Name="SemesterId" ColumnName="SemesterId" />
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+          <ScalarProperty Name="Session" ColumnName="Session" />
+          <ScalarProperty Name="OriginalCalID" ColumnName="OriginalCalID" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="CalCourseProgNodeID" ColumnName="CalCourseProgNodeID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcademicCalenderSections">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.AcademicCalenderSection">
+        <MappingFragment StoreEntitySet="AcademicCalenderSection">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="FacultyConflict" ColumnName="FacultyConflict" />
+          <ScalarProperty Name="RoomConflict" ColumnName="RoomConflict" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="SectionGenderID" ColumnName="SectionGenderID" />
+          <ScalarProperty Name="OnlineGradeSheetTemplateID" ColumnName="OnlineGradeSheetTemplateID" />
+          <ScalarProperty Name="CalculativeExamTemplateId" ColumnName="CalculativeExamTemplateId" />
+          <ScalarProperty Name="BasicExamTemplateId" ColumnName="BasicExamTemplateId" />
+          <ScalarProperty Name="ShareSection" ColumnName="ShareSection" />
+          <ScalarProperty Name="Occupied" ColumnName="Occupied" />
+          <ScalarProperty Name="TypeDefinitionID" ColumnName="TypeDefinitionID" />
+          <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="TeacherThreeID" ColumnName="TeacherThreeID" />
+          <ScalarProperty Name="TeacherTwoID" ColumnName="TeacherTwoID" />
+          <ScalarProperty Name="TeacherOneID" ColumnName="TeacherOneID" />
+          <ScalarProperty Name="TimeSlotPlanThreeID" ColumnName="TimeSlotPlanThreeID" />
+          <ScalarProperty Name="TimeSlotPlanTwoID" ColumnName="TimeSlotPlanTwoID" />
+          <ScalarProperty Name="TimeSlotPlanOneID" ColumnName="TimeSlotPlanOneID" />
+          <ScalarProperty Name="DayThree" ColumnName="DayThree" />
+          <ScalarProperty Name="DayTwo" ColumnName="DayTwo" />
+          <ScalarProperty Name="DayOne" ColumnName="DayOne" />
+          <ScalarProperty Name="RoomInfoThreeID" ColumnName="RoomInfoThreeID" />
+          <ScalarProperty Name="RoomInfoTwoID" ColumnName="RoomInfoTwoID" />
+          <ScalarProperty Name="RoomInfoOneID" ColumnName="RoomInfoOneID" />
+          <ScalarProperty Name="SemesterId" ColumnName="SemesterId" />
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+          <ScalarProperty Name="SemesterNo" ColumnName="SemesterNo" />
+          <ScalarProperty Name="YearNo" ColumnName="YearNo" />
+          <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+          <ScalarProperty Name="Session" ColumnName="Session" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="SectionDefination" ColumnName="SectionDefination" />
+          <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+          <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="HeldInRelationId" ColumnName="HeldInRelationId" />
+          <ScalarProperty Name="AcademicCalenderID" ColumnName="AcademicCalenderID" />
+          <ScalarProperty Name="AcaCal_SectionID" ColumnName="AcaCal_SectionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamHeldInInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamHeldInInformation">
+        <MappingFragment StoreEntitySet="ExamHeldInInformation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute5" ColumnName="Attribute5" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="HeldInEndYear" ColumnName="HeldInEndYear" />
+          <ScalarProperty Name="HeldInStartYear" ColumnName="HeldInStartYear" />
+          <ScalarProperty Name="HeldInEndMonth" ColumnName="HeldInEndMonth" />
+          <ScalarProperty Name="HeldInStartMonth" ColumnName="HeldInStartMonth" />
+          <ScalarProperty Name="ResultPublishDate" ColumnName="ResultPublishDate" />
+          <ScalarProperty Name="LastDateOfResultSubmission" ColumnName="LastDateOfResultSubmission" />
+          <ScalarProperty Name="ExamEndDate" ColumnName="ExamEndDate" />
+          <ScalarProperty Name="ExamStartDate" ColumnName="ExamStartDate" />
+          <ScalarProperty Name="ExamName" ColumnName="ExamName" />
+          <ScalarProperty Name="Session" ColumnName="Session" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="AcacalId" ColumnName="AcacalId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExternalCommitteeMemberInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExternalCommitteeMemberInformation">
+        <MappingFragment StoreEntitySet="ExternalCommitteeMemberInformation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="UniversityName" ColumnName="UniversityName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ExternalId" ColumnName="ExternalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Semesters">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.Semester">
+        <MappingFragment StoreEntitySet="Semester">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="SemesterNo" ColumnName="SemesterNo" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+          <ScalarProperty Name="SemesterName" ColumnName="SemesterName" />
+          <ScalarProperty Name="SemesterId" ColumnName="SemesterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Years">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.Year">
+        <MappingFragment StoreEntitySet="Year">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="ProgramTypeId" ColumnName="ProgramTypeId" />
+          <ScalarProperty Name="YearNo" ColumnName="YearNo" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="YearName" ColumnName="YearName" />
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamMarkDetails">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamMarkDetail">
+        <MappingFragment StoreEntitySet="ExamMarkDetails">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamMarkTypeId" ColumnName="ExamMarkTypeId" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="ConvertedMark" ColumnName="ConvertedMark" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+          <ScalarProperty Name="ExamMarkDetailId" ColumnName="ExamMarkDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonAdditionalInfoes">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.PersonAdditionalInfo">
+        <MappingFragment StoreEntitySet="PersonAdditionalInfo">
+          <ScalarProperty Name="BankRoutingNo" ColumnName="BankRoutingNo" />
+          <ScalarProperty Name="BankBranchName" ColumnName="BankBranchName" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankAccountNo" ColumnName="BankAccountNo" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="IsMigrate" ColumnName="IsMigrate" />
+          <ScalarProperty Name="PersonalNo" ColumnName="PersonalNo" />
+          <ScalarProperty Name="BirthCertificateNumber" ColumnName="BirthCertificateNumber" />
+          <ScalarProperty Name="NationalIdNumber" ColumnName="NationalIdNumber" />
+          <ScalarProperty Name="IsMilitary" ColumnName="IsMilitary" />
+          <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+          <ScalarProperty Name="PersonStatusEnumValueId" ColumnName="PersonStatusEnumValueId" />
+          <ScalarProperty Name="PersonCategoryEnumValueId" ColumnName="PersonCategoryEnumValueId" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="PersonAdditionalInfoId" ColumnName="PersonAdditionalInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamHeldInRelationWiseTabulatorInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamHeldInRelationWiseTabulatorInformation">
+        <MappingFragment StoreEntitySet="ExamHeldInRelationWiseTabulatorInformation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TabulatorThreeId" ColumnName="TabulatorThreeId" />
+          <ScalarProperty Name="TabulatorTwoId" ColumnName="TabulatorTwoId" />
+          <ScalarProperty Name="TabulatorOneId" ColumnName="TabulatorOneId" />
+          <ScalarProperty Name="HeldInProgramRelationId" ColumnName="HeldInProgramRelationId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HallInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.HallInformation">
+        <MappingFragment StoreEntitySet="HallInformation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute5" ColumnName="Attribute5" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="HallName" ColumnName="HallName" />
+          <ScalarProperty Name="HallCode" ColumnName="HallCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="ValidUptoProAdmissionDate" ColumnName="ValidUptoProAdmissionDate" />
+          <ScalarProperty Name="IsProvisionalAdmission" ColumnName="IsProvisionalAdmission" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDiploma" ColumnName="IsDiploma" />
+          <ScalarProperty Name="Pre_English" ColumnName="Pre_English" />
+          <ScalarProperty Name="Pre_Math" ColumnName="Pre_Math" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TranscriptSerial" ColumnName="TranscriptSerial" />
+          <ScalarProperty Name="CompletedAcaCalID" ColumnName="CompletedAcaCalID" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="History" ColumnName="History" />
+          <ScalarProperty Name="Minor3NodeID" ColumnName="Minor3NodeID" />
+          <ScalarProperty Name="Minor2NodeID" ColumnName="Minor2NodeID" />
+          <ScalarProperty Name="Minor1NodeID" ColumnName="Minor1NodeID" />
+          <ScalarProperty Name="Major3NodeID" ColumnName="Major3NodeID" />
+          <ScalarProperty Name="Major2NodeID" ColumnName="Major2NodeID" />
+          <ScalarProperty Name="Major1NodeID" ColumnName="Major1NodeID" />
+          <ScalarProperty Name="HallInfoId" ColumnName="HallInfoId" />
+          <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+          <ScalarProperty Name="TreeCalendarMasterID" ColumnName="TreeCalendarMasterID" />
+          <ScalarProperty Name="TreeMasterID" ColumnName="TreeMasterID" />
+          <ScalarProperty Name="AccountHeadsID" ColumnName="AccountHeadsID" />
+          <ScalarProperty Name="GradeMasterID" ColumnName="GradeMasterID" />
+          <ScalarProperty Name="ActiveSession" ColumnName="ActiveSession" />
+          <ScalarProperty Name="StudentAdmissionAcaCalId" ColumnName="StudentAdmissionAcaCalId" />
+          <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="Roll" ColumnName="Roll" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApprovalServicesAuthorizationMatrices">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ApprovalServicesAuthorizationMatrix">
+        <MappingFragment StoreEntitySet="ApprovalServicesAuthorizationMatrix">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="ApprovalMatrix" ColumnName="ApprovalMatrix" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FirstExaminerMarkDetailsFirstTimes">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.FirstExaminerMarkDetailsFirstTime">
+        <MappingFragment StoreEntitySet="FirstExaminerMarkDetailsFirstTime">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamMarkTypeId" ColumnName="ExamMarkTypeId" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="ConvertedMark" ColumnName="ConvertedMark" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FirstExaminerMarkDetailsSecondTimes">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.FirstExaminerMarkDetailsSecondTime">
+        <MappingFragment StoreEntitySet="FirstExaminerMarkDetailsSecondTime">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamMarkTypeId" ColumnName="ExamMarkTypeId" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="ConvertedMark" ColumnName="ConvertedMark" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SectionWiseResultSubmissionStatus">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.SectionWiseResultSubmissionStatu">
+        <MappingFragment StoreEntitySet="SectionWiseResultSubmissionStatus">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="AcacalSectionId" ColumnName="AcacalSectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="HallInfoId" ColumnName="HallInfoId" />
+          <ScalarProperty Name="TeacherTypeId" ColumnName="TeacherTypeId" />
+          <ScalarProperty Name="EmployeeTypeId" ColumnName="EmployeeTypeId" />
+          <ScalarProperty Name="MIUEmployeeID" ColumnName="MIUEmployeeID" />
+          <ScalarProperty Name="LibraryCardNo" ColumnName="LibraryCardNo" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Program" ColumnName="Program" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="History" ColumnName="History" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseTeacherMarkDetailsFirstTimes">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.CourseTeacherMarkDetailsFirstTime">
+        <MappingFragment StoreEntitySet="CourseTeacherMarkDetailsFirstTime">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamMarkTypeId" ColumnName="ExamMarkTypeId" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="ConvertedMark" ColumnName="ConvertedMark" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseTeacherMarkDetailsSecondTimes">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.CourseTeacherMarkDetailsSecondTime">
+        <MappingFragment StoreEntitySet="CourseTeacherMarkDetailsSecondTime">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamMarkTypeId" ColumnName="ExamMarkTypeId" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="ConvertedMark" ColumnName="ConvertedMark" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamMarkFirstSecondThirdExaminers">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamMarkFirstSecondThirdExaminer">
+        <MappingFragment StoreEntitySet="ExamMarkFirstSecondThirdExaminer">
+          <ScalarProperty Name="ThirdExaminerStatus" ColumnName="ThirdExaminerStatus" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="IsAbsent" ColumnName="IsAbsent" />
+          <ScalarProperty Name="MarkDifference" ColumnName="MarkDifference" />
+          <ScalarProperty Name="ThirdExaminerMarkSubmissionStatusDate" ColumnName="ThirdExaminerMarkSubmissionStatusDate" />
+          <ScalarProperty Name="ThirdExaminerMarkSubmissionStatus" ColumnName="ThirdExaminerMarkSubmissionStatus" />
+          <ScalarProperty Name="ThirdExaminerMark" ColumnName="ThirdExaminerMark" />
+          <ScalarProperty Name="SecondExaminerMarkSubmissionStatusDate" ColumnName="SecondExaminerMarkSubmissionStatusDate" />
+          <ScalarProperty Name="SecondExaminerMarkSubmissionStatus" ColumnName="SecondExaminerMarkSubmissionStatus" />
+          <ScalarProperty Name="SecondExaminerMark" ColumnName="SecondExaminerMark" />
+          <ScalarProperty Name="FirstExaminerMarkSubmissionStatusDate" ColumnName="FirstExaminerMarkSubmissionStatusDate" />
+          <ScalarProperty Name="FirstExaminerMarkSubmissionStatus" ColumnName="FirstExaminerMarkSubmissionStatus" />
+          <ScalarProperty Name="FirstExaminerMark" ColumnName="FirstExaminerMark" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamMarkMasters">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamMarkMaster">
+        <MappingFragment StoreEntitySet="ExamMarkMaster">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="AcaCalSectionId" ColumnName="AcaCalSectionId" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="FinalSubmissionDate" ColumnName="FinalSubmissionDate" />
+          <ScalarProperty Name="ExamMarkEntryDate" ColumnName="ExamMarkEntryDate" />
+          <ScalarProperty Name="ExamMark" ColumnName="ExamMark" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecondExaminerMarkDetails">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.SecondExaminerMarkDetail">
+        <MappingFragment StoreEntitySet="SecondExaminerMarkDetails">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamMarkTypeId" ColumnName="ExamMarkTypeId" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="ConvertedMark" ColumnName="ConvertedMark" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="TabulatorNo" ColumnName="TabulatorNo" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThirdExaminerMarkDetails">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ThirdExaminerMarkDetail">
+        <MappingFragment StoreEntitySet="ThirdExaminerMarkDetails">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamMarkTypeId" ColumnName="ExamMarkTypeId" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="ConvertedMark" ColumnName="ConvertedMark" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="TabulatorNo" ColumnName="TabulatorNo" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionSetterAndScriptExaminerInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.QuestionSetterAndScriptExaminerInformation">
+        <MappingFragment StoreEntitySet="QuestionSetterAndScriptExaminerInformation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ThirdExaminerId" ColumnName="ThirdExaminerId" />
+          <ScalarProperty Name="ExternalScriptExaminerId" ColumnName="ExternalScriptExaminerId" />
+          <ScalarProperty Name="InternalScriptExaminerId" ColumnName="InternalScriptExaminerId" />
+          <ScalarProperty Name="ExternalQuestionSetterId" ColumnName="ExternalQuestionSetterId" />
+          <ScalarProperty Name="InternalQuestionSetterId" ColumnName="InternalQuestionSetterId" />
+          <ScalarProperty Name="AcacalSectionId" ColumnName="AcacalSectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApprovalServicesHistoryInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ApprovalServicesHistoryInformation">
+        <MappingFragment StoreEntitySet="ApprovalServicesHistoryInformation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="AttendancePercentage" ColumnName="AttendancePercentage" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="SemesterNo" ColumnName="SemesterNo" />
+          <ScalarProperty Name="VersionId" ColumnName="VersionId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="HeldInRelationId" ColumnName="HeldInRelationId" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="ApplicationStatus" ColumnName="ApplicationStatus" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ApprovalServiceId" ColumnName="ApprovalServiceId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThirdExaminerMarkDetailsFirstTimes">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ThirdExaminerMarkDetailsFirstTime">
+        <MappingFragment StoreEntitySet="ThirdExaminerMarkDetailsFirstTime">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamMarkTypeId" ColumnName="ExamMarkTypeId" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="ConvertedMark" ColumnName="ConvertedMark" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThirdExaminerMarkDetailsSecondTimes">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ThirdExaminerMarkDetailsSecondTime">
+        <MappingFragment StoreEntitySet="ThirdExaminerMarkDetailsSecondTime">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamMarkTypeId" ColumnName="ExamMarkTypeId" />
+          <ScalarProperty Name="ExamStatus" ColumnName="ExamStatus" />
+          <ScalarProperty Name="ExamTemplateItemId" ColumnName="ExamTemplateItemId" />
+          <ScalarProperty Name="IsFinalSubmit" ColumnName="IsFinalSubmit" />
+          <ScalarProperty Name="ConvertedMark" ColumnName="ConvertedMark" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="ExamMarkMasterId" ColumnName="ExamMarkMasterId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentReAdmissionInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.StudentReAdmissionInformation">
+        <MappingFragment StoreEntitySet="StudentReAdmissionInformation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="ReAdmissionSessionId" ColumnName="ReAdmissionSessionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DateRangeActivityTypeInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.DateRangeActivityTypeInformation">
+        <MappingFragment StoreEntitySet="DateRangeActivityTypeInformation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DateRangeSetupInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.DateRangeSetupInformation">
+        <MappingFragment StoreEntitySet="DateRangeSetupInformation">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="DateRangeActivityTypeId" ColumnName="DateRangeActivityTypeId" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="AcacalId" ColumnName="AcacalId" />
+          <ScalarProperty Name="HeldInRelationId" ColumnName="HeldInRelationId" />
+          <ScalarProperty Name="HeldInId" ColumnName="HeldInId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamMarkDateRangeSetups">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamMarkDateRangeSetup">
+        <MappingFragment StoreEntitySet="ExamMarkDateRangeSetup">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute5" ColumnName="Attribute5" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ThirdExaminerSubmissionDate" ColumnName="ThirdExaminerSubmissionDate" />
+          <ScalarProperty Name="TabulatorSubmissionDate" ColumnName="TabulatorSubmissionDate" />
+          <ScalarProperty Name="InternalExaminerSubmissionDate" ColumnName="InternalExaminerSubmissionDate" />
+          <ScalarProperty Name="CourseTeacherSubmissionDate" ColumnName="CourseTeacherSubmissionDate" />
+          <ScalarProperty Name="FinalEndTime" ColumnName="FinalEndTime" />
+          <ScalarProperty Name="FinalEndDate" ColumnName="FinalEndDate" />
+          <ScalarProperty Name="FinalStartTime" ColumnName="FinalStartTime" />
+          <ScalarProperty Name="FinalStartDate" ColumnName="FinalStartDate" />
+          <ScalarProperty Name="CAEndTime" ColumnName="CAEndTime" />
+          <ScalarProperty Name="CAEndDate" ColumnName="CAEndDate" />
+          <ScalarProperty Name="CAStartTime" ColumnName="CAStartTime" />
+          <ScalarProperty Name="CAStartDate" ColumnName="CAStartDate" />
+          <ScalarProperty Name="ExamDate" ColumnName="ExamDate" />
+          <ScalarProperty Name="AcacalSectionId" ColumnName="AcacalSectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamAttendanceInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamAttendanceInformation">
+        <MappingFragment StoreEntitySet="ExamAttendanceInformation">
+          <ScalarProperty Name="ModifedDate" ColumnName="ModifedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute4" ColumnName="Attribute4" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DisciplinaryStatus" ColumnName="DisciplinaryStatus" />
+          <ScalarProperty Name="PresentAbsentStatus" ColumnName="PresentAbsentStatus" />
+          <ScalarProperty Name="CourseHistoryId" ColumnName="CourseHistoryId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacultyInformations">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.FacultyInformation">
+        <MappingFragment StoreEntitySet="FacultyInformation">
+          <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="OfficialFacultyName" ColumnName="OfficialFacultyName" />
+          <ScalarProperty Name="FacultyName" ColumnName="FacultyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programs">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.Program">
+        <MappingFragment StoreEntitySet="Program">
+          <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Attribute3" ColumnName="Attribute3" />
+          <ScalarProperty Name="Attribute2" ColumnName="Attribute2" />
+          <ScalarProperty Name="Attribute1" ColumnName="Attribute1" />
+          <ScalarProperty Name="CalenderUnitMasterID" ColumnName="CalenderUnitMasterID" />
+          <ScalarProperty Name="ProgramTypeID" ColumnName="ProgramTypeID" />
+          <ScalarProperty Name="DetailName" ColumnName="DetailName" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="TotalCredit" ColumnName="TotalCredit" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramTypes">
+      <EntityTypeMapping TypeName="MBSTU_UCAMModel.ProgramType">
+        <MappingFragment StoreEntitySet="ProgramType">
+          <ScalarProperty Name="TypeDescription" ColumnName="TypeDescription" />
+          <ScalarProperty Name="ProgramTypeID" ColumnName="ProgramTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

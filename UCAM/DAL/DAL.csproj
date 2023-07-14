@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7460F3F1-F187-4B87-97EC-A3C71E8A2069}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcademicCalender.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcademicCalenderGetAll_Result.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcademicCalenderGetById_Result.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AcademicCalenderSection.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovalServicesAuthorizationMatrix.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovalServicesHistoryInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Batch.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BatchGetAll_Result.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BatchGetById_Result.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalenderUnitMaster.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalenderUnitType.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseTeacherMarkDetailsFirstTime.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseTeacherMarkDetailsSecondTime.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateRangeActivityTypeInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateRangeSetupInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamAttendanceInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamHeldInAndProgramRelation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamHeldInInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamHeldInRelationWiseTabulatorInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExaminerSetup.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExaminerSetupStudentWise.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamMarkDateRangeSetup.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamMarkDetail.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamMarkFirstSecondThirdExaminer.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamMarkMaster.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamSetup.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamSetupDetail.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamSetupWithExamCommittee.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamTemplate.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExamTemplateItem.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalCommitteeMemberInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacultyInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FirstExaminerMarkDetailsFirstTime.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FirstExaminerMarkDetailsSecondTime.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HallInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAdditionalInfo.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramType.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionSetterAndScriptExaminerInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationWorksheet.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecondExaminerMarkDetail.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SectionWiseResultSubmissionStatu.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Semester.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentCourseHistory.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentReAdmissionInformation.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentYearSemesterHistory.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdExaminerMarkDetail.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdExaminerMarkDetailsFirstTime.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdExaminerMarkDetailsSecondTime.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UCAMModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UCAMModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UCAMModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UCAMModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UCAMModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Year.cs">
+      <DependentUpon>UCAMModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="UCAMModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UCAMModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="UCAMModel.edmx.diagram">
+      <DependentUpon>UCAMModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UCAMModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UCAMModel.edmx</DependentUpon>
+      <LastGenOutput>UCAMModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="UCAMModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UCAMModel.edmx</DependentUpon>
+      <LastGenOutput>UCAMModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

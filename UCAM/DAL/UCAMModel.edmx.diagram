@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f98376c03dbc4287a44d3b8f85c42029" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.AcademicCalender" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.Batch" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.CalenderUnitMaster" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.CalenderUnitType" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.Course" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.Department" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.Person" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="MBSTU_UCAMModel.FK_UIUEMS_CC_CalenderUnitType_UIUEMS_CC_CalenderUnitMaster" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExaminerSetup" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExaminerSetupStudentWise" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamSetup" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamSetupDetail" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamTemplate" Width="1.5" PointX="11.75" PointY="5.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamTemplateItem" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamHeldInAndProgramRelation" Width="1.5" PointX="12.375" PointY="9.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamSetupWithExamCommittee" Width="1.5" PointX="14.375" PointY="7.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.StudentYearSemesterHistory" Width="1.5" PointX="14.375" PointY="13.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.StudentCourseHistory" Width="1.5" PointX="16.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.RegistrationWorksheet" Width="1.5" PointX="16.375" PointY="9.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.AcademicCalenderSection" Width="1.5" PointX="8.875" PointY="4.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamHeldInInformation" Width="1.5" PointX="11.375" PointY="15.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExternalCommitteeMemberInformation" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.Semester" Width="1.5" PointX="3.375" PointY="17.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.Year" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamMarkDetail" Width="1.5" PointX="18.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.PersonAdditionalInfo" Width="1.5" PointX="5.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamHeldInRelationWiseTabulatorInformation" Width="1.5" PointX="18.375" PointY="10.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.HallInformation" Width="1.5" PointX="18.375" PointY="15.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.Student" Width="1.5" PointX="8.875" PointY="14.125" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ApprovalServicesAuthorizationMatrix" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.FirstExaminerMarkDetailsFirstTime" Width="1.5" PointX="20.375" PointY="12.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.FirstExaminerMarkDetailsSecondTime" Width="1.5" PointX="20.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.SectionWiseResultSubmissionStatu" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.Employee" Width="1.5" PointX="13.625" PointY="0.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.CourseTeacherMarkDetailsFirstTime" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.CourseTeacherMarkDetailsSecondTime" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamMarkFirstSecondThirdExaminer" Width="1.5" PointX="2.75" PointY="22.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamMarkMaster" Width="1.5" PointX="22.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.SecondExaminerMarkDetail" Width="1.5" PointX="22.75" PointY="11.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ThirdExaminerMarkDetail" Width="1.5" PointX="22.75" PointY="17.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.QuestionSetterAndScriptExaminerInformation" Width="1.5" PointX="13.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ApprovalServicesHistoryInformation" Width="1.5" PointX="5.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ThirdExaminerMarkDetailsFirstTime" Width="1.5" PointX="7.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ThirdExaminerMarkDetailsSecondTime" Width="1.5" PointX="9.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.StudentReAdmissionInformation" Width="1.5" PointX="11.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.DateRangeActivityTypeInformation" Width="1.5" PointX="13.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.DateRangeSetupInformation" Width="1.5" PointX="15.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamMarkDateRangeSetup" Width="1.5" PointX="17.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamAttendanceInformation" Width="1.5" PointX="22.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.FacultyInformation" Width="1.5" PointX="19.375" PointY="24.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.Program" Width="1.5" PointX="24.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ProgramType" Width="1.5" PointX="25.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
