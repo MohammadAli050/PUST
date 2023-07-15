@@ -545,21 +545,18 @@
   <ItemGroup>
     <Compile Include="MasterPage\MainMasterPageV2.master.cs">
       <DependentUpon>MainMasterPageV2.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage\MainMasterPageV2.master.designer.cs">
       <DependentUpon>MainMasterPageV2.master</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\AcademicCalendarInfo.aspx.cs">
       <DependentUpon>AcademicCalendarInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\AcademicCalendarInfo.aspx.designer.cs">
       <DependentUpon>AcademicCalendarInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\AdminHome.aspx.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
@@ -574,231 +571,198 @@
     </Compile>
     <Compile Include="MasterPage\Common\PublicMasterPage.master.cs">
       <DependentUpon>PublicMasterPage.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage\Common\PublicMasterPage.master.designer.cs">
       <DependentUpon>PublicMasterPage.master</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\BatchSetup.aspx.cs">
       <DependentUpon>BatchSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\BatchSetup.aspx.designer.cs">
       <DependentUpon>BatchSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\CourseTeacherAndTemplateAssign.aspx.cs">
       <DependentUpon>CourseTeacherAndTemplateAssign.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\CourseTeacherAndTemplateAssign.aspx.designer.cs">
       <DependentUpon>CourseTeacherAndTemplateAssign.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\DateRangeSetupInformation.aspx.cs">
       <DependentUpon>DateRangeSetupInformation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\DateRangeSetupInformation.aspx.designer.cs">
       <DependentUpon>DateRangeSetupInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\ExamAttendanceEntry.aspx.cs">
       <DependentUpon>ExamAttendanceEntry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\ExamAttendanceEntry.aspx.designer.cs">
       <DependentUpon>ExamAttendanceEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\ExamHeldInInformationSetup.aspx.cs">
       <DependentUpon>ExamHeldInInformationSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\ExamHeldInInformationSetup.aspx.designer.cs">
       <DependentUpon>ExamHeldInInformationSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\ExaminerSetup.aspx.cs">
       <DependentUpon>ExaminerSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\ExaminerSetup.aspx.designer.cs">
       <DependentUpon>ExaminerSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\ExaminerSetupStudentWise.aspx.cs">
       <DependentUpon>ExaminerSetupStudentWise.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\ExaminerSetupStudentWise.aspx.designer.cs">
       <DependentUpon>ExaminerSetupStudentWise.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\ExamMarkDateRangeSetup.aspx.cs">
       <DependentUpon>ExamMarkDateRangeSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\ExamMarkDateRangeSetup.aspx.designer.cs">
       <DependentUpon>ExamMarkDateRangeSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\ExamSetupNewVersion.aspx.cs">
       <DependentUpon>ExamSetupNewVersion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\ExamSetupNewVersion.aspx.designer.cs">
       <DependentUpon>ExamSetupNewVersion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\ExamSetups.aspx.cs">
       <DependentUpon>ExamSetups.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\ExamSetups.aspx.designer.cs">
       <DependentUpon>ExamSetups.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\ExternalCommitteeMemberInformationSetup.aspx.cs">
       <DependentUpon>ExternalCommitteeMemberInformationSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\ExternalCommitteeMemberInformationSetup.aspx.designer.cs">
       <DependentUpon>ExternalCommitteeMemberInformationSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\FacultyDepartmentProgramAndBatchSetup.aspx.cs">
       <DependentUpon>FacultyDepartmentProgramAndBatchSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\FacultyDepartmentProgramAndBatchSetup.aspx.designer.cs">
       <DependentUpon>FacultyDepartmentProgramAndBatchSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\ProgramYearSetup.aspx.cs">
       <DependentUpon>ProgramYearSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\ProgramYearSetup.aspx.designer.cs">
       <DependentUpon>ProgramYearSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\QuestionSetterAndScriptExaminerSetup.aspx.cs">
       <DependentUpon>QuestionSetterAndScriptExaminerSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\QuestionSetterAndScriptExaminerSetup.aspx.designer.cs">
       <DependentUpon>QuestionSetterAndScriptExaminerSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\Role.aspx.cs">
       <DependentUpon>Role.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\Role.aspx.designer.cs">
       <DependentUpon>Role.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\StudentReAdmission.aspx.cs">
       <DependentUpon>StudentReAdmission.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\StudentReAdmission.aspx.designer.cs">
       <DependentUpon>StudentReAdmission.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\TabulatorSetup.aspx.cs">
       <DependentUpon>TabulatorSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\TabulatorSetup.aspx.designer.cs">
       <DependentUpon>TabulatorSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\TeacherManagement.aspx.cs">
       <DependentUpon>TeacherManagement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\TeacherManagement.aspx.designer.cs">
       <DependentUpon>TeacherManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\User.aspx.designer.cs">
       <DependentUpon>User.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\UserControl.aspx.cs">
       <DependentUpon>UserControl.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\UserControl.aspx.designer.cs">
       <DependentUpon>UserControl.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\UserControlForUVuser.aspx.cs">
       <DependentUpon>UserControlForUVuser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\UserControlForUVuser.aspx.designer.cs">
       <DependentUpon>UserControlForUVuser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\admin\UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\AdmitCard\RptStudentAdmitCard.aspx.cs">
       <DependentUpon>RptStudentAdmitCard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\AdmitCard\RptStudentAdmitCard.aspx.designer.cs">
       <DependentUpon>RptStudentAdmitCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\bill\BillDelete.aspx.cs">
       <DependentUpon>BillDelete.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\bill\BillDelete.aspx.designer.cs">
       <DependentUpon>BillDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\bill\BillEdit.aspx.cs">
       <DependentUpon>BillEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\bill\BillEdit.aspx.designer.cs">
       <DependentUpon>BillEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\bill\BillGeneration.aspx.cs">
       <DependentUpon>BillGeneration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\bill\BillGeneration.aspx.designer.cs">
       <DependentUpon>BillGeneration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\bill\BillGenerationV2.aspx.cs">
       <DependentUpon>BillGenerationV2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\bill\BillGenerationV2.aspx.designer.cs">
       <DependentUpon>BillGenerationV2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\bill\FeeGroupSetup.aspx.cs">
       <DependentUpon>FeeGroupSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\bill\FeeGroupSetup.aspx.designer.cs">
       <DependentUpon>FeeGroupSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\bill\FeeSetup.aspx.cs">
       <DependentUpon>FeeSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\bill\FeeSetup.aspx.designer.cs">
       <DependentUpon>FeeSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\bill\StudentBillHistory.aspx.cs">
       <DependentUpon>StudentBillHistory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\bill\StudentBillHistory.aspx.designer.cs">
       <DependentUpon>StudentBillHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\bill\TypeDefinition.aspx.cs">
       <DependentUpon>TypeDefinition.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\bill\TypeDefinition.aspx.designer.cs">
       <DependentUpon>TypeDefinition.aspx</DependentUpon>
@@ -809,28 +773,24 @@
     <Compile Include="Module\CommonMethodsForGetHeldIn.cs" />
     <Compile Include="Module\FormFillUp\FormFillUpApplicationManage.aspx.cs">
       <DependentUpon>FormFillUpApplicationManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\FormFillUp\FormFillUpApplicationManage.aspx.designer.cs">
       <DependentUpon>FormFillUpApplicationManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\FormFillUp\FormFillUpApplicationManageByAcademicSection.aspx.cs">
       <DependentUpon>FormFillUpApplicationManageByAcademicSection.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\FormFillUp\FormFillUpApplicationManageByAcademicSection.aspx.designer.cs">
       <DependentUpon>FormFillUpApplicationManageByAcademicSection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\FormFillUp\FormFillUpApplicationManageByHallProvost.aspx.cs">
       <DependentUpon>FormFillUpApplicationManageByHallProvost.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\FormFillUp\FormFillUpApplicationManageByHallProvost.aspx.designer.cs">
       <DependentUpon>FormFillUpApplicationManageByHallProvost.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\FormFillUp\StudentFormFillUpApply.aspx.cs">
       <DependentUpon>StudentFormFillUpApply.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\FormFillUp\StudentFormFillUpApply.aspx.designer.cs">
       <DependentUpon>StudentFormFillUpApply.aspx</DependentUpon>
@@ -838,189 +798,162 @@
     <Compile Include="Module\MisscellaneousCommonMethods.cs" />
     <Compile Include="Module\registration\BatchWiseStudentRegistration.aspx.cs">
       <DependentUpon>BatchWiseStudentRegistration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\BatchWiseStudentRegistration.aspx.designer.cs">
       <DependentUpon>BatchWiseStudentRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\registration\CourseOfferAndCount.aspx.cs">
       <DependentUpon>CourseOfferAndCount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\CourseOfferAndCount.aspx.designer.cs">
       <DependentUpon>CourseOfferAndCount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\registration\Report\RptRegistrationSheetAndRollSheet.aspx.cs">
       <DependentUpon>RptRegistrationSheetAndRollSheet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\Report\RptRegistrationSheetAndRollSheet.aspx.designer.cs">
       <DependentUpon>RptRegistrationSheetAndRollSheet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\registration\Report\RptRollSheet.aspx.cs">
       <DependentUpon>RptRollSheet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\Report\RptRollSheet.aspx.designer.cs">
       <DependentUpon>RptRollSheet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\registration\SingleStudentRegistrationV2.aspx.cs">
       <DependentUpon>SingleStudentRegistrationV2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\SingleStudentRegistrationV2.aspx.designer.cs">
       <DependentUpon>SingleStudentRegistrationV2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\registration\StudentCourseSectionAssign.aspx.cs">
       <DependentUpon>StudentCourseSectionAssign.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\StudentCourseSectionAssign.aspx.designer.cs">
       <DependentUpon>StudentCourseSectionAssign.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\registration\StudentCourseSectionEnrollment.aspx.cs">
       <DependentUpon>StudentCourseSectionEnrollment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\StudentCourseSectionEnrollment.aspx.designer.cs">
       <DependentUpon>StudentCourseSectionEnrollment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\registration\StudentCourseSectionEnrollmentNewVersion.aspx.cs">
       <DependentUpon>StudentCourseSectionEnrollmentNewVersion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\StudentCourseSectionEnrollmentNewVersion.aspx.designer.cs">
       <DependentUpon>StudentCourseSectionEnrollmentNewVersion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\registration\StudentSyllabusAssign.aspx.cs">
       <DependentUpon>StudentSyllabusAssign.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\StudentSyllabusAssign.aspx.designer.cs">
       <DependentUpon>StudentSyllabusAssign.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\registration\UnRegistration.aspx.cs">
       <DependentUpon>UnRegistration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\registration\UnRegistration.aspx.designer.cs">
       <DependentUpon>UnRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\ExamCommitteeDashboard.aspx.cs">
       <DependentUpon>ExamCommitteeDashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\ExamCommitteeDashboard.aspx.designer.cs">
       <DependentUpon>ExamCommitteeDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\ExamCommitteeDashboardNewVersion.aspx.cs">
       <DependentUpon>ExamCommitteeDashboardNewVersion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\ExamCommitteeDashboardNewVersion.aspx.designer.cs">
       <DependentUpon>ExamCommitteeDashboardNewVersion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\ExamMarkEntry.aspx.cs">
       <DependentUpon>ExamMarkEntry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\ExamMarkEntry.aspx.designer.cs">
       <DependentUpon>ExamMarkEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\ExamMarkEntryNewVersion.aspx.cs">
       <DependentUpon>ExamMarkEntryNewVersion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\ExamMarkEntryNewVersion.aspx.designer.cs">
       <DependentUpon>ExamMarkEntryNewVersion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\ExamResultSubmit_NewVersion.aspx.cs">
       <DependentUpon>ExamResultSubmit_NewVersion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\ExamResultSubmit_NewVersion.aspx.designer.cs">
       <DependentUpon>ExamResultSubmit_NewVersion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\ExamTemplateItemManage.aspx.cs">
       <DependentUpon>ExamTemplateItemManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\ExamTemplateItemManage.aspx.designer.cs">
       <DependentUpon>ExamTemplateItemManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\ExamTemplateManage.aspx.cs">
       <DependentUpon>ExamTemplateManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\ExamTemplateManage.aspx.designer.cs">
       <DependentUpon>ExamTemplateManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\FinalExamExaminerResultSubmit.aspx.cs">
       <DependentUpon>FinalExamExaminerResultSubmit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\FinalExamExaminerResultSubmit.aspx.designer.cs">
       <DependentUpon>FinalExamExaminerResultSubmit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\ExamCommitteeDashboard2.aspx.cs">
       <DependentUpon>ExamCommitteeDashboard2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\ExamCommitteeDashboard2.aspx.designer.cs">
       <DependentUpon>ExamCommitteeDashboard2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\MarkEntryRelatedDeadlineSetup.aspx.cs">
       <DependentUpon>MarkEntryRelatedDeadlineSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\MarkEntryRelatedDeadlineSetup.aspx.designer.cs">
       <DependentUpon>MarkEntryRelatedDeadlineSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RptConsolidatedMarksSheet.aspx.cs">
       <DependentUpon>RptConsolidatedMarksSheet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\Report\RptConsolidatedMarksSheet.aspx.designer.cs">
       <DependentUpon>RptConsolidatedMarksSheet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RptContinuousAssessment.aspx.cs">
       <DependentUpon>RptContinuousAssessment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\Report\RptContinuousAssessment.aspx.designer.cs">
       <DependentUpon>RptContinuousAssessment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RPTExamMarkEntry.aspx.cs">
       <DependentUpon>RPTExamMarkEntry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\Report\RPTExamMarkEntry.aspx.designer.cs">
       <DependentUpon>RPTExamMarkEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RptExamResultReport.aspx.cs">
       <DependentUpon>RptExamResultReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\Report\RptExamResultReport.aspx.designer.cs">
       <DependentUpon>RptExamResultReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RptFinalMark.aspx.cs">
       <DependentUpon>RptFinalMark.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\Report\RptFinalMark.aspx.designer.cs">
       <DependentUpon>RptFinalMark.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx.cs">
       <DependentUpon>RptFirstSecondAndThirdExaminerMark.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx.designer.cs">
       <DependentUpon>RptFirstSecondAndThirdExaminerMark.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RptTabulationSheet.aspx.cs">
       <DependentUpon>RptTabulationSheet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\Report\RptTabulationSheet.aspx.designer.cs">
       <DependentUpon>RptTabulationSheet.aspx</DependentUpon>
@@ -1034,63 +967,54 @@
     </Compile>
     <Compile Include="Module\result\ResultHistoryUpload.aspx.cs">
       <DependentUpon>ResultHistoryUpload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\result\ResultHistoryUpload.aspx.designer.cs">
       <DependentUpon>ResultHistoryUpload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\schedular\ClassRoutine.aspx.cs">
       <DependentUpon>ClassRoutine.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\schedular\ClassRoutine.aspx.designer.cs">
       <DependentUpon>ClassRoutine.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\setup\CourseExplorer.aspx.cs">
       <DependentUpon>CourseExplorer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\setup\CourseExplorer.aspx.designer.cs">
       <DependentUpon>CourseExplorer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\setup\CurriculumDistribution.aspx.cs">
       <DependentUpon>CurriculumDistribution.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\setup\CurriculumDistribution.aspx.designer.cs">
       <DependentUpon>CurriculumDistribution.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\setup\Report\RptCalendarDistribution.aspx.cs">
       <DependentUpon>RptCalendarDistribution.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\setup\Report\RptCalendarDistribution.aspx.designer.cs">
       <DependentUpon>RptCalendarDistribution.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\setup\TreeMasterSetup.aspx.cs">
       <DependentUpon>TreeMasterSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\setup\TreeMasterSetup.aspx.designer.cs">
       <DependentUpon>TreeMasterSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\Report\RptStudentList.aspx.cs">
       <DependentUpon>RptStudentList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\Report\RptStudentList.aspx.designer.cs">
       <DependentUpon>RptStudentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\Result\ResultProcess.aspx.cs">
       <DependentUpon>ResultProcess.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\Result\ResultProcess.aspx.designer.cs">
       <DependentUpon>ResultProcess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\Result\ResultSheet.aspx.cs">
       <DependentUpon>ResultSheet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\Result\ResultSheet.aspx.designer.cs">
       <DependentUpon>ResultSheet.aspx</DependentUpon>
@@ -1111,70 +1035,60 @@
     </Compile>
     <Compile Include="Module\student\StudentExcelUpload.aspx.cs">
       <DependentUpon>StudentExcelUpload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\StudentExcelUpload.aspx.designer.cs">
       <DependentUpon>StudentExcelUpload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\StudentInformationMigration.aspx.cs">
       <DependentUpon>StudentInformationMigration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\StudentInformationMigration.aspx.designer.cs">
       <DependentUpon>StudentInformationMigration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\StudentManagementNewVersion.aspx.cs">
       <DependentUpon>StudentManagementNewVersion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\StudentManagementNewVersion.aspx.designer.cs">
       <DependentUpon>StudentManagementNewVersion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\StudentRegistrationForm.aspx.cs">
       <DependentUpon>StudentRegistrationForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\StudentRegistrationForm.aspx.designer.cs">
       <DependentUpon>StudentRegistrationForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\StudentResultHistory.aspx.cs">
       <DependentUpon>StudentResultHistory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\StudentResultHistory.aspx.designer.cs">
       <DependentUpon>StudentResultHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\StudentYearPromotion.aspx.cs">
       <DependentUpon>StudentYearPromotion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\StudentYearPromotion.aspx.designer.cs">
       <DependentUpon>StudentYearPromotion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\StudentYearSectionAssign.aspx.cs">
       <DependentUpon>StudentYearSectionAssign.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\StudentYearSectionAssign.aspx.designer.cs">
       <DependentUpon>StudentYearSectionAssign.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\StudentYearSemesterPromotion.aspx.cs">
       <DependentUpon>StudentYearSemesterPromotion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\student\StudentYearSemesterPromotion.aspx.designer.cs">
       <DependentUpon>StudentYearSemesterPromotion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\ViewPDF.aspx.cs">
       <DependentUpon>ViewPDF.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\ViewPDF.aspx.designer.cs">
       <DependentUpon>ViewPDF.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordRecovery.aspx.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PasswordRecovery.aspx.designer.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
@@ -1186,50 +1100,40 @@
     </Compile>
     <Compile Include="MasterPage\Common\CommonMasterPage.master.cs">
       <DependentUpon>CommonMasterPage.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage\Common\CommonMasterPage.master.designer.cs">
       <DependentUpon>CommonMasterPage.master</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\MainMasterPage.master.cs">
       <DependentUpon>MainMasterPage.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage\MainMasterPage.master.designer.cs">
       <DependentUpon>MainMasterPage.master</DependentUpon>
     </Compile>
-    <Compile Include="MasterPage\Helper\BaseMasterPage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPage\Helper\BasePage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="MasterPage\Helper\BaseMasterPage.cs" />
+    <Compile Include="MasterPage\Helper\BasePage.cs" />
     <Compile Include="MasterPage\Helper\Constants.cs" />
     <Compile Include="MasterPage\Helper\GridViewTemplate.cs" />
     <Compile Include="ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Security\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Security\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Security\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Security\LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentImageMigration.aspx.cs">
       <DependentUpon>StudentImageMigration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudentImageMigration.aspx.designer.cs">
       <DependentUpon>StudentImageMigration.aspx</DependentUpon>
