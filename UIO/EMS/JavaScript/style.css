@@ -1,0 +1,17 @@
+.container{
+    width: 50%; 
+    margin: 0 auto;  
+}
+
+.element{
+    margin-bottom: 10px;
+}
+
+.add,.remove{
+    border: 1px solid black;
+    padding: 2px 10px;
+}
+
+.add:hover,.remove:hover{
+    cursor: pointer;
+}
