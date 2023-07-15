@@ -1,0 +1,135 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace EMS.Module.result
+{
+    public partial class ExamCommitteeDashboardNewVersion : BasePage
+    {
+        string _pageUrl = HttpContext.Current.Request.Url.AbsoluteUri;
+        string _pageName = Convert.ToString(CommonUtility.CommonEnum.PageName.CourseTeacherAndTemplateAssign);
+        string _pageId = Convert.ToString(Convert.ToInt32(CommonUtility.CommonEnum.PageName.CourseTeacherAndTemplateAssign));
+
+        DAL.PABNA_UCAMEntities ucamContext = new DAL.PABNA_UCAMEntities();
+
+        BussinessObject.UIUMSUser UserObj = null;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            base.CheckPage_Load();
+            UserObj = (BussinessObject.UIUMSUser)GetFromSession(Constants.SESSIONCURRENT_USER);
+
+            if (!IsPostBack)
+            {
+                ucDepartment.LoadDropDownList();
+                ucDepartment_DepartmentSelectedIndexChanged(null, null);
+                LoadHeldInInformation();
+            }
+        }
+
+
+        #region On Load Methods
+
+        private void LoadHeldInInformation()
+        {
+            try
+            {
+                int ProgramId = Convert.ToInt32(ucProgram.selectedValue);
+
+                DataTable DataTableHeldInList = CommonMethodsForGetHeldIn.GetExamHeldInInformation(ProgramId, 0, 0, 0);
+
+                ddlHeldIn.Items.Clear();
+                ddlHeldIn.AppendDataBoundItems = true;
+                ddlHeldIn.Items.Add(new ListItem("Select", "0"));
+
+                if (DataTableHeldInList != null && DataTableHeldInList.Rows.Count > 0)
+                {
+                    ddlHeldIn.DataTextField = "ExamName";
+                    ddlHeldIn.DataValueField = "RelationId";
+                    ddlHeldIn.DataSource = DataTableHeldInList;
+                    ddlHeldIn.DataBind();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        #endregion
+
+        #region On Selected Index Changed Methods
+
+        protected void ucDepartment_DepartmentSelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int departmentId = Convert.ToInt32(ucDepartment.selectedValue);
+                ucProgram.LoadDropdownByDepartmentId(departmentId);
+                LoadHeldInInformation();
+                ClearGridView();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ucProgram_ProgramSelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadHeldInInformation();
+                ClearGridView();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        protected void ddlHeldIn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ClearGridView();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        protected void ddlCourseType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClearGridView();
+        }
+
+        protected void ddlTeacher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClearGridView();
+        }
+
+        protected void ddlTemplate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClearGridView();
+        }
+
+        #endregion
+
+        private void ClearGridView()
+        {
+            //gvScheduleList.DataSource = null;
+            //gvScheduleList.DataBind();
+            //DivUpdate.Visible = false;
+        }
+
+        protected void btnLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    }
+}
