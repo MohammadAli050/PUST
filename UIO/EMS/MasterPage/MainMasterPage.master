@@ -1,0 +1,147 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MainMasterPage" CodeBehind="MainMasterPage.master.cs" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>
+        <asp:ContentPlaceHolder runat="server" ID="Title" />
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <asp:PlaceHolder runat="server" ID="plh">
+        <link rel="shortcut icon" href="<%= string.Format("{0}/Images/PABNA_logo.png", CommonUtility.AppPath.ApplicationPath) %>" />
+    </asp:PlaceHolder>
+    <script type="text/javascript" src="../JavaScript/jquery-1.7.1.js"></script>
+    <link href="../CSS/CSSFiles/SiteMaster.CSS" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="~/Assets/Fonts/fontface.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles/jquery-ui-1.8.16.custom.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles/bootstrap-datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles/style.css" />
+
+    <script type="text/javascript" src="~/Assets/Scripts/bootstrap.js"></script>
+
+    <link href="~/ContentCSS/CSS/bootstrap-4.1.3/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/ContentCSS/CSS/mdb.min.css" rel="stylesheet" />
+    <script src="~/ContentCSS/CSS/jquery.min.js"></script>
+    <script src="~/ContentCSS/CSS/bootstrap-4.1.3/js/bootstrap.js"></script>
+
+    <asp:ContentPlaceHolder runat="server" ID="Head" />
+</head>
+<body id="MasterBody" style="font-family: 'Raleway', sans-serif;">
+    <form id="form" runat="server">
+        <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></ajaxToolkit:ToolkitScriptManager>
+        <div class="ContainWrapper ">
+            <div class="  ">
+                <div class="Header-Container ">
+                    <%--<div>
+                    <b class="floatLeft" style="color: black;">Notice: </b>
+                    <marquee class="notice-wrapper floatRight">
+                        <b>Notice for Certificate Collection of the Workshop on Corporate Etiquette & Personal Grooming</b> #
+                    </marquee>
+                    <div class="cleaner"></div>
+                </div>--%>
+
+                    <div class="Banner-Container">
+
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1">
+                                <img src='<%= string.Format("{0}/Images/PABNA_logo.png", CommonUtility.AppPath.ApplicationPath) %>' style="margin-left: 15px; margin-top: 7px; width: 93px; height: 100px;" />
+
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p style="font-size: 30px; font-weight: bold;margin-top:35px">Pabna University of Science and Technology</p>
+
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="floatRight loginStatusPanel">
+                                    <div class="StatusPanelContainer">
+                                        <div class="StatusPanel floatLeft" style="font-size: 10px;">
+                                            <div>
+                                                <asp:LinkButton runat="server" ID="lbtnUserName" class="loginStyle" Font-Bold="true" Font-Italic="true" Font-Size="14px" Text="[User Name]" OnClick="lbtnUserName_Click"></asp:LinkButton>
+                                                <asp:Label runat="server" ID="lblSeparate" Text="/"></asp:Label>
+                                                <asp:LinkButton runat="server" ID="lblLogout" class="logoutStyle" Font-Bold="true" ForeColor="Red" Text="Logout" OnClick="lbtnLogOut_Click"></asp:LinkButton>
+                                            </div>
+                                            <asp:Label runat="server" ID="lblAvatarName" Text="" />
+                                            <br />
+                                            <asp:Label runat="server" ID="lblRoleName" Text="" />
+                                            <div style="display: none">
+                                                <label class="semesterStatusLabel">Current→</label>
+                                                <asp:Label runat="server" ID="lblCurrent" class="semesterStatus" Text=""></asp:Label>
+                                            </div>
+                                            <div style="display: none">
+                                                <label class="semesterStatusLabel1">Registration→</label>
+                                                <asp:Label runat="server" ID="lblRegistration" class="semesterStatus1" Text=""></asp:Label>
+                                            </div>
+                                        </div>
+                                        <div class="AvatarStatusPanel floatLeft">
+                                            <asp:Image runat="server" ID="imgAvatar" style="border-radius:50px" ImageUrl="../Images/avatarMale.png" />
+                                        </div>
+                                        <div class="cleaner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <%--<div>&nbsp;</div>--%>
+            <div class="">
+                <div class="">
+                    <div class="navMenu">
+                        <ul class="staticHome">
+                            <li>
+                                <a id="A2" href="~/Security/Home.aspx" runat="server">Home</a>
+                            </li>
+                        </ul>
+                        <asp:Menu ID="menuMain" MaximumDynamicDisplayLevels="10"
+                            runat="server"
+                            Orientation="Horizontal">
+                        </asp:Menu>
+                        <div class="cleaner"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <div class="mainBodyContainer">
+                        <asp:ContentPlaceHolder runat="server" ID="MainContainer" />
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <div class="footer">
+                        <div>
+                            Powered by <b>Edusoft Consultants Ltd.</b><br />
+                            Copyright &copy; 2013 - 2023 Edusoft Consultants Ltd. All rights reserved.
+               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <script>
+        $(function () {
+            //to fix collapse mode width issue
+            //$(".nav li,.nav li a,.nav li ul").removeAttr('style');
+            $(".nav li,.nav li a,.nav li ul").removeAttr('style');
+            //for dropdown menu
+            $(".dropdown-menu").parent().removeClass().addClass('dropdown');
+            //$(".dropdown>a").removeClass().addClass('dropdown-toggle').append('<b class="caret"></b>').attr('data-toggle', 'dropdown');
+            $(".dropdown>a").removeClass().addClass('dropdown-toggle').attr('data-toggle', 'dropdown');
+            //remove default click redirect effect           
+            $('.dropdown-toggle').attr('onclick', '').off('click');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="CommonMasterPage" CodeBehind="CommonMasterPage.master.cs" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>
+        <asp:ContentPlaceHolder runat="server" ID="Title" />
+    </title>
+    <asp:PlaceHolder runat="server" ID="plh">
+        <link rel="shortcut icon" href="<%= string.Format("{0}/Images/mist_favicon.png", CommonUtility.AppPath.ApplicationPath) %>" />
+    </asp:PlaceHolder>
+    <%--<script type="text/javascript" src="../../JavaScript/jquery-1.7.1.js"></script>--%>
+    <script src="../../ContentCSS/CSS/jquery.min.js"></script>
+    <link href="../../ContentCSS/CSS/SiteMaster.CSS" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="~/Assets/Fonts/fontface.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles/jquery-ui-1.8.16.custom.css" />
+    <%--<link rel="stylesheet" type="text/css" href="~/Assets/Styles/bootstrap.css" />--%>
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles/bootstrap-datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/Styles/style.css" />
+
+
+    <%--<script type="text/javascript" src="~/Assets/Scripts/bootstrap.js"></script>--%>
+    <link href="~/ContentCSS/CSS/bootstrap-4.1.3/css/bootstrap.css" rel="stylesheet" />
+    <%--<link href="~/ContentCSS/CSS/mdb.min.css" rel="stylesheet" />--%>
+    <script src="../../ContentCSS/CSS/bootstrap-4.1.3/js/bootstrap.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+    <link href="../../CSS/select2.min.css" rel="stylesheet" />
+    <script src="../../JavaScript/select2.full.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+    <asp:ContentPlaceHolder runat="server" ID="Head" />
+    <style>
+        .btn:hover {
+            background-position: 0px 50px !important;
+            transition: none;
+        }
+
+        .btn {
+            background-image: none !important;
+            text-shadow: none !important;
+        }
+
+        .form-control {
+            height: 32px !important;
+        }
+
+        .staticHome > li {
+            line-height: 48px !important;
+        }
+
+        .select2-results__option {
+            line-height: 20px !important;
+            height: 34px !important;
+        }
+
+        .select2-container {
+            width: 306px !important;
+        }
+
+        .table-bordered {
+            border: 2px solid #dee2e6;
+        }
+
+        .navMenu {
+            height: 50px;
+        }
+    </style>
+</head>
+<body id="MasterBody">
+    <form id="form" runat="server" enctype="multipart/form-data">
+        <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" ScriptMode="Release"></ajaxToolkit:ToolkitScriptManager>
+        <div class="ContainWrapper">
+            <div class="Header-Container">
+                <div class="Banner-Container">
+
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1">
+                            <img src='<%= string.Format("{0}/Images/PABNA_logo.png", CommonUtility.AppPath.ApplicationPath) %>' style="margin-left: 15px; margin-top: 7px; width: 93px; height: 100px;" />
+
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p style="font-size: 30px; font-weight: bold; margin-top: 35px">Pabna University of Science and Technology</p>
+
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="floatRight loginStatusPanel">
+                                <div class="StatusPanelContainer">
+                                    <div class="StatusPanel floatLeft" style="font-size: 10px;">
+                                        <div>
+                                            <asp:LinkButton runat="server" ID="lbtnUserName" Font-Bold="true" Font-Italic="true" Font-Size="14px" class="loginStyle" Text="[User Name]" OnClick="lbtnUserName_Click"></asp:LinkButton>
+                                            <asp:Label runat="server" ID="lblSeparate" Text="/"></asp:Label>
+                                            <asp:LinkButton runat="server" ID="lblLogout" class="logoutStyle"  Font-Bold="true" ForeColor="Red" Text="Logout" OnClick="lbtnLogOut_Click"></asp:LinkButton>
+                                        </div>
+                                        <asp:Label runat="server" ID="lblAvatarName" Text="" />
+                                        <br />
+                                        <asp:Label runat="server" ID="lblRoleName" Text="" />
+                                        <div style="display: none">
+                                            <label class="semesterStatusLabel">Current→</label>
+                                            <asp:Label runat="server" ID="lblCurrent" class="semesterStatus" Text=""></asp:Label>
+                                        </div>
+                                        <div style="display: none">
+                                            <label class="semesterStatusLabel1">Registration→</label>
+                                            <asp:Label runat="server" ID="lblRegistration" class="semesterStatus1" Text=""></asp:Label>
+                                        </div>
+                                    </div>
+                                    <div class="AvatarStatusPanel floatLeft">
+                                        <asp:Image runat="server" ID="imgAvatar" Style="border-radius: 50px" ImageUrl="../../Images/avatarMale.png" />
+                                    </div>
+                                    <div class="cleaner"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <div class="navMenu">
+                        <ul class="staticHome">
+                            <li>
+                                <a id="A2" href="~/Security/Home.aspx" runat="server">Home</a>
+                            </li>
+                        </ul>
+                        <asp:Menu ID="menuMain" MaximumDynamicDisplayLevels="10"
+                            runat="server"
+                            Orientation="Horizontal">
+                        </asp:Menu>
+                        <div class="cleaner"></div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="mainBodyContainer">
+                <%--<asp:UpdatePanel ID="UpdatePanel3" runat="server">
+        <ContentTemplate>--%>
+                <asp:ContentPlaceHolder runat="server" ID="MainContainer" />
+                <%-- </ContentTemplate>
+                </asp:UpdatePanel>--%>
+            </div>
+
+            <div class="footer">
+                <div>
+                    Powered by <b>Edusoft Consultants Ltd.</b><br />
+                    Copyright &copy; 2013 - 2023 Edusoft Consultants Ltd. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
