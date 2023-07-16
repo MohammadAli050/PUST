@@ -112,15 +112,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContainer" runat="Server">
     
     <div class="container">
-        <div class="Main-Hotline-container">
+        <div class="Main-Hotline-container" style="margin-top:45px">
             <div style="clear: both;">
-                <hr />
-                    <h2 style="color: black; font-family: Calibri;"><b>Welcome to Pabna University of Science and Technology (PUST) UCAM</b></h2> 
-                    <h2 style="color: black; font-family: Calibri;"></h2>
-                    <h2 style="color: black; font-family: Calibri;"></h2>
-                <hr />
-                <br />
-                <br />
+                
+                    <h1 style="color: #4ca1d7 ; font-family: 'Global User Interface'; text-align:center"><b>Welcome to PUST UCAM</b></h1> 
+                    <h4 style="color: #4ca1d7; font-family: 'Global Serif';">University Comprehensive Academic Management (UCAM)</h4>
+                
             </div>
         </div>
         <div class="row d-none">

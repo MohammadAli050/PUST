@@ -9,9 +9,8 @@
 
 
 
-public partial class Security_Default
-{
-
+public partial class Security_Default {
+    
     /// <summary>
     /// plh control.
     /// </summary>
@@ -20,7 +19,7 @@ public partial class Security_Default
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.PlaceHolder plh;
-
+    
     /// <summary>
     /// frmLogIn control.
     /// </summary>
@@ -29,7 +28,7 @@ public partial class Security_Default
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.HtmlControls.HtmlForm frmLogIn;
-
+    
     /// <summary>
     /// scMgtMas control.
     /// </summary>
@@ -38,7 +37,7 @@ public partial class Security_Default
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.ScriptManager scMgtMas;
-
+    
     /// <summary>
     /// upMain control.
     /// </summary>
@@ -47,7 +46,7 @@ public partial class Security_Default
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.UpdatePanel upMain;
-
+    
     /// <summary>
     /// logMain control.
     /// </summary>
@@ -56,7 +55,7 @@ public partial class Security_Default
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Login logMain;
-
+    
     /// <summary>
     /// UpdatePanelAnimationExtender1 control.
     /// </summary>
@@ -65,7 +64,7 @@ public partial class Security_Default
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::AjaxControlToolkit.UpdatePanelAnimationExtender UpdatePanelAnimationExtender1;
-
+    
     /// <summary>
     /// UpdatePanel2 control.
     /// </summary>
