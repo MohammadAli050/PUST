@@ -376,6 +376,7 @@
                                                      </asp:LinkButton>
                                                                 </div>
                                                             </ItemTemplate>
+                                                            <ItemStyle Width="12%" />
                                                         </asp:TemplateField>
 
                                                     </Columns>

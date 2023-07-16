@@ -20,18 +20,18 @@ namespace EMS.Module.Setup
 
         protected void Page_Load(object sender, EventArgs e)
         {
-             base.CheckPage_Load();
-             ScriptManager _scriptMan = ScriptManager.GetCurrent(this);
-             _scriptMan.AsyncPostBackTimeout = 36000;
-             if (!IsPostBack)
-             {
-                 LoadProgram();
-                 LoadTreeCombo(0);
-                 LoadTreeCalender(0);
-                 InvisibleAllPanel();
-                 LoadAllDropDownWithZero();
-                 ClearAllFields();
-             }
+            base.CheckPage_Load();
+            ScriptManager _scriptMan = ScriptManager.GetCurrent(this);
+            _scriptMan.AsyncPostBackTimeout = 36000;
+            if (!IsPostBack)
+            {
+                LoadProgram();
+                LoadTreeCombo(0);
+                LoadTreeCalender(0);
+                InvisibleAllPanel();
+                LoadAllDropDownWithZero();
+                ClearAllFields();
+            }
         }
 
         protected void LoadProgram()
@@ -82,7 +82,7 @@ namespace EMS.Module.Setup
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ModalPopupExtender1.Show();
                 lblMsg.Text = ex.Message;
@@ -149,7 +149,7 @@ namespace EMS.Module.Setup
             {
                 LoadTree();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ModalPopupExtender1.Show();
                 lblMsg.Text = ex.Message;
@@ -172,7 +172,7 @@ namespace EMS.Module.Setup
                 VisibleAllPanel();
                 ClearAllFields();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ModalPopupExtender1.Show();
                 lblMsg.Text = ex.Message;
@@ -189,7 +189,7 @@ namespace EMS.Module.Setup
                 btnReloadTree.Visible = false;
                 btnClearFields.Visible = false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ModalPopupExtender1.Show();
                 lblMsg.Text = ex.Message;
@@ -206,14 +206,14 @@ namespace EMS.Module.Setup
                 btnReloadTree.Visible = true;
                 btnClearFields.Visible = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ModalPopupExtender1.Show();
                 lblMsg.Text = ex.Message;
             }
         }
 
-        private void ClearAllFields() 
+        private void ClearAllFields()
         {
             try
             {
@@ -318,7 +318,7 @@ namespace EMS.Module.Setup
             }
         }
 
-        private void LoaddAllDropDownAfterSaveEditDelete() 
+        private void LoaddAllDropDownAfterSaveEditDelete()
         {
             ddlAddCourseTrimester.SelectedValue = Convert.ToString("0");
             ddlAddCourse.SelectedValue = Convert.ToString("0");
@@ -372,7 +372,7 @@ namespace EMS.Module.Setup
         {
             tvwCalendar.Nodes.Clear();
             TreeNode treeNode = new TreeNode();
-            if (treeCalMaster!=null)
+            if (treeCalMaster != null)
             {
                 treeNode.Text = treeCalMaster.CalenderUnitName;
                 treeNode.Value = "TreeCalMas," + treeCalMaster.TreeCalendarMasterID.ToString();
@@ -389,7 +389,7 @@ namespace EMS.Module.Setup
             }
             catch (Exception Ex)
             {
-                
+
             }
         }
 
@@ -504,7 +504,7 @@ namespace EMS.Module.Setup
                         else
                         {
                             #region Node_Courses
-                            if(node.NodeID > 0)
+                            if (node.NodeID > 0)
                             {
                                 List<NodeCoursesDTO> nodeCourseList = Node_CourseManager.GetByNodeId(node.NodeID);
                                 if (nodeCourseList != null)
@@ -535,7 +535,7 @@ namespace EMS.Module.Setup
                         setNoAndNodeID = _clsNameAndID[1].Split('#');
 
                         Node node = NodeManager.GetById(Int32.Parse(setNoAndNodeID[1]));
-                        if (node!= null) 
+                        if (node != null)
                         {
                             List<VNodeSet> vNodeSetList = VNodeSetManager.GetbyNodeId(node.NodeID);
                             List<VNodeSetMaster> vNodeSetMasterList = VNodeSetMasterManager.GetByNodeId(node.NodeID);
@@ -571,7 +571,7 @@ namespace EMS.Module.Setup
                                 treeNode.ChildNodes.Clear();
                             }
                         }
-                        
+
                     }
                     #endregion
                 }
@@ -601,7 +601,7 @@ namespace EMS.Module.Setup
                 throw exp;
             }
         }
-        
+
         private void LoadNode(TreeNode parentNode, List<TreeCalendarDetail> treeCalDetails)
         {
             foreach (TreeCalendarDetail treeCalDetail in treeCalDetails)
@@ -638,7 +638,7 @@ namespace EMS.Module.Setup
                         }
                         else if (calendarDistribution.CourseID > 0 && (calendarDistribution.NodeID == 0 || calendarDistribution.NodeID == null))
                         {
-                            treeNode.Text = calendarDistribution.CalCourseProgNodeCourse.FormalCode + " - "+ calendarDistribution.CalCourseProgNodeCourse.VersionCode + " - " + calendarDistribution.CalCourseProgNodeCourse.Title + " ( " + calendarDistribution.CalCourseProgNodeCourse.Credits + " )" + " Pr: (" + calendarDistribution.Priority + ")";
+                            treeNode.Text = calendarDistribution.CalCourseProgNodeCourse.FormalCode + " - " + calendarDistribution.CalCourseProgNodeCourse.VersionCode + " - " + calendarDistribution.CalCourseProgNodeCourse.Title + " ( " + calendarDistribution.CalCourseProgNodeCourse.Credits + " )" + " Pr: (" + calendarDistribution.Priority + ")";
                             treeNode.Value = "CALDISCRS," + calendarDistribution.CalCorProgNodeID.ToString() + "#" + calendarDistribution.CourseID.ToString() + "#" + calendarDistribution.VersionID.ToString();
                             treeNode.ExpandAll();
                         }
@@ -663,7 +663,7 @@ namespace EMS.Module.Setup
             foreach (Course course in courses)
             {
                 TreeNode node = new TreeNode();
-                node.Text = course.FormalCode + " - "+ course.VersionCode + " - " + course.Title + " ( " + course.Credits + " ) ";
+                node.Text = course.FormalCode + " - " + course.VersionCode + " - " + course.Title + " ( " + course.Credits + " ) ";
                 node.Value = "CRS," + course.CourseID.ToString() + "#" + course.VersionID.ToString();
                 node.ExpandAll();
                 if (parentNode == null)
@@ -701,7 +701,7 @@ namespace EMS.Module.Setup
             foreach (VNodeSetMaster vNodeMaster in vNodeSetMasterList)
             {
                 TreeNode treeNode = new TreeNode();
-                treeNode.Text = "Set "+ Convert.ToString(vNodeMaster.SetNo);
+                treeNode.Text = "Set " + Convert.ToString(vNodeMaster.SetNo);
                 treeNode.Value = "SETMAS," + vNodeMaster.SetNo.ToString() + "#" + vNodeMaster.NodeID.ToString();
                 treeNode.ExpandAll();
                 if (parentNode == null)
@@ -723,15 +723,15 @@ namespace EMS.Module.Setup
                 Course courseObj = new Course();
                 Operator operatorObj = new Operator();
                 Node nodeObj = new Node();
-                if (vNodeSet.OperatorID != null && vNodeSet.OperatorID> 0) 
+                if (vNodeSet.OperatorID != null && vNodeSet.OperatorID > 0)
                 {
                     operatorObj = OperatorManager.GetById(vNodeSet.OperatorID);
                 }
-                if ((vNodeSet.OperandCourseID != null && vNodeSet.OperandCourseID > 0) && (vNodeSet.OperandVersionID != null && vNodeSet.OperandVersionID > 0)) 
+                if ((vNodeSet.OperandCourseID != null && vNodeSet.OperandCourseID > 0) && (vNodeSet.OperandVersionID != null && vNodeSet.OperandVersionID > 0))
                 {
                     courseObj = CourseManager.GetByCourseIdVersionId(vNodeSet.OperandCourseID, vNodeSet.OperandVersionID);
                 }
-                if (vNodeSet.OperandNodeID != null && vNodeSet.OperandNodeID > 0) 
+                if (vNodeSet.OperandNodeID != null && vNodeSet.OperandNodeID > 0)
                 {
                     nodeObj = NodeManager.GetById(vNodeSet.OperandNodeID);
                 }
@@ -739,7 +739,7 @@ namespace EMS.Module.Setup
 
                 if (!vNodeSet.IsStudntSpec && vNodeSet.OperandNodeID == 0)
                 {
-                    if (courseObj != null && operatorObj!=null)
+                    if (courseObj != null && operatorObj != null)
                     {
                         treeNode.Text = courseObj.Title + " - " + operatorObj.Name;
                         treeNode.Value = "VNODSET," + vNodeSet.VNodeSetID.ToString();
@@ -888,8 +888,8 @@ namespace EMS.Module.Setup
 
             ddlDeleteNodeTrimesterLoad();
         }
-       
-        private void ddlAddCourseTrimesterLoad() 
+
+        private void ddlAddCourseTrimesterLoad()
         {
             try
             {
@@ -924,7 +924,7 @@ namespace EMS.Module.Setup
             {
                 int treeMasterId = Convert.ToInt32(lblTreeId.Text);
                 TreeMaster treeMasterObj = TreeMasterManager.GetById(treeMasterId);
-            
+
 
                 ddlAddCourse.Items.Clear();
                 ddlAddCourse.Items.Add(new ListItem("-Select Course-", "0"));
@@ -950,7 +950,7 @@ namespace EMS.Module.Setup
             }
         }
 
-        private void ddlAddCourseParentNodeLoad() 
+        private void ddlAddCourseParentNodeLoad()
         {
             try
             {
@@ -971,13 +971,13 @@ namespace EMS.Module.Setup
                     ddlAddCourseParentNode.DataBind();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ModalPopupExtender1.Show();
                 lblMsg.Text = ex.Message;
             }
         }
-        
+
         protected void btnAddCourseSave_Click(object sender, EventArgs e)
         {
             try
@@ -1028,8 +1028,8 @@ namespace EMS.Module.Setup
                             #region Log Insert
                             LogGeneralManager.Insert(
                                     DateTime.Now,
-                                    BaseAcaCalCurrent.Code,
-                                    BaseAcaCalCurrent.FullCode,
+                                    "",
+                                    "",
                                     BaseCurrentUserObj.LogInID,
                                     "",
                                     "",
@@ -1062,14 +1062,14 @@ namespace EMS.Module.Setup
                     lblMsg.Text = "Priority can not be null.";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ModalPopupExtender1.Show();
                 lblMsg.Text = ex.Message;
             }
         }
 
-        private void ClearAddCourseField() 
+        private void ClearAddCourseField()
         {
             txtAddCourseCrComplete.Text = string.Empty;
             txtAddCoursePriority.Text = string.Empty;
@@ -1172,7 +1172,7 @@ namespace EMS.Module.Setup
                 int programId = Convert.ToInt32(lblProgramId.Text);
 
                 int nodeId = Convert.ToInt32(ddlAddNodeNodes.SelectedValue);
-                
+
                 if (!string.IsNullOrEmpty(txtAddNodeName.Text.Trim()))
                 {
                     if (!string.IsNullOrEmpty(txtAddNodePriority.Text.Trim()))
@@ -1192,14 +1192,14 @@ namespace EMS.Module.Setup
                         {
                             calCourseProgNodeObj.Credits = Convert.ToInt32(txtAddNodeCrComplete.Text);
                         }
- 
+
                         if (chkAddNodeIsMajor.Checked)
                         {
                             calCourseProgNodeObj.IsMajorRelated = true;
                         }
-                        else 
-                        { 
-                            calCourseProgNodeObj.IsMajorRelated = false; 
+                        else
+                        {
+                            calCourseProgNodeObj.IsMajorRelated = false;
                         }
                         calCourseProgNodeObj.CreatedBy = BaseCurrentUserObj.Id;
                         calCourseProgNodeObj.CreatedDate = DateTime.Now;
@@ -1218,8 +1218,8 @@ namespace EMS.Module.Setup
                                 #region Log Insert
                                 LogGeneralManager.Insert(
                                         DateTime.Now,
-                                        BaseAcaCalCurrent.Code,
-                                        BaseAcaCalCurrent.FullCode,
+                                        "",
+                                        "",
                                         BaseCurrentUserObj.LogInID,
                                         "",
                                         "",
@@ -1246,7 +1246,7 @@ namespace EMS.Module.Setup
                             lblMsg.Text = "Node/Priority already exist.";
                         }
                     }
-                    else 
+                    else
                     {
                         ModalPopupExtender1.Show();
                         lblMsg.Text = "Priority can not be null.";
@@ -1399,22 +1399,22 @@ namespace EMS.Module.Setup
 
                 ddlEditCourseOld.AppendDataBoundItems = true;
 
-                if (calCourseProgNodeList!= null) 
-                { 
-                    foreach(CalCourseProgNode calCourseProgNode in calCourseProgNodeList)
+                if (calCourseProgNodeList != null)
+                {
+                    foreach (CalCourseProgNode calCourseProgNode in calCourseProgNodeList)
                     {
-                        if (calCourseProgNode.CourseID > 0 && calCourseProgNode.VersionID > 0) 
-                        { 
+                        if (calCourseProgNode.CourseID > 0 && calCourseProgNode.VersionID > 0)
+                        {
                             Course courseObj = CourseManager.GetByCourseIdVersionId(calCourseProgNode.CourseID, calCourseProgNode.VersionID);
                             if (courseObj != null)
                             {
                                 string valueField = courseObj.CourseID + "_" + courseObj.VersionID + "_" + calCourseProgNode.Node_CourseID;
-                                string textField = courseObj.FormalCode + " - " + courseObj.VersionCode + " - " + courseObj.Title +" (Cr: "+courseObj.Credits+")";
+                                string textField = courseObj.FormalCode + " - " + courseObj.VersionCode + " - " + courseObj.Title + " (Cr: " + courseObj.Credits + ")";
                                 ddlEditCourseOld.Items.Add(new ListItem(textField, valueField));
                             }
                         }
                     }
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -1485,9 +1485,9 @@ namespace EMS.Module.Setup
                 int nodeCourseIdNew = Convert.ToInt32(strNew[2]);
 
                 CalCourseProgNode calCourseProgNodeObj = CalCourseProgNodeManager.GetByTreeCalenderDetailId(treeCalenderDetailId).Where(d => d.CourseID == courseIdOld && d.VersionID == versionIdOld && d.Node_CourseID == nodeCourseIdOld).FirstOrDefault();
-                if (calCourseProgNodeObj != null) 
-                { 
-                    if(courseIdNew> 0 && versionIdNew> 0)
+                if (calCourseProgNodeObj != null)
+                {
+                    if (courseIdNew > 0 && versionIdNew > 0)
                     {
                         if (!string.IsNullOrEmpty(txtEditCoursePriority.Text.Trim()))
                         {
@@ -1511,8 +1511,8 @@ namespace EMS.Module.Setup
                                 #region Log Insert
                                 LogGeneralManager.Insert(
                                         DateTime.Now,
-                                        BaseAcaCalCurrent.Code,
-                                        BaseAcaCalCurrent.FullCode,
+                                        "",
+                                        "",
                                         BaseCurrentUserObj.LogInID,
                                         "",
                                         "",
@@ -1656,7 +1656,7 @@ namespace EMS.Module.Setup
                 {
                     foreach (CalCourseProgNode calCourseProgNode in calCourseProgNodeList)
                     {
-                        if (calCourseProgNode.NodeID > 0 )
+                        if (calCourseProgNode.NodeID > 0)
                         {
                             Node nodeObj = NodeManager.GetById(calCourseProgNode.NodeID);
                             if (nodeObj != null)
@@ -1667,7 +1667,7 @@ namespace EMS.Module.Setup
                             }
                         }
                     }
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -1705,7 +1705,7 @@ namespace EMS.Module.Setup
                 if (calCourseProgNode.TopNodeId != null && calCourseProgNode.TopNodeId > 0)
                 {
                     ddlAddNodeParentNode.SelectedValue = Convert.ToString(calCourseProgNode.TopNodeId);
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -1738,7 +1738,7 @@ namespace EMS.Module.Setup
                                 {
                                     calCourseProgNodeObj.Credits = Convert.ToDecimal(txtEditNodeCrComplete.Text);
                                 }
-                        
+
                                 if (chkEditNodeIsMajor.Checked)
                                 {
                                     calCourseProgNodeObj.IsMajorRelated = true;
@@ -1753,12 +1753,12 @@ namespace EMS.Module.Setup
                                     ModalPopupExtender1.Show();
                                     lblMsg.Text = "Node edited successfully.";
                                     ShowRoot(calenderDistributionId);
-                                    
+
                                     #region Log Insert
                                     LogGeneralManager.Insert(
                                             DateTime.Now,
-                                            BaseAcaCalCurrent.Code,
-                                            BaseAcaCalCurrent.FullCode,
+                                            "",
+                                            "",
                                             BaseCurrentUserObj.LogInID,
                                             "",
                                             "",
@@ -1882,15 +1882,15 @@ namespace EMS.Module.Setup
                         if (calCourseProgNode.CourseID > 0 && calCourseProgNode.VersionID > 0)
                         {
                             Course courseObj = CourseManager.GetByCourseIdVersionId(calCourseProgNode.CourseID, calCourseProgNode.VersionID);
-                            if (courseObj!=  null)
+                            if (courseObj != null)
                             {
                                 string valueField = courseObj.CourseID + "_" + courseObj.VersionID + "_" + calCourseProgNode.Node_CourseID;
-                                string textField = courseObj.FormalCode + " - " + courseObj.VersionCode + " - " + courseObj.Title +" (Cr: "+courseObj.Credits+")";
+                                string textField = courseObj.FormalCode + " - " + courseObj.VersionCode + " - " + courseObj.Title + " (Cr: " + courseObj.Credits + ")";
                                 ddlDeleteCourse.Items.Add(new ListItem(textField, valueField));
                             }
                         }
                     }
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -1913,7 +1913,7 @@ namespace EMS.Module.Setup
                 int nodeCourseId = Convert.ToInt32(str[2]);
 
                 CalCourseProgNode calCourseProgNodeObj = CalCourseProgNodeManager.GetByTreeCalenderDetailId(treeCalenderDetailId).Where(d => d.CourseID == courseId && d.VersionID == versionId && d.Node_CourseID == nodeCourseId).FirstOrDefault();
-                if (calCourseProgNodeObj!= null) 
+                if (calCourseProgNodeObj != null)
                 {
                     bool result = CalCourseProgNodeManager.Delete(calCourseProgNodeObj.CalCorProgNodeID);
                     if (result)
@@ -1921,12 +1921,12 @@ namespace EMS.Module.Setup
                         ModalPopupExtender1.Show();
                         lblMsg.Text = "Course deleted successfully.";
                         ShowRoot(calenderDistributionId);
-                        
+
                         #region Log Insert
                         LogGeneralManager.Insert(
                                 DateTime.Now,
-                                BaseAcaCalCurrent.Code,
-                                BaseAcaCalCurrent.FullCode,
+                                "",
+                                "",
                                 BaseCurrentUserObj.LogInID,
                                 "",
                                 "",
@@ -2011,7 +2011,7 @@ namespace EMS.Module.Setup
                             }
                         }
                     }
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -2038,12 +2038,12 @@ namespace EMS.Module.Setup
                         ModalPopupExtender1.Show();
                         lblMsg.Text = "Node deleted successfully.";
                         ShowRoot(calenderDistributionId);
-                        
+
                         #region Log Insert
                         LogGeneralManager.Insert(
                                 DateTime.Now,
-                                BaseAcaCalCurrent.Code,
-                                BaseAcaCalCurrent.FullCode,
+                                "",
+                                "",
                                 BaseCurrentUserObj.LogInID,
                                 "",
                                 "",
@@ -2121,7 +2121,7 @@ namespace EMS.Module.Setup
                 string calenderDistributionName = Convert.ToString(txtDistribution.Text);
                 int treeMasterId = Convert.ToInt32(ddlTree.SelectedValue);
                 int calendarMasterId = Convert.ToInt32(ddlCalendarType.SelectedValue);
-                
+
                 TreeCalendarMaster treeCalendarMasterObj = new TreeCalendarMaster();
                 treeCalendarMasterObj = TreeCalendarMasterManager.GetByTreeCalenderNameTreeMasterId(calenderDistributionName, treeMasterId);
                 if (treeCalendarMasterObj == null && treeMasterId > 0 && calendarMasterId > 0)
@@ -2136,22 +2136,23 @@ namespace EMS.Module.Setup
                     treeCalendarMasterInsertObj.ModifiedBy = BaseCurrentUserObj.Id;
                     treeCalendarMasterInsertObj.ModifiedDate = DateTime.Now;
                     int treeCalenderMasterId = TreeCalendarMasterManager.Insert(treeCalendarMasterInsertObj);
-                    if (treeCalenderMasterId > 0) 
+                    if (treeCalenderMasterId > 0)
                     {
                         InsertTreeCalenderDetail(treeMasterId, treeCalenderMasterId, calendarMasterId);
                     }
                     lblMsgAddTreeDistributionPopUp.Text = "Inserted";
                 }
-                else 
+                else
                 {
                     treeCalendarMasterObj.TreeMasterID = treeMasterId;
                     treeCalendarMasterObj.Name = txtDistribution.Text;
                     treeCalendarMasterObj.ModifiedDate = DateTime.Now;
                     bool isUpdated = TreeCalendarMasterManager.Update(treeCalendarMasterObj);
-                    lblMsgAddTreeDistributionPopUp.Text = "Updated";                    
+                    lblMsgAddTreeDistributionPopUp.Text = "Updated";
                 }
+                ddlTree_SelectedIndexChanged(null, null);
             }
-            catch { }
+            catch (Exception ex) { }
         }
 
         private void InsertTreeCalenderDetail(int treeMasterId, int treeCalenderMasterId, int calendarMasterId)
@@ -2160,7 +2161,7 @@ namespace EMS.Module.Setup
 
             if (calenderUnitDistributionList != null)
             {
-                for (int i = 0; i < calenderUnitDistributionList.Count; i++ ) 
+                for (int i = 0; i < calenderUnitDistributionList.Count; i++)
                 {
                     TreeCalendarDetail treeCalendarDetailObj = new TreeCalendarDetail();
                     treeCalendarDetailObj.TreeCalendarMasterID = treeCalenderMasterId;
@@ -2194,5 +2195,273 @@ namespace EMS.Module.Setup
             ClearAllFields();
             LoaddAllDropDownAfterSaveEditDelete();
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                modalPopupCourseList.Show();
+                LoadSemester();
+                LoadCourseList();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void LoadCourseList()
+        {
+            try
+            {
+                gvCourseList.DataSource = null;
+                gvCourseList.DataBind();
+
+                int treeMasterId = Convert.ToInt32(lblTreeId.Text);
+                TreeMaster treeMasterObj = TreeMasterManager.GetById(treeMasterId);
+
+                List<CourseListByNodeDTO> nodeCourseList = CourseListByNodeDTOManager.GetAllByRootNodeId(treeMasterObj.RootNodeID);
+
+                if (nodeCourseList != null && nodeCourseList.Any())
+                {
+                    gvCourseList.DataSource = nodeCourseList;
+                    gvCourseList.DataBind();
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void LoadSemester()
+        {
+            try
+            {
+                int treeCalenderMasterId = Convert.ToInt32(lblCalenderDistributionId.Text);
+                TreeCalendarMaster treeCalMaster = TreeCalendarMasterManager.GetById(treeCalenderMasterId);
+
+                ddlSemesterNo.Items.Clear();
+                ddlSemesterNo.Items.Add(new ListItem("-Select Trimester-", "0"));
+
+                List<TreeCalendarDetail> treeCalDetails = TreeCalendarDetailManager.GetByTreeCalenderMasterId(treeCalMaster.TreeCalendarMasterID);
+
+                ddlSemesterNo.AppendDataBoundItems = true;
+
+                if (treeCalDetails != null)
+                {
+                    ddlSemesterNo.DataSource = treeCalDetails.OrderBy(d => d.CalendarDetailID).ToList();
+                    ddlSemesterNo.DataValueField = "TreeCalendarDetailID";
+                    ddlSemesterNo.DataTextField = "CalenderUnitDistributionName";
+                    ddlSemesterNo.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            modalPopupCourseList.Hide();
+        }
+
+        protected void btnSave2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int CheckCount = CountCheckedItem();
+
+                if (CheckCount == 0)
+                {
+                    modalPopupCourseList.Show();
+                    showAlert("Please check minimum one course");
+                    return;
+                }
+                if (CheckCount == -1)
+                {
+                    modalPopupCourseList.Show();
+                    showAlert("Please give priority for all checked course");
+                    return;
+                }
+
+                int Insert = 0, Duplicate = 0;
+
+                for (int i = 0; i < gvCourseList.Rows.Count; i++)
+                {
+                    try
+                    {
+                        GridViewRow row = gvCourseList.Rows[i];
+                        CheckBox Checkd = (CheckBox)row.FindControl("ChkChecked");
+                        TextBox txtPr = (TextBox)row.FindControl("txtPriority");
+                        HiddenField hdnCourseId = (HiddenField)row.FindControl("hdnCourseID");
+                        HiddenField hdnVersionId = (HiddenField)row.FindControl("hdnVersionID");
+                        HiddenField hdnNodeCourseId = (HiddenField)row.FindControl("hdnNodeCourseId");
+                        DropDownList ParentNode = (DropDownList)row.FindControl("ddlParentNode");
+
+                        int treeMasterId = Convert.ToInt32(lblTreeId.Text);
+                        int calenderDistributionId = Convert.ToInt32(lblCalenderDistributionId.Text);
+                        int treeCalenderDetailId = Convert.ToInt32(ddlSemesterNo.SelectedValue);
+                        int programId = Convert.ToInt32(lblProgramId.Text);
+
+
+                        int courseId = Convert.ToInt32(hdnCourseId.Value);
+                        int versionId = Convert.ToInt32(hdnVersionId.Value);
+                        int nodeCourseId = Convert.ToInt32(hdnNodeCourseId.Value);
+
+                        int ParentNodeId = Convert.ToInt32(ParentNode.SelectedValue);
+
+                        if (!string.IsNullOrEmpty(txtPr.Text.Trim()))
+                        {
+                            Course courseObj = CourseManager.GetByCourseIdVersionId(courseId, versionId);
+                            CalCourseProgNode calCourseProgNodeObj = new CalCourseProgNode();
+
+                            calCourseProgNodeObj.TreeCalendarDetailID = treeCalenderDetailId;
+                            calCourseProgNodeObj.OfferedByProgramID = programId;
+                            calCourseProgNodeObj.CourseID = courseId;
+                            calCourseProgNodeObj.VersionID = versionId;
+                            if (courseObj != null)
+                            {
+                                calCourseProgNodeObj.Credits = courseObj.Credits;
+                            }
+                            calCourseProgNodeObj.Node_CourseID = nodeCourseId;
+                            calCourseProgNodeObj.Priority = Convert.ToInt32(txtPr.Text);
+                            calCourseProgNodeObj.TopNodeId = ParentNodeId;
+                            calCourseProgNodeObj.IsMajorRelated = false;
+                            calCourseProgNodeObj.CreatedBy = BaseCurrentUserObj.Id;
+                            calCourseProgNodeObj.CreatedDate = DateTime.Now;
+                            calCourseProgNodeObj.ModifiedBy = BaseCurrentUserObj.Id;
+                            calCourseProgNodeObj.ModifiedDate = DateTime.Now;
+                            bool checkDuplicateCourse = CalCourseProgNodeManager.CheckCourseCalCourseProgNode(treeMasterId, calenderDistributionId, courseId, versionId, nodeCourseId, calCourseProgNodeObj.Priority);
+                            if (checkDuplicateCourse)
+                            {
+                                int result = CalCourseProgNodeManager.Insert(calCourseProgNodeObj);
+                                if (result > 0)
+                                {
+                                    Insert++;
+
+                                    try
+                                    {
+                                        #region Log Insert
+                                        LogGeneralManager.Insert(
+                                                DateTime.Now,
+                                                "",
+                                                "",
+                                                BaseCurrentUserObj.LogInID,
+                                                "",
+                                                "",
+                                                "Course add in curriculum distribution",
+                                                BaseCurrentUserObj.LogInID + " attempted to add course in tree " + ddlTree.SelectedItem + ", semester/trimester " + ddlAddCourseTrimester.SelectedItem + ", course name " + ddlAddCourse.SelectedItem,
+                                                "normal",
+                                                _pageId,
+                                                _pageName,
+                                                _pageUrl,
+                                                "");
+
+                                        #endregion
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                    }
+
+                                }
+                            }
+                            else
+                            {
+                                Duplicate++;
+                            }
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }
+
+                string msg = "";
+
+                if (Insert > 0)
+                    msg = "Course Added Successfully";
+                if (Duplicate > 0 && Insert > 0)
+                    msg = msg + " and some course has duplicate course / Priority";
+                else if (Duplicate > 0)
+                    msg = "Some course has duplicate course / Priority";
+
+                showAlert(msg);
+                modalPopupCourseList.Hide();
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private int CountCheckedItem()
+        {
+            int Counter = 0, txtPrio = 0;
+            for (int i = 0; i < gvCourseList.Rows.Count; i++)
+            {
+                try
+                {
+                    GridViewRow row = gvCourseList.Rows[i];
+                    CheckBox Checkd = (CheckBox)row.FindControl("ChkChecked");
+                    TextBox txtPr = (TextBox)row.FindControl("txtPriority");
+                    if (Checkd.Checked == true)
+                    {
+                        Counter = Counter + 1;
+                    }
+                    if (!string.IsNullOrEmpty(txtPr.Text))
+                    {
+                        txtPrio = txtPrio + 1;
+                    }
+
+                    if (Counter > 0 && Counter != txtPrio)
+                        Counter = -1;
+
+                }
+                catch (Exception ex)
+                {
+                }
+
+            }
+            return Counter;
+        }
+
+        protected void gvCourseList_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+            try
+            {
+                int treeMasterId = Convert.ToInt32(lblTreeId.Text);
+
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    var ddl = e.Row.FindControl("ddlParentNode") as DropDownList;
+                    ddl.Items.Clear();
+                    ddl.AppendDataBoundItems = true;
+                    List<Node> nodeList = NodeManager.GetNodeByTreeMasterId(treeMasterId);
+
+                    if (nodeList != null && nodeList.Any())
+                    {
+
+                        ddl.DataTextField = "Name";
+                        ddl.DataValueField = "NodeID";
+                        ddl.DataSource = nodeList;
+                        ddl.DataBind();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+
+
+
+        protected void showAlert(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "SweetAlert", "swal('" + msg + "');", true);
+        }
+
     }
 }

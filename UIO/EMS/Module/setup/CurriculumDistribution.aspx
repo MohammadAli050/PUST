@@ -1,40 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/Common/CommonMasterPage.master" AutoEventWireup="true" 
     CodeBehind="CurriculumDistribution.aspx.cs" Inherits="EMS.Module.Setup.CurriculumDistribution" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="server">
     Curriculum Distribution
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Head" runat="server">
     <style type="text/css">
-        .modalBackground
-        {
+        .modalBackground {
             background-color: #2a2d2a;
             filter: alpha(opacity=80);
             opacity: 0.8;
             z-index: 10000;
         }
 
-        .font
-        {
+        .font {
             font-size: 12px;
         }
 
-        .cursor
-        {
+        .cursor {
             cursor: pointer;
         }
 
-        .auto-style3
-        {
+        .auto-style3 {
             width: 100px;
         }
+
         .button_Page_Re_load {
-           height: 38px;
-           width: 167px;
-           border-radius: 5px;
-           padding-left: 23px;
-           background-color: #368445;
-           color: white;
-                    }
+            height: 38px;
+            width: 167px;
+            border-radius: 5px;
+            padding-left: 23px;
+            background-color: #368445;
+            color: white;
+        }
+
         .button_Clear_save {
             height: 38px;
             width: 100px;
@@ -42,8 +41,8 @@
             padding-left: 23px;
             background-color: #368445;
             color: white;
-
         }
+
         .button_delete {
             height: 38px;
             width: 100px;
@@ -51,11 +50,37 @@
             padding-left: 17px;
             background-color: #d7393b;
             color: white;
-
         }
 
+        #ctl00_MainContainer_Button1 {
+            height: 40px !important;
+        }
+
+        .blink {
+            animation: blinker 0.6s linear infinite;
+            color: #1c87c9;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .sweet-alert {
+            z-index: 1000000;
+            background-color: #cbcbcb;
+        }
+
+        /*#ctl00_MainContainer_gvCourseList td input {
+            height: 25px;
+            width: 25px;
+        }*/
     </style>
-    
+
     <script type="text/javascript">
         function InProgress() {
             var panelProg = $get('divProgress');
@@ -66,10 +91,35 @@
             var panelProg = $get('divProgress');
             panelProg.style.display = 'none';
         }
+
+        function Search(x) {
+
+
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("ctl00_MainContainer_gvCourseList");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                if (tr) {
+                    txtValue = tr[i].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                    tr[0].style.display = "";
+
+
+                }
+
+            }
+        };
+
     </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContainer" runat="server">
-    <div class="well" style="height: auto; width: auto; margin-top:20px;">
+    <div class="well" style="height: auto; width: auto; margin-top: 20px;">
         <div class="PageTitle">
             <label>Curriculum Distribution</label>
         </div>
@@ -92,39 +142,39 @@
                         <div id="divProgress" style="display: none; float: right; z-index: 1000;">
                             <asp:Image ID="LoadingImage" runat="server" ImageUrl="~/Images/Img/Waiting.gif" Height="35px" Width="35px" />
                         </div>
-                        <div class="loadArea"> 
+                        <div class="loadArea">
                             <table style="padding: 1px;" border="0">
                                 <tr>
-                                    <td><b>Program :</b></td> 
+                                    <td><b>Program :</b></td>
                                     <td>
                                         <asp:DropDownList ID="ddlProgram" runat="server" AutoPostBack="true" Width="200px" OnSelectedIndexChanged="ddlProgram_SelectedIndexChanged"></asp:DropDownList>
                                         <asp:Label ID="lblProgramId" runat="server" Visible="false"></asp:Label>
-                                    </td>                                                                                                                                                                                                  
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><b>Tree :</b></td> 
+                                    <td><b>Tree :</b></td>
                                     <td>
                                         <asp:DropDownList ID="ddlTree" runat="server" AutoPostBack="true" Width="200px" OnSelectedIndexChanged="ddlTree_SelectedIndexChanged"></asp:DropDownList>
                                         <asp:Label ID="lblTreeId" runat="server" Visible="false"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>Distribution:</b></td> 
+                                    <td><b>Distribution:</b></td>
                                     <td>
-                                        <asp:DropDownList ID="ddlCalenderDistribution" runat="server" AutoPostBack="true" Width="200px" OnSelectedIndexChanged="ddlCalenderDistribution_SelectedIndexChanged" ></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlCalenderDistribution" runat="server" AutoPostBack="true" Width="200px" OnSelectedIndexChanged="ddlCalenderDistribution_SelectedIndexChanged"></asp:DropDownList>
                                         <asp:Label ID="lblCalenderDistributionId" runat="server" Visible="false"></asp:Label>
                                     </td>
-                                    <td style="align-content:center; width:200px" >
-                                        <asp:Button ID="btnAddNewDistName" runat="server" Text="Add New Distribution" visible="false" OnClick="btnAddNewDistName_Click" />
-                                    </td>  
+                                    <td style="align-content: center; width: 200px">
+                                        <asp:Button ID="btnAddNewDistName" runat="server" Text="Add New Distribution" Visible="false" OnClick="btnAddNewDistName_Click" />
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Button ID="btnReloadTree" runat="server" Text="Page Re-load "  Visible="false" Class="button_Page_Re_load"  OnClick="btnReloadTree_Click"/></td>
+                                        <asp:Button ID="btnReloadTree" runat="server" Text="Page Re-load " Visible="false" Class="button_Page_Re_load" OnClick="btnReloadTree_Click" /></td>
                                     <td>
-                                        <asp:Button ID="btnClearFields" runat="server" Text=" Clear " Visible="false" Class="button_Clear_save"  OnClick="btnClearFields_Click"/>
-                                    </td> 
-                                                                                                                                                                                                                                   
+                                        <asp:Button ID="btnClearFields" runat="server" Text=" Clear " Visible="false" Class="button_Clear_save" OnClick="btnClearFields_Click" />
+                                    </td>
+
                                 </tr>
                             </table>
                         </div>
@@ -139,15 +189,15 @@
                     <table>
                         <tr>
                             <td valign="top">
-                                <div style="Height:540px; width:427px; overflow-y:auto; float:left; border-style: solid; border-width: 2px; border-color:#FFA500; padding: 10px;">
-                                    <asp:Label ID="lblTreeView" runat="server" Font-Bold="true" Text="Tree View"></asp:Label>                                    
+                                <div style="height: 540px; width: 427px; overflow-y: auto; float: left; border-style: solid; border-width: 2px; border-color: #FFA500; padding: 10px;">
+                                    <asp:Label ID="lblTreeView" runat="server" Font-Bold="true" Text="Tree View"></asp:Label>
                                     <asp:Panel ID="pnlTreeView" runat="server">
                                         <asp:TreeView ID="tvwCalendar" runat="server" Width="100%" ShowLines="True"
-                                            Height="98%" onselectednodechanged="tvwCalendar_SelectedNodeChanged"
+                                            Height="98%" OnSelectedNodeChanged="tvwCalendar_SelectedNodeChanged"
                                             LineImagesFolder="~/TreeLineImages" TabIndex="4">
                                             <ParentNodeStyle ForeColor="#660066" />
                                             <HoverNodeStyle ForeColor="#FF6600" />
-                                            <SelectedNodeStyle ForeColor="Lime" Font-Bold="True" Font-Underline="True"/>
+                                            <SelectedNodeStyle ForeColor="Lime" Font-Bold="True" Font-Underline="True" />
                                             <RootNodeStyle ForeColor="#000066" />
                                             <LeafNodeStyle ForeColor="#006699" />
                                         </asp:TreeView>
@@ -156,17 +206,17 @@
                             </td>
                             <td class="auto-style5">&nbsp;</td>
                             <td valign="top">
-                                <div style="Height:540px; width:400px; overflow-y:auto; float:left; border-style: solid; border-width: 2px; border-color:#FFA500; padding: 10px;">
+                                <div style="height: 540px; width: 400px; overflow-y: auto; float: left; border-style: solid; border-width: 2px; border-color: #FFA500; padding: 10px;">
                                     <asp:Panel ID="pnlAddTreeItem" runat="server">
                                         <asp:Label ID="lblAddTreeItem" runat="server" Font-Bold="true" Text="Add Tree Item"></asp:Label>
-                                        <asp:RadioButtonList ID="rbAddTreeItem" RepeatDirection="Horizontal" style="display:inline" AutoPostBack="true" runat="server" OnSelectedIndexChanged="rbAddTreeItem_SelectedIndexChanged">
+                                        <asp:RadioButtonList ID="rbAddTreeItem" RepeatDirection="Horizontal" Style="display: inline" AutoPostBack="true" runat="server" OnSelectedIndexChanged="rbAddTreeItem_SelectedIndexChanged">
                                             <asp:ListItem Text="Course" Value="1" Selected="True" />
                                             <asp:ListItem Text="Node" Value="2" />
                                         </asp:RadioButtonList>
                                         <asp:Panel ID="pnlAddCourse" Visible="true" runat="server">
-                                            <table class="table" style="width: 100%; height:auto;">
+                                            <table class="table" style="width: 100%; height: auto;">
                                                 <tr>
-                                                    <td style="width:150px">
+                                                    <td style="width: 150px">
                                                         <asp:Label ID="lblAddCourseTrimester" runat="server" Text="Trimester"></asp:Label>
                                                     </td>
                                                     <td>
@@ -206,7 +256,9 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td></td>
+                                                    <td>
+                                                        <asp:Button ID="Button1" runat="server" Text="Add Multiple" CssClass="btn-info form-control" OnClick="Button1_Click" OnClientClick="this.style.display = 'none'" />
+                                                    </td>
                                                     <td>
                                                         <asp:Button ID="btnAddCourseSave" runat="server" Text=" Save " Class="button_Clear_save" OnClick="btnAddCourseSave_Click" />
                                                     </td>
@@ -214,9 +266,9 @@
                                             </table>
                                         </asp:Panel>
                                         <asp:Panel ID="pnlAddNode" Visible="false" runat="server">
-                                            <table class="table" style="width: 100%; height:auto;">
+                                            <table class="table" style="width: 100%; height: auto;">
                                                 <tr>
-                                                    <td style="width:150px">
+                                                    <td style="width: 150px">
                                                         <asp:Label ID="lblAddNodeTrimester" runat="server" Text="Trimester"></asp:Label>
                                                     </td>
                                                     <td>
@@ -255,7 +307,7 @@
                                                         <asp:TextBox ID="txtAddNodePriority" runat="server"></asp:TextBox>
                                                     </td>
                                                 </tr>
-                                                
+
                                                 <tr>
                                                     <td>
                                                         <asp:Label ID="lblAddNodeIsMajor" runat="server" Text="Is Major Related"></asp:Label>
@@ -272,7 +324,7 @@
                                                         <asp:DropDownList ID="ddlAddNodeParentNode" Width="180px" runat="server"></asp:DropDownList>
                                                     </td>
                                                 </tr>
-                                                 <tr>
+                                                <tr>
                                                     <td></td>
                                                     <td>
                                                         <asp:Button ID="btnAddNodeSave" runat="server" Text=" Save " Class="button_Clear_save" OnClick="btnAddNodeSave_Click" />
@@ -283,15 +335,15 @@
                                     </asp:Panel>
                                     <br />
                                     <asp:Panel ID="pnlEditTreeItem" runat="server">
-                                        <asp:Label ID="lblEditTreeItem" runat="server" Font-Bold="true"  Text="Edit Tree Item"></asp:Label>
-                                        <asp:RadioButtonList ID="rbEditTreeItem" RepeatDirection="Horizontal" style="display:inline" AutoPostBack="true" runat="server" OnSelectedIndexChanged="rbEditTreeItem_SelectedIndexChanged">
+                                        <asp:Label ID="lblEditTreeItem" runat="server" Font-Bold="true" Text="Edit Tree Item"></asp:Label>
+                                        <asp:RadioButtonList ID="rbEditTreeItem" RepeatDirection="Horizontal" Style="display: inline" AutoPostBack="true" runat="server" OnSelectedIndexChanged="rbEditTreeItem_SelectedIndexChanged">
                                             <asp:ListItem Text="Course" Value="1" Selected="True" />
                                             <asp:ListItem Text="Node" Value="2" />
                                         </asp:RadioButtonList>
                                         <asp:Panel ID="pnlEditCourse" Visible="true" runat="server">
-                                            <table class="table" style="width: 100%; height:auto;">
+                                            <table class="table" style="width: 100%; height: auto;">
                                                 <tr>
-                                                    <td style="width:150px">
+                                                    <td style="width: 150px">
                                                         <asp:Label ID="lblEditCourseTrimester" runat="server" Text="Trimester"></asp:Label>
                                                     </td>
                                                     <td>
@@ -347,9 +399,9 @@
                                             </table>
                                         </asp:Panel>
                                         <asp:Panel ID="pnlEditNode" Visible="false" runat="server">
-                                            <table class="table" style="width: 100%; height:auto;">
+                                            <table class="table" style="width: 100%; height: auto;">
                                                 <tr>
-                                                    <td style="width:150px">
+                                                    <td style="width: 150px">
                                                         <asp:Label ID="lblEditNodeTrimester" runat="server" Text="Trimester"></asp:Label>
                                                     </td>
                                                     <td>
@@ -365,12 +417,12 @@
                                                     </td>
                                                 </tr>
 
-                                               <tr>
+                                                <tr>
                                                     <td>
                                                         <asp:Label ID="lblEditNodeNew" runat="server" Text="New Nodes"></asp:Label>
                                                     </td>
                                                     <td>
-                                                        <asp:DropDownList ID="ddlEditNodeNew" Width="180px"  runat="server"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlEditNodeNew" Width="180px" runat="server"></asp:DropDownList>
                                                     </td>
                                                 </tr>
 
@@ -398,7 +450,7 @@
                                                         <asp:TextBox ID="txtEditNodePriority" runat="server"></asp:TextBox>
                                                     </td>
                                                 </tr>
-                                                
+
                                                 <tr>
                                                     <td>
                                                         <asp:Label ID="lblEditNodeIsMajor" runat="server" Text="Is Major Related"></asp:Label>
@@ -415,7 +467,7 @@
                                                         <asp:DropDownList ID="ddlEditNodeParentNode" Width="180px" runat="server"></asp:DropDownList>
                                                     </td>
                                                 </tr>
-                                                 <tr>
+                                                <tr>
                                                     <td></td>
                                                     <td>
                                                         <asp:Button ID="btnEditNodeSave" runat="server" Text=" Save " Class="button_Clear_save" OnClick="btnEditNodeSave_Click" />
@@ -427,14 +479,14 @@
                                     <br />
                                     <asp:Panel ID="pnlDeleteTreeItem" runat="server">
                                         <asp:Label ID="lblDeleteTreeItem" runat="server" Font-Bold="true" Text="Remove Tree Item"></asp:Label>
-                                        <asp:RadioButtonList ID="rbDeleteTreeItem" RepeatDirection="Horizontal" style="display:inline" AutoPostBack="true" runat="server" OnSelectedIndexChanged="rbDeleteTreeItem_SelectedIndexChanged">
+                                        <asp:RadioButtonList ID="rbDeleteTreeItem" RepeatDirection="Horizontal" Style="display: inline" AutoPostBack="true" runat="server" OnSelectedIndexChanged="rbDeleteTreeItem_SelectedIndexChanged">
                                             <asp:ListItem Text="Course" Value="1" Selected="True" />
                                             <asp:ListItem Text="Node" Value="2" />
                                         </asp:RadioButtonList>
                                         <asp:Panel ID="pnlDeleteCourse" Visible="true" runat="server">
-                                            <table class="table" style="width: 100%; height:auto;">
+                                            <table class="table" style="width: 100%; height: auto;">
                                                 <tr>
-                                                    <td style="width:150px">
+                                                    <td style="width: 150px">
                                                         <asp:Label ID="lblDeleteCourseTrimester" runat="server" Text="Trimester"></asp:Label>
                                                     </td>
                                                     <td>
@@ -449,7 +501,7 @@
                                                         <asp:DropDownList ID="ddlDeleteCourse" Width="180px" runat="server"></asp:DropDownList>
                                                     </td>
                                                 </tr>
-                                                
+
                                                 <tr>
                                                     <td></td>
                                                     <td>
@@ -459,9 +511,9 @@
                                             </table>
                                         </asp:Panel>
                                         <asp:Panel ID="pnlDeleteNode" Visible="false" runat="server">
-                                            <table class="table" style="width: 100%; height:auto;">
+                                            <table class="table" style="width: 100%; height: auto;">
                                                 <tr>
-                                                    <td style="width:150px">
+                                                    <td style="width: 150px">
                                                         <asp:Label ID="lblDeleteNodeTrimester" runat="server" Text="Trimester"></asp:Label>
                                                     </td>
                                                     <td>
@@ -473,11 +525,11 @@
                                                         <asp:Label ID="lblDeleteNode" runat="server" Text="Nodes"></asp:Label>
                                                     </td>
                                                     <td>
-                                                        <asp:DropDownList ID="ddlDeleteNode" Width="180px" runat="server" ></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlDeleteNode" Width="180px" runat="server"></asp:DropDownList>
                                                     </td>
                                                 </tr>
 
-                                                 <tr>
+                                                <tr>
                                                     <td></td>
                                                     <td>
                                                         <asp:Button ID="btnDeleteNode" runat="server" Text=" Remove " Class="button_delete" OnClick="btnDeleteNode_Click" />
@@ -516,13 +568,13 @@
                                     </asp:UpdatePanel>
                                 </div>
                             </div>
-                            <asp:Button ID="CancelButton" runat="server" Text="Close" CssClass="cursor"/></td>
+                            <asp:Button ID="CancelButton" runat="server" Text="Close" CssClass="cursor" /></td>
                         </fieldset>
                     </div>
                 </asp:Panel>
             </ContentTemplate>
         </asp:UpdatePanel>
-        
+
         <asp:UpdatePanel ID="UpdatePanelAddTreeDistribution" runat="server">
             <ContentTemplate>
                 <asp:Button ID="btnAddTreeDistributionPopUp" runat="server" Style="display: none" />
@@ -563,7 +615,7 @@
                                                             <asp:Button ID="btnSaveDistName" runat="server" Text="Save" OnClick="btnSaveDistName_Clicked" />
                                                         </td>
                                                         <td>
-                                                            <asp:Button ID="btnCancelAddTreeDistributionPopUp" runat="server" Text="Close" OnClick="btnCancelAddTreeDistributionPopUp_Click" CssClass="cursor"/>
+                                                            <asp:Button ID="btnCancelAddTreeDistributionPopUp" runat="server" Text="Close" OnClick="btnCancelAddTreeDistributionPopUp_Click" CssClass="cursor" />
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -578,4 +630,152 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
+
+
+
+    <asp:UpdatePanel ID="UpdatePanel9" runat="server">
+        <ContentTemplate>
+
+            <asp:Button ID="Button2" runat="server" Style="display: none" />
+            <ajaxToolkit:ModalPopupExtender ID="modalPopupCourseList" runat="server" TargetControlID="Button2" PopupControlID="Panel3"
+                BackgroundCssClass="modalBackground">
+            </ajaxToolkit:ModalPopupExtender>
+
+            <asp:Panel runat="server" ID="Panel3" Style="display: none; padding: 5px; overflow-y: scroll" BackColor="White" Width="65%" Height="600px">
+
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center">
+                                        <b style="color: blue">Please check the courses you want to add</b>
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin-top: 10px">
+                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                        <b>Trimester</b>
+                                        <asp:CompareValidator ID="CompareValidator4" runat="server"
+                                            ControlToValidate="ddlSemesterNo" ErrorMessage="Required" Font-Size="15pt" Font-Bold="true"
+                                            ForeColor="Red" Display="Dynamic" ValueToCompare="0" Operator="NotEqual" CssClass="blink"
+                                            ValidationGroup="VG1"></asp:CompareValidator>
+                                        <asp:DropDownList ID="ddlSemesterNo" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <br />
+                                        <input type="text" class="form-control" id="myInput" onkeyup="javascript: Search( this.value );"
+                                            placeholder="Type Course Code/Title/Credit" title="Type Course Code/Title/Credit" style="color: red; width: 100%">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <asp:Button runat="server" ID="btnSave" ValidationGroup="VG1" Text="SAVE" CssClass="btn-info btn-sm" OnClick="btnSave2_Click" Style="display: inline-block; width: 100%; text-align: center;" />
+
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8">
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <asp:Button runat="server" ID="Button4" Text="CLOSE" OnClick="Button3_Click" CssClass="btn-danger btn-sm" Style="display: inline-block; width: 100%; text-align: center;" />
+                                    </div>
+                                </div>
+                                <br />
+
+                                <asp:GridView runat="server" ID="gvCourseList" AllowSorting="True" CssClass="table-bordered" OnRowDataBound="gvCourseList_RowDataBound"
+                                    AutoGenerateColumns="False" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                    <HeaderStyle BackColor="#3f2c7b" ForeColor="White" Font-Bold="True" />
+                                    <FooterStyle BackColor="#3f2c7b" ForeColor="White" Font-Bold="True" />
+                                    <AlternatingRowStyle BackColor="White" />
+                                    <RowStyle Height="10px" />
+
+                                    <Columns>
+
+
+                                        <asp:TemplateField HeaderText="Formal Code">
+                                            <ItemTemplate>
+                                                <asp:Label runat="server" ID="lblFormalCode" Text='<%#Eval("CourseInfo")==null ? "" : Eval("CourseInfo.FormalCode")  %>' ForeColor="Black"></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle />
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Version Code">
+                                            <ItemTemplate>
+                                                <asp:Label runat="server" ID="lblVersionCode" Text='<%#Eval("CourseInfo")==null ? "" : Eval("CourseInfo.VersionCode")  %>' ForeColor="Black"></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle />
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Title">
+                                            <ItemTemplate>
+                                                <asp:Label runat="server" ID="lblTitle" Text='<%#Eval("CourseInfo")==null ? "" : Eval("CourseInfo.Title")  %>' ForeColor="Black"></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle />
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Credit">
+                                            <ItemTemplate>
+                                                <asp:Label runat="server" ID="lblCredit" Text='<%#Eval("CourseInfo")==null ? "" : Eval("CourseInfo.Credits") %>' ForeColor="Black"></asp:Label>
+                                            </ItemTemplate>
+                                            <HeaderStyle />
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderStyle-CssClass="header-center">
+
+                                            <ItemTemplate>
+                                                <div style="text-align: center; width: 40px">
+                                                    <asp:HiddenField ID="hdnCourseID" runat="server" Value='<%#Eval("CourseId") %>' />
+                                                    <asp:HiddenField ID="hdnVersionID" runat="server" Value='<%#Eval("VersionId") %>' />
+                                                    <asp:HiddenField ID="hdnNodeCourseId" runat="server" Value='<%#Eval("NodeCourseId") %>' />
+
+                                                    <asp:CheckBox runat="server" ID="ChkChecked"></asp:CheckBox>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Priority">
+                                            <ItemTemplate>
+                                                <asp:TextBox runat="server" ID="txtPriority" Text="" placeholder="1111" TextMode="Number" CssClass="form-control" ForeColor="Black"></asp:TextBox>
+                                            </ItemTemplate>
+                                            <HeaderStyle />
+                                            <ItemStyle Width="10%" />
+                                        </asp:TemplateField>
+
+                                        <asp:TemplateField HeaderText="Parent Node">
+                                            <ItemTemplate>
+                                                <asp:DropDownList ID="ddlParentNode" runat="server" CssClass="form-control"></asp:DropDownList>
+                                            </ItemTemplate>
+                                            <HeaderStyle />
+                                            <ItemStyle Width="20%" />
+                                        </asp:TemplateField>
+
+
+                                    </Columns>
+                                </asp:GridView>
+
+                                <br />
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <asp:Button runat="server" ID="btnSave2" ValidationGroup="VG1" Text="SAVE" CssClass="btn-info btn-sm" OnClick="btnSave2_Click" Style="display: inline-block; width: 100%; text-align: center;" />
+
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8">
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <asp:Button runat="server" ID="Button3" Text="CLOSE" OnClick="Button3_Click" CssClass="btn-danger btn-sm" Style="display: inline-block; width: 100%; text-align: center;" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </asp:Panel>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+
 </asp:Content>

@@ -13,33 +13,6 @@ namespace EMS.SyllabusMan {
     public partial class CourseExplorer {
         
         /// <summary>
-        /// UpdatePanel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// lblMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
-        
-        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +67,15 @@ namespace EMS.SyllabusMan {
         protected global::System.Web.UI.WebControls.Button btnLoad;
         
         /// <summary>
+        /// btnClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClear;
+        
+        /// <summary>
         /// btnAddNew control.
         /// </summary>
         /// <remarks>
@@ -112,6 +94,132 @@ namespace EMS.SyllabusMan {
         protected global::System.Web.UI.WebControls.Button btnExportExcel;
         
         /// <summary>
+        /// btnMigrateCourse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMigrateCourse;
+        
+        /// <summary>
+        /// divUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divUpload;
+        
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// ExcelUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload ExcelUpload;
+        
+        /// <summary>
+        /// btnExcelUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExcelUpload;
+        
+        /// <summary>
+        /// btnCourseMigrateButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCourseMigrateButton;
+        
+        /// <summary>
+        /// btnSampleExcel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSampleExcel;
+        
+        /// <summary>
+        /// DivTotalCourse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivTotalCourse;
+        
+        /// <summary>
+        /// lblTotalCourse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalCourse;
+        
+        /// <summary>
+        /// GVTotalCourseList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVTotalCourseList;
+        
+        /// <summary>
+        /// DivNotUploadedCourse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivNotUploadedCourse;
+        
+        /// <summary>
+        /// lblNotMigratedCourse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNotMigratedCourse;
+        
+        /// <summary>
+        /// lnkDownloadExcel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkDownloadExcel;
+        
+        /// <summary>
+        /// GVNotUploadedCourseList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVNotUploadedCourseList;
+        
+        /// <summary>
         /// Image1 control.
         /// </summary>
         /// <remarks>
@@ -128,6 +236,15 @@ namespace EMS.SyllabusMan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.UpdatePanelAnimationExtender UpdatePanelAnimationExtender1;
+        
+        /// <summary>
+        /// UpdatePanelAnimationExtender2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.UpdatePanelAnimationExtender UpdatePanelAnimationExtender2;
         
         /// <summary>
         /// UpdatePanel3 control.
@@ -238,15 +355,6 @@ namespace EMS.SyllabusMan {
         protected global::System.Web.UI.WebControls.TextBox txtVersionCode;
         
         /// <summary>
-        /// ddlProgram control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProgram;
-        
-        /// <summary>
         /// txtTranscriptCode control.
         /// </summary>
         /// <remarks>
@@ -254,6 +362,15 @@ namespace EMS.SyllabusMan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTranscriptCode;
+        
+        /// <summary>
+        /// ddlProgram control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProgram;
         
         /// <summary>
         /// txtTitle control.
@@ -265,15 +382,6 @@ namespace EMS.SyllabusMan {
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// txtCourseContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseContent;
-        
-        /// <summary>
         /// txtCredits control.
         /// </summary>
         /// <remarks>
@@ -281,24 +389,6 @@ namespace EMS.SyllabusMan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCredits;
-        
-        /// <summary>
-        /// txtMarks control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMarks;
-        
-        /// <summary>
-        /// txtCourseGroup control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseGroup;
         
         /// <summary>
         /// ddlMultiple control.
@@ -344,6 +434,51 @@ namespace EMS.SyllabusMan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnClose;
+        
+        /// <summary>
+        /// chkCheckDuplicate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkCheckDuplicate;
+        
+        /// <summary>
+        /// txtCourseContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCourseContent;
+        
+        /// <summary>
+        /// txtMarks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMarks;
+        
+        /// <summary>
+        /// txtCourseGroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCourseGroup;
+        
+        /// <summary>
+        /// divGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divGrid;
         
         /// <summary>
         /// gvCourselists control.

@@ -151,6 +151,7 @@
     <Compile Include="BusinessObjects\CalenderUnitType.cs" />
     <Compile Include="BusinessObjects\CollectionHistory.cs" />
     <Compile Include="BusinessObjects\ContactDetails.cs" />
+    <Compile Include="BusinessObjects\CourseMigrationObj.cs" />
     <Compile Include="BusinessObjects\DTO\CountinousMarkTeacherInfoAPI_DTO.cs" />
     <Compile Include="BusinessObjects\Course.cs" />
     <Compile Include="BusinessObjects\CourseExtendOne.cs" />

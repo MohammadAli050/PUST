@@ -11,7 +11,7 @@
     Course List
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Head" runat="Server">
-    <link href="../ContentCSS/CSS/ChildSiteMaster.CSS" rel="stylesheet" />
+    <%--<link href="../ContentCSS/CSS/ChildSiteMaster.CSS" rel="stylesheet" />--%>
 
     <style type="text/css">
         .modalBackground {
@@ -91,13 +91,11 @@
             color: white;
         }
 
-        #ctl00_MainContainer_ucDepartment_ddlDepartment,#ctl00_MainContainer_ucProgram_ddlProgram
-        ,#ctl00_MainContainer_searchFormalCode,#ctl00_MainContainer_searchTitle,#ctl00_MainContainer_btnLoad,#ctl00_MainContainer_btnAddNew {
-    height: 40px !important;
-    width: 100% !important;
-    font-size:20px !important;
-}
-
+        #ctl00_MainContainer_btnMigrateCourse,#ctl00_MainContainer_btnClear ,#ExcelUpload, #btnSampleExcel, #ctl00_MainContainer_btnCourseMigrateButton, #btnExcelUpload, #ctl00_MainContainer_ucDepartment_ddlDepartment, #ctl00_MainContainer_ucProgram_ddlProgram, #ctl00_MainContainer_btnExportExcel, #ctl00_MainContainer_searchFormalCode, #ctl00_MainContainer_searchTitle, #ctl00_MainContainer_btnLoad, #ctl00_MainContainer_btnAddNew {
+            height: 40px !important;
+            width: 100% !important;
+            font-size: 15px !important;
+        }
     </style>
     <script type="text/javascript">
         function isNumber(e) {
@@ -153,71 +151,177 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContainer" runat="server">
+
+
+    <div>
+        <div class="row col-lg-8 col-md-8 col-sm-8" style="font-size: 12pt; margin-top: 10pt;">
+            <label><b style="color: black; font-size: 26px">Course List</b></label>
+        </div>
+    </div>
+
+
     <div>
         <div>
             <div class="well" style="margin-top: 20px;">
-                <div class="PageTitle">
-                    <label>Course List</label>
-                </div>
-
-                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                    <ContentTemplate>
-                        <div class="Message-Area">
-                            <asp:Label ID="Label2" runat="server" Text="Message : " Font-Bold="true"></asp:Label>
-                            <asp:Label ID="lblMessage" ForeColor="Red" runat="server"></asp:Label>
-                        </div>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
 
 
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
 
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <b>Choose Department</b>
-                                <br />
 
-                                <uc1:DepartmentUserControl runat="server" ID="ucDepartment" OnDepartmentSelectedIndexChanged="OnDepartmentSelectedIndexChanged" />
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <b>Choose Program</b>
-                                <br />
-                                <uc1:ProgramUserControl runat="server" ID="ucProgram" class="margin-zero dropDownList" />
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <b>Course Code</b>
-                                <br />
 
-                                <asp:TextBox ID="searchFormalCode" runat="server" Width="350px"></asp:TextBox>
+                        <div class="card">
+                            <div class="card-body">
+
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <b>Choose Department</b>
+                                        <br />
+
+                                        <uc1:DepartmentUserControl runat="server" ID="ucDepartment" OnDepartmentSelectedIndexChanged="OnDepartmentSelectedIndexChanged" />
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <b>Choose Program</b>
+                                        <br />
+                                        <uc1:ProgramUserControl runat="server" ID="ucProgram" class="margin-zero dropDownList" OnProgramSelectedIndexChanged="ucProgram_ProgramSelectedIndexChanged" />
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <b>Course Code</b>
+                                        <br />
+
+                                        <asp:TextBox ID="searchFormalCode" runat="server" Width="350px"></asp:TextBox>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <b>Course Name</b>
+                                        <br />
+                                        <asp:TextBox ID="searchTitle" runat="server" Width="350px"></asp:TextBox>
+
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px">
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <asp:Button ID="btnLoad" runat="server" Text="Load Courses"  OnClick="btnLoad_Click" CssClass="btn-Custom form-control" />
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <asp:Button ID="btnClear" runat="server" Text="Clear"  OnClick="btnClear_Click" CssClass="btn-default form-control" />
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <asp:Button ID="btnAddNew" runat="server"  Text="Add New Course" CssClass="btn-info form-control" OnClick="btnAddNewCourse_Click" />
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <asp:Button ID="btnExportExcel" runat="server" CssClass="btn-success form-control" Text="Download Course" OnClick="btnExportExcel_Click" />
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <asp:Button ID="btnMigrateCourse" runat="server" CssClass="btn-danger form-control" Text="Migrate Course" OnClick="btnMigrateCourse_Click" />
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <b>Course Name</b>
-                                <br />
-                                <asp:TextBox ID="searchTitle" runat="server" Width="350px"></asp:TextBox>
+                        </div>
+
+
+
+                        <div class="card" style="margin-top: 10px" runat="server" id="divUpload">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <asp:Label ID="Label2" runat="server" Text="Choose Excel File" Font-Bold="true"></asp:Label>
+                                        <br />
+                                        <asp:FileUpload ID="ExcelUpload" runat="server" accept=".xlsx,.xls" CssClass="w-100" BackColor="#cccccc" ClientIDMode="Static" Height="35px" />
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <br />
+                                        <asp:Button ID="btnExcelUpload" runat="server" CssClass="btn-info form-control w-100" Font-Size="18px" Text="Load Excel File To View Before Upload" OnClick="btnExcelUpload_Click"
+                                            ClientIDMode="Static" CausesValidation="false"></asp:Button>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <br />
+                                        <asp:Button ID="btnCourseMigrateButton" runat="server" CssClass="btn-danger form-control w-100" Font-Size="18px" Text="Migrate Course Information" OnClick="btnCourseMigrateButton_Click" OnClientClick="jsShowHideProgress();"></asp:Button>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <br />
+                                        <asp:Button ID="btnSampleExcel" runat="server" CssClass="btn-default form-control w-100" Font-Size="18px" Text="Download Sample Excel File To View Format " OnClick="btnSampleExcel_Click"
+                                            ClientIDMode="Static" CausesValidation="false"></asp:Button>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="card" style="margin-top: 10px">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6" runat="server" id="DivTotalCourse" style="text-align: center;">
+
+                                                <div class="card">
+                                                    <div class="card-body">
+
+                                                        <div class="row">
+                                                            <asp:Label ID="lblTotalCourse" runat="server" Text="" Font-Bold="true" Font-Size="18"></asp:Label>
+                                                        </div>
+                                                        <br />
+                                                        <asp:GridView ID="GVTotalCourseList" runat="server" Width="100%">
+                                                            <HeaderStyle BackColor="#3f2c7b" ForeColor="White" Height="10px" Font-Bold="True" />
+                                            <FooterStyle BackColor="#3f2c7b" ForeColor="White" Height="10px" Font-Bold="True" />
+                                                            <AlternatingRowStyle BackColor="White" />
+                                                        </asp:GridView>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-6" runat="server" id="DivNotUploadedCourse" style="text-align: center;">
+
+                                                <div class="card">
+                                                    <div class="card-body">
+
+                                                        <div class="row">
+                                                            <div class="col-lg-7 col-md-7 col-sm-7">
+                                                                <asp:Label ID="lblNotMigratedCourse" runat="server" Text="" Font-Bold="true" Font-Size="18px" ForeColor="Red"></asp:Label></b>
+                                                            </div>
+                                                            <div class="col-lg-5 col-md-5 col-sm-5">
+                                                                <asp:LinkButton ID="lnkDownloadExcel" runat="server" CssClass="btn-info btn-sm" Style="display: inline-block; width: 100%; text-align: center; font-size: 20px;" Font-Bold="true" Text="Download Excel File"
+                                                                    OnClick="lnkDownloadExcel_Click" ClientIDMode="Static" CausesValidation="false" OnClientClick="jsShowHideProgress();"></asp:LinkButton>
+                                                            </div>
+                                                        </div>
+
+                                                        <br />
+                                                        <asp:GridView ID="GVNotUploadedCourseList" runat="server" Width="100%">
+                                                            <HeaderStyle BackColor="#3f2c7b" ForeColor="White" Height="10px" Font-Bold="True" />
+                                            <FooterStyle BackColor="#3f2c7b" ForeColor="White" Height="10px" Font-Bold="True" />
+                                                            <RowStyle BackColor="#ecf0f0" />
+                                                            <AlternatingRowStyle BackColor="#ffffff" />
+                                                        </asp:GridView>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
 
                             </div>
                         </div>
-                        <div class="row" style="margin-top: 10px">
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <asp:Button ID="btnLoad" runat="server" Text="Click Here To Load Courses" Width="100%" OnClick="btnLoad_Click" CssClass="btn-info" />
 
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <asp:Button ID="btnAddNew" runat="server" Width="100%" Text="Click Here To Add New Course" CssClass="btn-success" OnClick="btnAddNewCourse_Click" />
-
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-2">
-                                <asp:Button ID="btnExportExcel" runat="server" class="button_load_SaveOrUpdate" Visible="false" Text="Excel Export" OnClick="btnExportExcel_Click" />
-
-                            </div>
-                        </div>
 
 
 
                     </ContentTemplate>
                     <Triggers>
                         <asp:PostBackTrigger ControlID="btnExportExcel" />
+                        <asp:PostBackTrigger ControlID="btnExcelUpload" />
+                        <asp:PostBackTrigger ControlID="btnSampleExcel" />
+                        <asp:PostBackTrigger ControlID="lnkDownloadExcel" />
 
                     </Triggers>
                 </asp:UpdatePanel>
@@ -249,6 +353,28 @@
             </ajaxToolkit:UpdatePanelAnimationExtender>
 
 
+            <ajaxToolkit:UpdatePanelAnimationExtender
+                ID="UpdatePanelAnimationExtender2"
+                TargetControlID="UpdatePanel3"
+                runat="server">
+                <Animations>
+            <OnUpdating>
+               <Parallel duration="0">
+                    <ScriptAction Script="InProgress();" />
+                    <EnableAction AnimationTarget="btnSaveOrUpdate" 
+                                  Enabled="false" />                   
+                </Parallel>
+            </OnUpdating>
+            <OnUpdated>
+                <Parallel duration="0">
+                    <ScriptAction Script="onComplete();" />
+                    <EnableAction   AnimationTarget="btnSaveOrUpdate" 
+                                    Enabled="true" />
+                </Parallel>
+            </OnUpdated>
+                </Animations>
+            </ajaxToolkit:UpdatePanelAnimationExtender>
+
             <div>
                 <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                     <ContentTemplate>
@@ -261,7 +387,7 @@
                                     <asp:Button ID="btnShowPopup" runat="server" Style="display: none" />
                                     <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="btnShowPopup" PopupControlID="pnPopUp" CancelControlID="btnClose" BackgroundCssClass="modalBackground">
                                     </ajaxToolkit:ModalPopupExtender>
-                                    <asp:Panel runat="server" ID="pnPopUp" Style="display: none;">
+                                    <asp:Panel runat="server" ID="pnPopUp" Style="display: none;" Width="50%">
 
                                         <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                                             <ContentTemplate>
@@ -280,124 +406,106 @@
                                                                     </ContentTemplate>
                                                                 </asp:UpdatePanel>
                                                             </div>
-                                                            <table>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Formal Code: *</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:HiddenField ID="hdnCourseId" runat="server" />
-                                                                        <asp:HiddenField ID="hdnVersionId" runat="server" />
-                                                                        <asp:TextBox runat="server" ID="txtFormalCode" class="margin-zero label-width" Width="236px" onblur="check();" onkeyup="check();" AutoPostBack="false" />
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Version Code: *</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:TextBox runat="server" ID="txtVersionCode" class="margin-zero label-width" Width="236px" onblur="check();" onkeyup="check();" />
-                                                                    </td>
-                                                                </tr>
 
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Program :</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:DropDownList ID="ddlProgram" runat="server" Width="250px"></asp:DropDownList>
-                                                                    </td>
-                                                                </tr>
+                                                            <div class="card" style="margin-top: 10px">
+                                                                <div class="card-body">
 
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Transcript Code:</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:TextBox runat="server" ID="txtTranscriptCode" class="margin-zero label-width" Width="236px" />
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Title: *</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:TextBox runat="server" ID="txtTitle" class="margin-zero label-width" Width="236px" onblur="check();" onkeyup="check();" />
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Course Content:</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:TextBox runat="server" ID="txtCourseContent" TextMode="MultiLine" Height="60" class="margin-zero label-width" Width="236px" />
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Credits: *</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:TextBox runat="server" ID="txtCredits" class="margin-zero label-width" Width="236px" onkeyup="check();" onkeypress="return onlyDotsAndNumbers(event)" />
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Marks: </label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:TextBox runat="server" ID="txtMarks" class="margin-zero label-width" Width="236px" />
+                                                                    <div class="row">
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Formal Code <span style="color: red">*</span></b>
+                                                                            <asp:HiddenField ID="hdnCourseId" runat="server" />
+                                                                            <asp:HiddenField ID="hdnVersionId" runat="server" />
+                                                                            <asp:TextBox runat="server" ID="txtFormalCode" CssClass="form-control" Width="100%" onblur="check();" onkeyup="check();" AutoPostBack="false" />
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Version Code <span style="color: red">*</span></b>
+                                                                            <asp:TextBox runat="server" ID="txtVersionCode" CssClass="form-control" Width="100%" onblur="check();" onkeyup="check();" />
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Transcript Code</b>
+                                                                            <asp:TextBox runat="server" ID="txtTranscriptCode" CssClass="form-control" Width="100%" />
+                                                                        </div>
+                                                                    </div>
 
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Course Group:</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:TextBox runat="server" ID="txtCourseGroup" class="margin-zero label-width" Width="236px" />
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Thesis/Project:</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:DropDownList ID="ddlMultiple" runat="server" AutoPostBack="false" EnableViewState="true" Width="250px">
-                                                                            <asp:ListItem Value="0">No</asp:ListItem>
-                                                                            <asp:ListItem Value="1">Yes</asp:ListItem>
-                                                                        </asp:DropDownList>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Type:</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:DropDownList ID="ddlCourseType" runat="server" AutoPostBack="false" EnableViewState="true" Width="250px">
-                                                                        </asp:DropDownList>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label class="display-inline field-Title">Is Active:</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:DropDownList ID="ddlIsActive" runat="server" AutoPostBack="false" EnableViewState="true" Width="250px">
-                                                                            <asp:ListItem Value="1">Yes</asp:ListItem>
-                                                                            <asp:ListItem Value="0">No</asp:ListItem>
-                                                                        </asp:DropDownList>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <asp:Button ID="btnSaveOrUpdate" runat="server" Text="SaveOrUpdate" Class="button_load_SaveOrUpdate" OnClick="btnSaveOrUpdate_Click" />
-                                                                    </td>
-                                                                    <td>
-                                                                        <asp:Button ID="btnClose" runat="server" Text="Close" Class="button_close" />
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
+                                                                    <div class="row" style="margin-top: 10px">
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Program<span style="color: red">*</span></b>
+                                                                            <asp:DropDownList ID="ddlProgram" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Title<span style="color: red">*</span></b>
+                                                                            <asp:TextBox runat="server" ID="txtTitle" CssClass="form-control" Width="100%" onblur="check();" onkeyup="check();" />
+
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Credit <span style="color: red">*</span></b>
+                                                                            <asp:TextBox runat="server" ID="txtCredits" CssClass="form-control" Width="100%" onkeyup="check();" onkeypress="return onlyDotsAndNumbers(event)" />
+
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="row" style="margin-top: 10px">
+
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Thesis/Project</b>
+                                                                            <asp:DropDownList ID="ddlMultiple" runat="server" AutoPostBack="false" EnableViewState="true" Width="100%" CssClass="form-control">
+                                                                                <asp:ListItem Value="0">No</asp:ListItem>
+                                                                                <asp:ListItem Value="1">Yes</asp:ListItem>
+                                                                            </asp:DropDownList>
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Type</b>
+                                                                            <asp:DropDownList ID="ddlCourseType" runat="server" AutoPostBack="false" EnableViewState="true" CssClass="form-control" Width="100%">
+                                                                            </asp:DropDownList>
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Is Active</b>
+                                                                            <asp:DropDownList ID="ddlIsActive" runat="server" AutoPostBack="false" EnableViewState="true" CssClass="form-control" Width="100%">
+                                                                                <asp:ListItem Value="1">Yes</asp:ListItem>
+                                                                                <asp:ListItem Value="0">No</asp:ListItem>
+                                                                            </asp:DropDownList>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="row" style="margin-top: 10px">
+
+                                                                        <div class="col-lg-2 col-md-2 col-sm-2">
+                                                                            <asp:Button ID="btnSaveOrUpdate" runat="server" Text="SaveOrUpdate" Style="border-radius: 5px" CssClass="btn-primary" Width="100%" OnClick="btnSaveOrUpdate_Click" />
+
+                                                                        </div>
+                                                                        <div class="col-lg-2 col-md-2 col-sm-2">
+                                                                            <asp:Button ID="btnClose" runat="server" Text="Close" Style="border-radius: 5px" CssClass="btn-danger" Width="100%" />
+
+                                                                        </div>
+                                                                        <div class="col-lg-5 col-md-5 col-sm-5">
+                                                                            <div style="text-align: center; font-size: 15px">
+                                                                                <asp:CheckBox ID="chkCheckDuplicate" runat="server" OnCheckedChanged="chkCheckDuplicate_CheckedChanged" ForeColor="Crimson" Font-Bold="true" AutoPostBack="true" Text="Check Version Code Is Exists" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row" style="margin-top: 10px; display: none">
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Course Content</b>
+                                                                            <asp:TextBox runat="server" ID="txtCourseContent" CssClass="form-control" Width="100%" />
+
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Marks</b>
+                                                                            <asp:TextBox runat="server" ID="txtMarks" CssClass="form-control" Width="100%" />
+
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                                            <b>Course Group</b>
+                                                                            <asp:TextBox runat="server" ID="txtCourseGroup" CssClass="form-control" Width="100%" />
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                     </fieldset>
                                                 </div>
                                             </ContentTemplate>
@@ -406,119 +514,124 @@
                                 </div>
                                 <div style="clear: both;"></div>
 
-                                <div>
-                                    <asp:GridView ID="gvCourselists" OnSorting="gvStudentBillView_Sorting" AllowSorting="True" runat="server" CssClass="table-bordered"
-                                        AutoGenerateColumns="False" ShowFooter="True" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                <div class="card" runat="server" id="divGrid">
+                                    <div class="card-body">
 
-                                        <HeaderStyle BackColor="#4285f4" ForeColor="White" Height="10px" Font-Bold="True" />
-                                        <FooterStyle BackColor="#4285f4" ForeColor="White" Height="10px" Font-Bold="True" />
-                                        <AlternatingRowStyle BackColor="White" />
-                                        <RowStyle Height="10px" />
+                                        <asp:GridView ID="gvCourselists" OnSorting="gvStudentBillView_Sorting" AllowSorting="True" runat="server" CssClass="table table-bordered"
+                                            AutoGenerateColumns="False" ShowFooter="True" Width="100%" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                            <HeaderStyle BackColor="#3f2c7b" ForeColor="White" Height="10px" Font-Bold="True" />
+                                            <FooterStyle BackColor="#3f2c7b" ForeColor="White" Height="10px" Font-Bold="True" />
+                                            <AlternatingRowStyle BackColor="White" />
+                                            <RowStyle Height="10px" />
 
-                                        <Columns>
-                                            <asp:TemplateField HeaderText="SL" ItemStyle-HorizontalAlign="Center">
-                                                <ItemTemplate><b><%# Container.DataItemIndex + 1 %></b></ItemTemplate>
-                                                <HeaderStyle Width="35px" />
-                                                <ItemStyle HorizontalAlign="Center" />
-                                            </asp:TemplateField>
+                                            <Columns>
+                                                <asp:TemplateField HeaderText="SL" ItemStyle-HorizontalAlign="Center">
+                                                    <ItemTemplate><b><%# Container.DataItemIndex + 1 %></b></ItemTemplate>
 
-                                            <asp:TemplateField HeaderText="Course Code" ItemStyle-HorizontalAlign="Left">
-                                                <HeaderTemplate>
-                                                    <asp:LinkButton ID="lnkFormalCode" runat="server" ForeColor="White" CommandName="Sort" CommandArgument="FormalCode">Course Code</asp:LinkButton>
-                                                </HeaderTemplate>
-                                                <ItemTemplate>
-                                                    <asp:Label runat="server" ID="lblFormalCode" Font-Bold="True" Text='<%#Eval("FormalCode") %>' />
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="100px" />
-                                                <ItemStyle HorizontalAlign="Left" />
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Transcript Code" ItemStyle-HorizontalAlign="Left">
-                                                <ItemTemplate>
-                                                    <asp:Label runat="server" ID="lblTranscriptCode" Font-Bold="True" Text='<%#Eval("TranscriptCode") %>' />
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="100px" />
-                                                <ItemStyle HorizontalAlign="Left" />
-                                            </asp:TemplateField>
-                                            <%--<asp:TemplateField HeaderText="Course Group" ItemStyle-HorizontalAlign="Left">
+                                                    <ItemStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
+
+                                                <asp:TemplateField HeaderText="Course Code" ItemStyle-HorizontalAlign="Left">
+                                                    <HeaderTemplate>
+                                                        <asp:LinkButton ID="lnkFormalCode" runat="server" ForeColor="White" CommandName="Sort" CommandArgument="FormalCode">Course Code</asp:LinkButton>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" ID="lblFormalCode" Font-Bold="True" Text='<%#Eval("FormalCode") %>' />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Left" />
+                                                </asp:TemplateField>
+
+                                                <asp:TemplateField HeaderText="Version Code" ItemStyle-HorizontalAlign="Left">
+                                                    <HeaderTemplate>
+                                                        <asp:LinkButton ID="lnkVersionCode" runat="server" ForeColor="White" CommandName="Sort" CommandArgument="VersionCode">Version Code</asp:LinkButton>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" ID="lblVersionCode" Font-Bold="True" Text='<%#Eval("VersionCode") %>' />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Left" />
+                                                </asp:TemplateField>
+
+                                                <asp:TemplateField HeaderText="Transcript Code" ItemStyle-HorizontalAlign="Left">
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" ID="lblTranscriptCode" Font-Bold="True" Text='<%#Eval("TranscriptCode") %>' />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Left" />
+                                                </asp:TemplateField>
+                                                <%--<asp:TemplateField HeaderText="Course Group" ItemStyle-HorizontalAlign="Left">
                                                 <ItemTemplate>
                                                     <asp:Label runat="server" ID="lblCourseGroup" Font-Bold="True" Text='<%#Eval("CourseGroup") %>' />
                                                 </ItemTemplate>
                                                 <HeaderStyle Width="80px" />
                                                  <ItemStyle HorizontalAlign="Left" />
                                             </asp:TemplateField>--%>
-                                            <asp:TemplateField HeaderText="Title" ItemStyle-HorizontalAlign="Left">
-                                                <HeaderTemplate>
-                                                    <asp:LinkButton ID="lnkTitle" runat="server" ForeColor="White" CommandName="Sort" CommandArgument="Title">Title</asp:LinkButton>
-                                                </HeaderTemplate>
-                                                <ItemTemplate>
-                                                    <asp:Label runat="server" ID="lblTitle" Font-Bold="True" Text='<%#Eval("Title") %>' />
-                                                </ItemTemplate>
-                                                <%--<HeaderStyle Width="100%"/>--%>
-                                                <ItemStyle HorizontalAlign="Left" />
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Credits" ItemStyle-HorizontalAlign="Center">
-                                                <ItemTemplate>
-                                                    <asp:Label runat="server" ID="lblCredits" Font-Bold="True" Text='<%#Eval("Credits") %>' />
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="50px" />
-                                                <ItemStyle HorizontalAlign="Center" />
-                                            </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Title" ItemStyle-HorizontalAlign="Left">
+                                                    <HeaderTemplate>
+                                                        <asp:LinkButton ID="lnkTitle" runat="server" ForeColor="White" CommandName="Sort" CommandArgument="Title">Title</asp:LinkButton>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" ID="lblTitle" Font-Bold="True" Text='<%#Eval("Title") %>' />
+                                                    </ItemTemplate>
+                                                    <%--<HeaderStyle Width="100%"/>--%>
+                                                    <ItemStyle HorizontalAlign="Left" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Credits" ItemStyle-HorizontalAlign="Center">
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" ID="lblCredits" Font-Bold="True" Text='<%#Eval("Credits") %>' />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
 
-                                            <asp:TemplateField HeaderText="Marks">
-                                                <ItemTemplate>
-                                                    <asp:Label runat="server" ID="lblMarks" Font-Bold="True" Text='<%#Eval("CourseExtend.Marks") %>' />
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="80px" />
-                                                <ItemStyle HorizontalAlign="Center" />
-                                            </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Marks" Visible="false">
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" ID="lblMarks" Font-Bold="True" Text='<%#Eval("CourseExtend.Marks") %>' />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
 
-                                            <asp:TemplateField HeaderText="Thesis/Project" ItemStyle-HorizontalAlign="Center">
-                                                <ItemTemplate>
-                                                    <asp:Label runat="server" ID="lblThesisOrProject" Font-Bold="True" Text='<%#Eval("HasMultipleACUSpan") == null ? "" : (Boolean.Parse(Eval("HasMultipleACUSpan").ToString())) ? "Yes" : "No" %>' />
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="60px" />
-                                                <ItemStyle HorizontalAlign="Center" />
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Is Active" ItemStyle-HorizontalAlign="Center">
-                                                <ItemTemplate>
-                                                    <asp:Label runat="server" ID="lblIsActive" Font-Bold="True" Text='<%#  Eval("IsActive") == null ? "" : (Boolean.Parse(Eval("IsActive").ToString())) ? "Yes" : "No" %>' />
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="60px" />
-                                                <ItemStyle HorizontalAlign="Center" />
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Type" ItemStyle-HorizontalAlign="Center">
-                                                <ItemTemplate>
-                                                    <asp:Label runat="server" ID="lblTypeDefinitionID" Font-Bold="True" Text='<%#Eval("CourseType") %>' />
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="60px" />
-                                                <ItemStyle HorizontalAlign="Center" />
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="">
-                                                <ItemTemplate>
-                                                    <div style="text-align: center">
-                                                        <asp:LinkButton runat="server" ToolTip="Edit" ID="lnkEdit" CommandArgument='<%#Eval("CourseID")+","+ Eval("VersionID")%>' OnClick="lnkEdit_Click">
-                                                            <span class="action-container">Edit</span>
+                                                <asp:TemplateField HeaderText="Thesis/Project" ItemStyle-HorizontalAlign="Center">
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" ID="lblThesisOrProject" Font-Bold="True" Text='<%#Eval("HasMultipleACUSpan") == null ? "" : (Boolean.Parse(Eval("HasMultipleACUSpan").ToString())) ? "Yes" : "No" %>' />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Is Active" ItemStyle-HorizontalAlign="Center">
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" ID="lblIsActive" Font-Bold="True" Text='<%#  Eval("IsActive") == null ? "" : (Boolean.Parse(Eval("IsActive").ToString())) ? "Yes" : "No" %>' />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Type" ItemStyle-HorizontalAlign="Center">
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" ID="lblTypeDefinitionID" Font-Bold="True" Text='<%#Eval("CourseType") %>' />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="">
+                                                    <ItemTemplate>
+                                                        <div style="text-align: center">
+                                                            <asp:LinkButton runat="server" ToolTip="Edit" ID="lnkEdit" CommandArgument='<%#Eval("CourseID")+","+ Eval("VersionID")%>' OnClick="lnkEdit_Click">
+                                                            <span class="action-container"><i class="fas fa-pencil-alt"></i></span>
                                                         </asp:LinkButton>
-                                                    </div>
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="40px" />
-                                            </asp:TemplateField>
-                                        </Columns>
+                                                        </div>
+                                                    </ItemTemplate>
+                                                    <HeaderStyle Width="40px" />
+                                                </asp:TemplateField>
+                                            </Columns>
 
-                                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                                        <RowStyle Height="10px" VerticalAlign="Middle" HorizontalAlign="Left" BackColor="#E3EAEB" />
-                                        <EditRowStyle BackColor="#7C6F57" />
-                                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                                        <SortedAscendingHeaderStyle BackColor="#246B61" />
-                                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                                        <SortedDescendingHeaderStyle BackColor="#15524A" />
-                                    </asp:GridView>
+                                        </asp:GridView>
+                                    </div>
                                 </div>
+
+
+
                             </div>
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
+
+
+
+
                 <div id="divProgress" style="display: none; z-index: 1000; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
                     <asp:Image ID="LoadingImage" runat="server" ImageUrl="~/Images/Img/Waiting.gif" Height="150px" Width="150px" />
                 </div>

@@ -12,6 +12,8 @@ using LogicLayer.BusinessLogic;
 using CommonUtility;
 using System.IO;
 using OfficeOpenXml;
+using System.Data;
+using ClosedXML.Excel;
 
 namespace EMS.SyllabusMan
 {
@@ -33,9 +35,12 @@ namespace EMS.SyllabusMan
             {
                 base.CheckPage_Load();
                 userObj = (BussinessObject.UIUMSUser)GetFromSession(Constants.SESSIONCURRENT_USER);
-            
+
                 if (!IsPostBack)
                 {
+                    ClearExcelGrid();
+                    divUpload.Visible = false;
+                    divGrid.Visible = false;
                     btnSaveOrUpdate.Enabled = false;
                     ucDepartment.LoadDropDownList();
                     int departmentId = Convert.ToInt32(ucDepartment.selectedValue);
@@ -53,11 +58,22 @@ namespace EMS.SyllabusMan
             {
                 int departmentId = Convert.ToInt32(ucDepartment.selectedValue);
                 ucProgram.LoadDropdownByDepartmentId(departmentId);
+                ClearGrid();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
             }
+        }
+
+        protected void ucProgram_ProgramSelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClearGrid();
+        }
+
+        private void ClearGrid()
+        {
+            gvCourselists.DataSource = null;
+            gvCourselists.DataBind();
         }
 
         protected void btnLoad_Click(object sender, EventArgs e)
@@ -92,10 +108,10 @@ namespace EMS.SyllabusMan
 
                     if (_courseList2 != null && _courseList2.Count > 0)
                     {
-                        ShowMessage("", Color.Red);
-
                         gvCourselists.DataSource = _courseList2;
                         gvCourselists.DataBind();
+                        divGrid.Visible = true;
+                        divUpload.Visible = false;
                     }
                     else
                     {
@@ -142,6 +158,8 @@ namespace EMS.SyllabusMan
                 ddlProgram.DataTextField = "ShortName";
                 ddlProgram.DataValueField = "ProgramID";
                 ddlProgram.DataBind();
+
+                ddlProgram.SelectedValue = ucProgram.selectedValue.ToString();
             }
         }
 
@@ -189,7 +207,7 @@ namespace EMS.SyllabusMan
             try
             {
                 List<TypeDefinition> list = TypeDefinitionManager.GetAll("Course");
-                
+
 
                 if (list != null)
                 {
@@ -294,7 +312,7 @@ namespace EMS.SyllabusMan
 
                                 ShowMessage("Successfully Saved", Color.Green);
 
-                                #region Log Insert 
+                                #region Log Insert
                                 LogGeneralManager.Insert(
                                      DateTime.Now,
                                      "",
@@ -373,7 +391,7 @@ namespace EMS.SyllabusMan
                             }
                         }
                         else
-                        {                            
+                        {
                             ModalPopupExtender1.Show();
                             ShowPopUpMessage("Version Code is already Exist !", Color.Red);
                         }
@@ -434,7 +452,7 @@ namespace EMS.SyllabusMan
 
                 int isInsert = CourseExtendOneManager.Insert(courseExtend);
                 courseMarks = isInsert > 0 ? mark : 0;
-            }                       
+            }
         }
 
         protected void gvStudentBillView_Sorting(object sender, GridViewSortEventArgs e)
@@ -486,7 +504,7 @@ namespace EMS.SyllabusMan
             }
             catch (Exception ex)
             {
-                lblMessage.Text = ex.Message;
+
             }
         }
 
@@ -515,9 +533,7 @@ namespace EMS.SyllabusMan
 
         private void ShowMessage(string message, Color color)
         {
-            lblMessage.Text = string.Empty;
-            lblMessage.Text = message;
-            lblMessage.ForeColor = color;
+            showAlert(message);
         }
 
         private void ShowPopUpMessage(string message, Color color)
@@ -525,6 +541,12 @@ namespace EMS.SyllabusMan
             lblPopUpMassege.Text = string.Empty;
             lblPopUpMassege.Text = message;
             lblPopUpMassege.ForeColor = color;
+        }
+
+
+        protected void showAlert(string msg)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "SweetAlert", "swal('" + msg + "');", true);
         }
 
         private void ClearAll()
@@ -540,9 +562,8 @@ namespace EMS.SyllabusMan
             txtTitle.Text = "";
             ddlIsActive.SelectedValue = "0";
             ddlMultiple.SelectedValue = "0";
-            lblMessage.Text = "";
             lblPopUpMassege.Text = "";
-
+            chkCheckDuplicate.Checked = false;
 
         }
 
@@ -641,6 +662,430 @@ namespace EMS.SyllabusMan
             catch (Exception ex)
             {
                 ShowMessage(ex.Message, Color.Red);
+            }
+        }
+
+        protected void chkCheckDuplicate_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                lblPopUpMassege.Text = string.Empty;
+                ModalPopupExtender1.Show();
+
+                if (chkCheckDuplicate.Checked)
+                {
+
+                    string versionCode = txtVersionCode.Text.Trim();
+
+                    DAL.PABNA_UCAMEntities ucamContext = new DAL.PABNA_UCAMEntities();
+
+                    var ExistingObj = ucamContext.Courses.Where(x => x.VersionCode == versionCode).FirstOrDefault();
+
+                    if (ExistingObj != null)
+                    {
+                        lblPopUpMassege.Text = "Version Code Already Exists With Another Course With Formal Code : " + ExistingObj.FormalCode;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+
+
+
+        #region New Methods For Course Upload
+
+        protected void btnCourseMigrateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Session["NotMigratedCourseList"] = null;
+                int ProgramId = Convert.ToInt32(ucProgram.selectedValue);
+
+                int Total = 0;
+
+
+                if (ProgramId > 0)
+                {
+                    DataTable CourseList = (DataTable)Session["DataTableExcelUpload"];
+
+                    if (CourseList != null && CourseList.Rows.Count > 0)
+                    {
+
+                        List<CourseMigrationObj> MigrationCourseList = new List<CourseMigrationObj>();
+
+                        Total = CourseList.Rows.Count;
+
+                        string FormalCode = "", VersionCode = "", Title = "", Credits = "", ThesisProject = "", CourseType = "";
+
+                        #region Data Migration Process
+
+                        var TypeList = TypeDefinitionManager.GetAll().Where(x => x.Type == "Course").ToList();
+                        if (TypeList != null && TypeList.Any())
+                        {
+                            foreach (DataRow row in CourseList.Rows)
+                            {
+                                try
+                                {
+                                    string SL = "";
+
+                                    if (!string.IsNullOrEmpty(row[0].ToString()))
+                                        SL = row[0].ToString().Trim();
+
+                                    if (SL != "")
+                                    {
+                                        if (!string.IsNullOrEmpty(row[1].ToString()))
+                                            FormalCode = row[1].ToString().Trim();
+
+                                        if (!string.IsNullOrEmpty(row[2].ToString()))
+                                            VersionCode = row[2].ToString().Trim();
+
+                                        if (!string.IsNullOrEmpty(row[3].ToString()))
+                                            Title = row[3].ToString().Trim();
+
+                                        if (!string.IsNullOrEmpty(row[4].ToString()))
+                                            Credits = row[4].ToString().Trim();
+
+                                        if (!string.IsNullOrEmpty(row[5].ToString()))
+                                            ThesisProject = row[5].ToString().Trim().ToLower();
+
+                                        if (!string.IsNullOrEmpty(row[6].ToString()))
+                                            CourseType = row[6].ToString().Trim();
+
+                                        var CrsType = TypeList.Where(x => x.Definition == CourseType).FirstOrDefault();
+                                        if (CrsType != null)
+                                        {
+                                            bool HasThesisProject = false;
+                                            if (ThesisProject == "yes")
+                                                HasThesisProject = true;
+
+                                            CourseMigrationObj MigratedObj = EMS.Module.CommonFunctionForCourseMigration.MigrateCourse(ProgramId, FormalCode, VersionCode, Title, Credits, HasThesisProject, CrsType.TypeDefinitionID, userObj.Id, userObj.LogInID, _pageId, _pageName, _pageUrl);
+
+                                            if (MigratedObj != null)
+                                            {
+                                                MigrationCourseList.Add(MigratedObj);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            CourseMigrationObj NewObj = new CourseMigrationObj();
+
+                                            NewObj.Status = 0;
+                                            NewObj.FormaCode = FormalCode;
+                                            NewObj.Title = Title;
+                                            NewObj.Reason = "Course Type Not Found";
+                                            MigrationCourseList.Add(NewObj);
+                                        }
+                                    }
+
+
+                                }
+                                catch (Exception ex)
+                                {
+                                    CourseMigrationObj ExceptionObj = new CourseMigrationObj();
+
+                                    ExceptionObj.Status = 0;
+                                    ExceptionObj.FormaCode = FormalCode;
+                                    ExceptionObj.Title = Title;
+                                    ExceptionObj.Reason = "Exception occurred";
+
+                                    MigrationCourseList.Add(ExceptionObj);
+
+                                }
+
+                            }
+
+                            Session["DataTableExcelUpload"] = null;
+
+                            ClearExcelGrid();
+
+                            #region Bind Grid View
+
+                            HttpCookie cookie = new HttpCookie("ExcelDownloadFlag");
+                            cookie.Value = "Flag";
+                            cookie.Expires = DateTime.Now.AddDays(1);
+                            Response.AppendCookie(cookie);
+
+
+
+                            if (MigrationCourseList != null && MigrationCourseList.Any())
+                            {
+                                string msg = "";
+
+                                if (MigrationCourseList.Where(x => x.Status == 1).Any())
+                                {
+                                    var MigratedList = MigrationCourseList.Where(x => x.Status == 1).ToList();
+
+                                    lblTotalCourse.Text = "Total Updated Course List : " + MigratedList.Count();
+
+                                    GVTotalCourseList.DataSource = MigratedList;
+                                    GVTotalCourseList.DataBind();
+
+                                    DivTotalCourse.Visible = true;
+
+                                    msg = "Course Information Updated Successfully";
+
+                                }
+                                if (MigrationCourseList.Where(x => x.Status == 0).Any())
+                                {
+                                    var NotMigratedList = MigrationCourseList.Where(x => x.Status == 0).ToList();
+
+                                    lblNotMigratedCourse.Text = "Total Not Updated Course List : " + NotMigratedList.Count();
+
+                                    GVNotUploadedCourseList.DataSource = NotMigratedList;
+                                    GVNotUploadedCourseList.DataBind();
+
+                                    DivNotUploadedCourse.Visible = true;
+
+                                    Session["NotMigratedCourseList"] = NotMigratedList;
+
+                                    if (msg == "")
+                                        msg = "Some Courses Information is Not Updated";
+                                    else
+                                        msg = msg + " And Some Course Information is Not Updated";
+
+                                }
+
+                                showAlert(msg);
+                                return;
+
+                            }
+                            else
+                            {
+                                showAlert("Something went wrong while uploding the excel file");
+                                return;
+                            }
+                            #endregion
+
+                        }
+                        else
+                        {
+                            showAlert("Course Type Not Created In Database");
+                            return;
+                        }
+
+
+                        #endregion
+
+
+
+                    }
+                    else
+                    {
+                        showAlert("No Data Found To Upload");
+                        Session["DataTableExcelUpload"] = null;
+                        HttpCookie cookie = new HttpCookie("ExcelDownloadFlag");
+                        cookie.Value = "Flag";
+                        cookie.Expires = DateTime.Now.AddDays(1);
+                        Response.AppendCookie(cookie);
+                        return;
+                    }
+                }
+                else
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ClearExcelGrid();
+                showAlert("Something went wrong");
+                return;
+            }
+        }
+
+
+        #endregion
+
+        protected void btnMigrateCourse_Click(object sender, EventArgs e)
+        {
+            divGrid.Visible = false;
+            divUpload.Visible = !divUpload.Visible;
+        }
+
+        protected void btnSampleExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string fileName = "SampleCourseMigrationFile.xlsx";
+
+                Response.ContentType = "application/octet-stream";
+                Response.AddHeader("Content-Disposition", "attachment;filename=" + fileName);
+                Response.TransmitFile(Server.MapPath("~/Upload/SampleExcel/" + fileName));
+
+                Response.Flush();
+                Response.SuppressContent = true;
+                Response.End();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        protected void btnExcelUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ClearExcelGrid();
+                Session["DataTableExcelUpload"] = null;
+                Session["NotMigratedCourseList"] = null;
+                if (ExcelUpload.HasFile)
+                {
+                    string saveFolder = "~/Upload/";
+                    string filename = ExcelUpload.FileName;
+                    string filePath = Path.Combine(saveFolder, ExcelUpload.FileName);
+                    string excelpath = Server.MapPath(filePath);
+
+                    string Extension = Path.GetExtension(filename);
+
+                    if (Extension.ToLower() != ".xlsx" && Extension.ToLower() != ".xls")
+                    {
+                        showAlert("Please upload the excel file and try again");
+                        return;
+                    }
+
+                    if (File.Exists(excelpath))
+                    {
+                        System.IO.File.Delete(excelpath);
+                        ExcelUpload.SaveAs(excelpath);
+                    }
+                    else
+                    {
+                        ExcelUpload.SaveAs(excelpath);
+                    }
+
+                    try
+                    {
+                        System.Data.OleDb.OleDbConnection MyConnection;
+                        System.Data.DataTable DtTable;
+                        System.Data.OleDb.OleDbDataAdapter MyCommand; ;
+                        MyConnection = new System.Data.OleDb.OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + excelpath + ";Extended Properties=Excel 12.0 xml;");
+                        MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
+                        MyCommand.TableMappings.Add("Table", "TestTable");
+                        DtTable = new System.Data.DataTable();
+                        MyCommand.Fill(DtTable);
+                        Session["DataTableExcelUpload"] = DtTable;
+
+                        MyConnection.Close();
+                        if (DtTable.Rows.Count > 0)
+                        {
+                            GVTotalCourseList.DataSource = DtTable;
+                            GVTotalCourseList.DataBind();
+
+                            lblTotalCourse.Text = "Total Course List : " + DtTable.Rows.Count;
+
+                            DivTotalCourse.Visible = true;
+                        }
+
+                        if (File.Exists(excelpath))
+                        {
+                            System.IO.File.Delete(excelpath);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        showAlert("Excel file format is not correct.You can download sample excel file for help.");
+                        return;
+                    }
+                }
+                else
+                {
+                    showAlert("Please select a excel file");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void ClearExcelGrid()
+        {
+            try
+            {
+                DivTotalCourse.Visible = false;
+                DivNotUploadedCourse.Visible = false;
+                GVTotalCourseList.DataSource = null;
+                GVTotalCourseList.DataBind();
+                GVNotUploadedCourseList.DataSource = null;
+                GVNotUploadedCourseList.DataBind();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        protected void lnkDownloadExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<CourseMigrationObj> CourseList = (List<CourseMigrationObj>)Session["NotMigratedCourseList"];
+
+
+                if (CourseList != null && CourseList.Count > 0)
+                {
+                    DataTable stdlist = CommonUtility.DataTableMethods.ListToDataTable(CourseList);
+
+                    if (stdlist != null && stdlist.Rows.Count > 0)
+                    {
+                        using (XLWorkbook wb = new XLWorkbook())
+                        {
+
+                            IXLWorksheet sheet2;
+                            sheet2 = wb.AddWorksheet(stdlist, "Sheet");
+
+                            sheet2.Table("Table1").ShowAutoFilter = false;
+
+                            Response.Clear();
+                            Response.Buffer = true;
+                            Response.Charset = "";
+                            Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                            Response.AddHeader("content-disposition", "attachment;filename=" + "NotUploadedCourseList.xlsx");
+                            using (MemoryStream MyMemoryStream = new MemoryStream())
+                            {
+                                wb.SaveAs(MyMemoryStream);
+                                MyMemoryStream.WriteTo(Response.OutputStream);
+
+                                HttpCookie cookie = new HttpCookie("ExcelDownloadFlag");
+                                cookie.Value = "Flag";
+                                cookie.Expires = DateTime.Now.AddDays(1);
+                                Response.AppendCookie(cookie);
+
+                                Response.Flush();
+                                Response.SuppressContent = true;
+                                Response.End();
+                            }
+                        };
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                searchFormalCode.Text = "";
+                searchTitle.Text = "";
+                ClearGrid();
+                btnLoad_Click(null, null);
+            }
+            catch (Exception ex)
+            {
             }
         }
     }

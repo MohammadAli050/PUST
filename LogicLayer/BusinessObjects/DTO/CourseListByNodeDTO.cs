@@ -23,5 +23,23 @@ namespace LogicLayer.BusinessObjects
                 return course.FormalCode + " - " + course.VersionCode + " - " + course.Title;
             }
         }
+
+        public Course CourseInfo
+        {
+            get
+            {
+                Course crs = null;
+                try
+                {
+                    Course course = CourseManager.GetByCourseIdVersionId(CourseId, VersionId);
+                    if (course != null)
+                        crs = course;
+                }
+                catch (Exception ex)
+                {
+                }
+                return crs;
+            }
+        }
     }
 }

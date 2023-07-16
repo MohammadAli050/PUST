@@ -174,6 +174,7 @@ namespace EMS.Module.setup
                         //ddlCourses.Items.Add(item);
 
                         //item = new ListEditItem();
+
                         try
                         {
                             item.Value = nodeCourse.ChildCourseID.ToString() + "," + nodeCourse.ChildVersionID.ToString();
@@ -189,7 +190,8 @@ namespace EMS.Module.setup
                         catch (Exception ex)
                         {
                         }
-                        
+
+
                     }
 
                     if (Session["Courses"] != null)
@@ -707,15 +709,8 @@ namespace EMS.Module.setup
                                 List<Course> courses = new List<Course>();
                                 foreach (NodeCourse node_Course in node.Node_Courses)
                                 {
-                                    try
-                                    {
-                                        Course childCourse = Course.GetCourse(node_Course.ChildCourseID, node_Course.ChildVersionID);
-                                        courses.Add(childCourse);
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                    }
-                                   
+                                    Course childCourse = Course.GetCourse(node_Course.ChildCourseID, node_Course.ChildVersionID);
+                                    courses.Add(childCourse);
                                 }
                                 treeNode.ChildNodes.Clear();
                                 LoadNode(treeNode, courses);
@@ -2361,7 +2356,10 @@ namespace EMS.Module.setup
                 RemoveFromSession(SESSIONPREREQMASTERS);
                 InitializePreReqArea();
 
-                ctlCourseSelect.Focus();
+                modalPopupCourseList.Show();
+                LoadProgram();
+                ddlProgram_SelectedIndexChanged(null, null);
+                //ctlCourseSelect.Focus();
             }
             catch (Exception Ex)
             {
@@ -2370,6 +2368,7 @@ namespace EMS.Module.setup
                 lblMsg.Text = Ex.Message;
             }
         }
+
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             try
@@ -3897,5 +3896,441 @@ namespace EMS.Module.setup
             pnlPreReqArea.Visible = false;
         }
         #endregion
+
+
+        #region New Added For Bulk Course Add
+
+
+        private void LoadProgram()
+        {
+            try
+            {
+                ddlProgram.Items.Clear();
+                ddlProgram.AppendDataBoundItems = true;
+                ddlProgram.Items.Add(new ListItem("All", "0"));
+
+                var ProgramList = CommonMethodForFacultyDepartmentProgramBatch.AllProgramListByParameter(0, 0, 0, 0);
+
+                if (ProgramList != null && ProgramList.Any())
+                {
+                    ddlProgram.DataTextField = "ShortName";
+                    ddlProgram.DataValueField = "ProgramID";
+                    ddlProgram.DataSource = ProgramList;
+                    ddlProgram.DataBind();
+
+                    ddlProgram.SelectedValue = ddlPrograms.SelectedValue.ToString();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        protected void ddlProgram_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            modalPopupCourseList.Show();
+            ClearGrid();
+            LoadCourseGrid();
+        }
+
+        private void ClearGrid()
+        {
+            try
+            {
+                gvCourseList.DataSource = null;
+                gvCourseList.DataBind();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void LoadCourseGrid()
+        {
+            try
+            {
+                List<LogicLayer.BusinessObjects.Course> CourseList = new List<LogicLayer.BusinessObjects.Course>();
+
+                int ProgramId = Convert.ToInt32(ddlProgram.SelectedValue);
+
+                if (ProgramId == 0)
+                    CourseList = CourseManager.GetAll();
+                else
+                    CourseList = CourseManager.GetAllByProgram(ProgramId);
+
+                if (CourseList != null && CourseList.Any())
+                {
+                    gvCourseList.DataSource = CourseList;
+                    gvCourseList.DataBind();
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            modalPopupCourseList.Hide();
+            butCancel_Click(null, null);
+        }
+
+        #endregion
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UIUMSUser CurrentUser = (UIUMSUser)GetFromSession(Constants.SESSIONCURRENT_USER);
+
+                ClearMessagelbl();
+                if (gdvPreReq.IsEditing)
+                {
+                    Utilities.ShowMassage(lblMsg, Color.Red, "Saving is not allowed when prerequisit grid is in edit mode.");
+                    return;
+                }
+
+
+                if (Session["IsAddingRoot"] != null)
+                {
+                    #region Root
+                    if (Convert.ToBoolean(Session["IsAddingRoot"]))
+                    {
+                        if (ValidateNode())
+                        {
+                            if (Session["CurrentNode"] == null)
+                            {
+                                TreeMaster treeMaster = RefreshTreeMas();
+                                treeMaster.CreatorID = CurrentUser.Id;
+                                treeMaster.CreatedDate = DateTime.Now;
+
+                                Node rootNode = RefreshRootNode();
+                                rootNode.CreatorID = CurrentUser.Id;
+                                rootNode.CreatedDate = DateTime.Now;
+
+                                TreeMaster.SaveTreeMasterWithRootNode(rootNode, treeMaster);
+
+                                lblMsg.Text = string.Empty;
+                                lblMsg.ForeColor = Color.SteelBlue;
+                                lblMsg.Text = "Root Saved";
+                            }
+                            else
+                            {
+                                TreeMaster treeMaster = RefreshTreeMas();
+                                treeMaster.ModifierID = CurrentUser.Id;
+                                treeMaster.ModifiedDate = DateTime.Now;
+
+                                Node rootNode = RefreshRootNode();
+                                rootNode.ModifierID = CurrentUser.Id;
+                                rootNode.ModifiedDate = DateTime.Now;
+
+                                TreeMaster.SaveTreeMasterWithRootNode(rootNode, treeMaster);
+
+                                TreeNode treeNode = tvwMaster.FindNode(((string)Session["SelectedNode"]));
+
+                                treeNode.Text = rootNode.Name;
+                                treeNode.Value = "NOD," + rootNode.Id.ToString();
+                                treeNode.ExpandAll();
+
+                                ClearControl();
+
+                                lblMsg.Text = string.Empty;
+                                lblMsg.ForeColor = Color.SteelBlue;
+                                lblMsg.Text = "Node Updated";
+                            }
+
+                            FillTreeCombo();
+                            ShowRoot();
+                            ClearControl();
+
+                            if (Session["CurrentNode"] != null)
+                            {
+                                Session.Remove("CurrentNode");
+                            }
+
+                            ddlTree.Focus();
+                        }
+                    }
+                    #endregion
+                }
+                else if (Session["IsAddingNode"] != null)
+                {
+                    #region Node
+                    if (Convert.ToBoolean(Session["IsAddingNode"]))
+                    {
+                        if (Session["TreeMaster"] != null && Session["ParentNode"] != null && Session["SelectedNode"] != null)
+                        {
+                            if (ValidateNode())
+                            {
+                                if (Session["CurrentNode"] == null)
+                                {
+                                    TreeDetail treeDetail = RefreshTreeDet();
+                                    treeDetail.CreatorID = CurrentUser.Id;
+                                    treeDetail.CreatedDate = DateTime.Now;
+
+                                    Node childNode = RefreshChildNode();
+                                    childNode.CreatorID = CurrentUser.Id;
+                                    childNode.CreatedDate = DateTime.Now;
+
+                                    TreeDetail.SaveTreeDetailWithChildNode(childNode, treeDetail);
+
+                                    lblMsg.Text = string.Empty;
+                                    lblMsg.ForeColor = Color.SteelBlue;
+                                    lblMsg.Text = "Node Saved";
+                                }
+                                else
+                                {
+                                    Node childNode = RefreshChildNode();
+                                    childNode.ModifierID = CurrentUser.Id;
+                                    childNode.ModifiedDate = DateTime.Now;
+
+                                    Node.SaveNode(childNode);
+
+                                    TreeNode treeNode = tvwMaster.FindNode(((string)Session["SelectedNode"]));
+
+                                    treeNode.Text = childNode.Name;
+                                    treeNode.Value = "NOD," + childNode.Id.ToString();
+                                    treeNode.ExpandAll();
+
+                                    ClearControl();
+
+                                    lblMsg.Text = string.Empty;
+                                    lblMsg.ForeColor = Color.SteelBlue;
+                                    lblMsg.Text = "Node Updated";
+                                }
+
+                                LoadChildrens(tvwMaster.FindNode(((string)Session["SelectedNode"])));
+                                ClearControl();
+
+                                if (Session["CurrentNode"] != null)
+                                {
+                                    Session.Remove("CurrentNode");
+                                }
+                                pnlPREREQ.Visible = false;
+                                RemoveFromSession(SESSIONPREREQMASTERS);
+                                RemoveFromSession(SESSIONPREREQMASTER);
+                                RemoveFromSession(SESSIONPREREQNODE);
+                                RemoveFromSession(SESSIONPREREQCOURSE);
+                                tvwMaster.Focus();
+                            }
+                        }
+                    }
+                    #endregion
+                }
+                else if (Session["IsAddingSet"] != null)
+                {
+                    #region Set
+                    if (Convert.ToBoolean(Session["IsAddingSet"]))
+                    {
+                        if (Session["TreeMaster"] != null && Session["ParentNode"] != null && Session["SelectedNode"] != null && Session["VNodeSetMas"] != null)
+                        {
+                            if (ValidateVNodeSet())
+                            {
+                                VNodeSet vNodeSet = RefreshVNodeSet();
+                                vNodeSet.CreatorID = CurrentUser.Id;
+                                vNodeSet.CreatedDate = DateTime.Now;
+
+                                VNodeSet.SaveVNodeSet(vNodeSet);
+
+                                lblMsg.Text = string.Empty;
+                                lblMsg.ForeColor = Color.SteelBlue;
+                                lblMsg.Text = "Virtual Node Set Saved";
+
+                                LoadChildrens(tvwMaster.FindNode(((string)Session["SelectedNode"])));
+                                ClearControl();
+                                tvwMaster.Focus();
+                            }
+                        }
+                        else if (Session["TreeMaster"] != null && Session["ParentNode"] != null && Session["SelectedNode"] != null)
+                        {
+                            if (ValidateVNodeSet())
+                            {
+                                VNodeSetMaster vNodeSetMas = RefreshVNodeSetMas();
+
+                                vNodeSetMas.CreatorID = CurrentUser.Id;
+                                vNodeSetMas.CreatedDate = DateTime.Now;
+
+                                VNodeSetMaster.Insert(vNodeSetMas);
+
+                                lblMsg.Text = string.Empty;
+                                lblMsg.ForeColor = Color.SteelBlue;
+                                lblMsg.Text = "Virtual Node Set Saved";
+
+                                LoadChildrens(tvwMaster.FindNode(((string)Session["SelectedNode"])));
+                                ClearControl();
+
+                                tvwMaster.Focus();
+                            }
+                        }
+                    }
+                    #endregion
+                }
+                else if (Session["IsAddingCourse"] != null)
+                {
+                    #region Course
+                    if (Convert.ToBoolean(Session["IsAddingCourse"]))
+                    {
+                        if (Session["TreeMaster"] != null && Session["ParentNode"] != null && Session["SelectedNode"] != null)
+                        {
+                            //if (ValidateCourse())
+                            //{
+                            //NodeCourse nodeCourse = RefreshNodeCourse();
+                            //nodeCourse.CreatorID = CurrentUser.Id;
+                            //nodeCourse.CreatedDate = DateTime.Now;
+
+                            //NodeCourse.SaveNode_Course(nodeCourse);
+
+                            NodeCourse nodeCourse = null;
+                            foreach (GridViewRow row in gvCourseList.Rows)
+                            {
+                                CheckBox ckBox = (CheckBox)row.FindControl("ChkChecked");
+                                HiddenField hdnCourseID = (HiddenField)row.FindControl("hdnCourseID");
+                                HiddenField hdnVersionID = (HiddenField)row.FindControl("hdnVersionID");
+
+                                if (ckBox.Checked)
+                                {
+
+                                    int courseId = Convert.ToInt32(hdnCourseID.Value);
+                                    int versionId = Convert.ToInt32(hdnVersionID.Value);
+
+
+                                    List<LogicLayer.BusinessObjects.Node_Course> list = Node_CourseManager.GetAll();
+                                    LogicLayer.BusinessObjects.Node_Course isNodeCourseHave = null;
+                                    if (list != null && list.Any())
+                                        isNodeCourseHave = list.Where(x => x.NodeID == ((Node)Session["ParentNode"]).Id && x.CourseID == courseId && x.VersionID == versionId).FirstOrDefault();
+
+                                    if (isNodeCourseHave != null)
+                                    {
+                                    }
+                                    else
+                                    {
+                                        nodeCourse = RefreshNodeCourse(courseId, versionId);
+                                        nodeCourse.CreatorID = BaseCurrentUserObj.Id;
+                                        nodeCourse.CreatedDate = DateTime.Now;
+
+                                        NodeCourse.SaveNode_Course(nodeCourse);
+                                    }
+                                }
+                            }
+
+
+                            if (Session["Node_Course"] == null)
+                            {
+                                lblMsg.Text = string.Empty;
+                                lblMsg.ForeColor = Color.SteelBlue;
+                                lblMsg.Text = "Link with node and course has been saved.";
+
+                                TreeNode treeNode = tvwMaster.FindNode(((string)Session["SelectedNode"]));
+                                _clsNameAndID = treeNode.Value.Split(',');
+                                if (_clsNameAndID[0] == "CRS")
+                                {
+
+                                    treeNode.Text = nodeCourse.ChildCourse.VersionCode + "-" + nodeCourse.ChildCourse.Title;
+                                    treeNode.Value = "CRS," + nodeCourse.ChildCourseID.ToString() + "#" + nodeCourse.ChildVersionID.ToString();
+                                    treeNode.ExpandAll();
+                                }
+                                LoadChildrens(treeNode);
+                            }
+                            else
+                            {
+                                ClearControl();
+                                lblMsg.Text = string.Empty;
+                                lblMsg.ForeColor = Color.SteelBlue;
+                                lblMsg.Text = "Link with node and course has been modified.";
+
+                                TreeNode treeNode = tvwMaster.FindNode(((string)Session["SelectedNode"])).Parent;
+                                LoadChildrens(treeNode);
+                            }
+
+
+
+                            //TreeNode treeNode = tvwMaster.FindNode(((string)Session["SelectedNode"]));
+                            //_clsNameAndID = treeNode.Value.Split(',');
+                            //if (_clsNameAndID[0] == "CRS")
+                            //{
+
+                            //    treeNode.Text = nodeCourse.ChildCourse.VersionCode + "-" + nodeCourse.ChildCourse.Title;
+                            //    treeNode.Value = "CRS," + nodeCourse.ChildCourseID.ToString() + "#" + nodeCourse.ChildVersionID.ToString();
+                            //    treeNode.ExpandAll();
+                            //}
+
+
+                            //treeNode.ExpandAll();
+                            ClearControl();
+                            pnlPREREQ.Visible = false;
+                            RemoveFromSession(SESSIONPREREQMASTERS);
+                            RemoveFromSession(SESSIONPREREQMASTER);
+                            RemoveFromSession(SESSIONPREREQNODE);
+                            RemoveFromSession(SESSIONPREREQCOURSE);
+
+                            if (Session["Node_Course"] != null)
+                            {
+                                Session.Remove("Node_Course");
+                            }
+                            tvwMaster.Focus();
+                        }
+                        //}
+                    }
+                    #endregion
+                }
+                ddlTree_SelectedIndexChanged(null, null);
+                modalPopupCourseList.Hide();
+            }
+            catch (Exception Ex)
+            {
+                lblMsg.Text = string.Empty;
+                lblMsg.ForeColor = Color.Red;
+                lblMsg.Text = Ex.Message;
+                modalPopupCourseList.Hide();
+            }
+        }
+
+        private NodeCourse RefreshNodeCourse(int cId, int vId)
+        {
+            NodeCourse nodeCourse = null;
+            if (Session["Node_Course"] == null)
+            {
+                nodeCourse = new NodeCourse();
+            }
+            else
+            {
+                nodeCourse = (NodeCourse)Session["Node_Course"];
+            }
+
+            nodeCourse.ParentNodeID = ((Node)Session["ParentNode"]).Id;
+
+            //string[] courseIDnVerID = new string[2];
+            //courseIDnVerID = ddlCourses.Value.ToString().Split(',');
+            //nodeCourse.ChildCourseID = Int32.Parse(courseIDnVerID[0]);
+            //nodeCourse.ChildVersionID = Int32.Parse(courseIDnVerID[1]);
+            nodeCourse.ChildCourseID = cId;//ctlCourseSelect.PickedCourse.Id;
+            nodeCourse.ChildVersionID = vId;//ctlCourseSelect.PickedCourse.VersionID;
+
+            nodeCourse.Priority = Convert.ToInt32(spnPriority.Value);
+            nodeCourse.IsActive = chkIsActive.Checked;
+
+            nodeCourse.PreReqMasters = PreparePrerequisits();
+            if (nodeCourse.PreReqMasters == null)
+            {
+                nodeCourse.HasPreriquisite = false;
+            }
+            else if (nodeCourse.PreReqMasters != null)
+            {
+                nodeCourse.HasPreriquisite = false;
+            }
+            else
+            {
+                nodeCourse.HasPreriquisite = true;
+            }
+
+
+            return nodeCourse;
+        }
     }
 }
