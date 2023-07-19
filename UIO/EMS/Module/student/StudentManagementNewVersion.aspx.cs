@@ -916,6 +916,8 @@ namespace EMS.Module.student
                             {
                                 item.Attribute3 = HallObj.HallCode;
                             }
+                            else
+                                item.Attribute3 = "";
 
                             var yearSemester = ucamContext.StudentYearSemesterHistories.Where(x => x.StudentId == item.StudentID && x.IsActive == true).FirstOrDefault();
                             if (yearSemester != null)
