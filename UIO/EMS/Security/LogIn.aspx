@@ -98,7 +98,7 @@
         }
 
         .below {
-            background-color: #0b74e3 !important;
+            background-color: #0b74e3a8!important;
         }
 
             .below:hover {
@@ -110,7 +110,7 @@
 </head>
 
 <body>
-    <div class="container-login100" style="background-image: url('../Content/assets/images/bg-01.jpg')">
+    <div class="container-login100" style="background-image: url('../Content/assets/images/bluedots.jpeg')">
         <form id="frmLogIn" runat="server">
             <%-- <div class="container">
                     <div class="row" >
@@ -244,7 +244,7 @@
                                                             <%--<asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password"></asp:Label>--%>
                                                             <asp:TextBox ID="Password" runat="server" Style="border-radius: 7px" CssClass="form-control" placeholder="Enter your password" TextMode="Password"></asp:TextBox>
                                                         </div>
-                                                        <asp:Button ID="Button1" runat="server" CommandName="Login" Style="border-radius: 7px; width: 100%;" CssClass="btn btn-info shadow-2 mb-4" Text="Login" Font-Bold="true" ValidationGroup="logMain" />
+                                                        <asp:Button ID="Button1" runat="server" CommandName="Login" Style="border-radius: 7px; width: 100%;" CssClass="btn btn-info shadow-2 mb-4"  Text="Login" Font-Bold="true" ValidationGroup="logMain" />
                                                         <div id="divProgress" style="display: none; z-index: 1000;">
                                                             <asp:Image ID="LoadingImage" runat="server" ImageUrl="~/Images/working.gif" Height="30px" Width="30px" />
                                                         </div>
@@ -257,7 +257,7 @@
 
 
                                                 <div class="card-body text-center below" style="">
-                                                    <div class="card-body right" style="font-size: 15px; text-align: center; background-color: white; border: 1px solid black; color: black; border-radius: 4px;">
+                                                    <div class="card-body right" style="font-size: 15px; text-align: center; background-color: lightgray; border: 1px solid black; color: black; border-radius: 4px;">
                                                         <div style="background-color: #033e0c; border-radius: 4px; border: 1.5px solid #2f2f5d;  text-align: center; height: 45px;">
                                                             <p style="font-size: 18px; color: white; margin-top: 10px;"><b>নির্দেশিকা</b></p>
                                                         </div>
