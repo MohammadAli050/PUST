@@ -11,8 +11,8 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div>
-                <div class="PageTitle">
-                    <label>Exam Template Item</label>
+                <div class="col-sm-12" style="font-size: 12pt; margin-top: 10pt;">
+                    <label><b style="color: black; font-size: 26px">Exam Template Item</b></label>
                 </div>
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>

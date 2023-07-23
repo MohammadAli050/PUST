@@ -32,8 +32,8 @@
 
 
     <div>
-        <div class="row col-lg-8 col-md-8 col-sm-8" style="font-size: 12pt; margin-top: 10pt;">
-            <label><b style="color: black;">Faculty, Department, Program Setup</b></label>
+        <div class="col-sm-12" style="font-size: 12pt; margin-top: 10pt;">
+            <label><b style="color: black; font-size: 26px">Faculty, Department, Program Setup</b></label>
         </div>
     </div>
     <div id="divProgress" style="display: none; z-index: 100000000; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">

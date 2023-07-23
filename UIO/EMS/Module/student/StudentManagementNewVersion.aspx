@@ -275,8 +275,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContainer" runat="server">
     <div>
-        <div class="PageTitle">
-            <label>Student Profile</label>
+        <div class="col-sm-12" style="font-size: 12pt; margin-top: 10pt;">
+            <label><b style="color: black; font-size: 26px">Student Profile</b></label>
         </div>
 
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">

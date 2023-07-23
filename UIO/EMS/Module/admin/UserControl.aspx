@@ -21,8 +21,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContainer" runat="Server">
     <div>
-        <div class="PageTitle">
-            <label>User Control</label>
+        <div class="col-sm-12" style="font-size: 12pt; margin-top: 10pt;">
+            <label><b style="color: black; font-size: 26px">User Control</b></label>
         </div>
 
         <asp:UpdatePanel ID="UpdatePanel01" runat="server">

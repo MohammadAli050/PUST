@@ -228,14 +228,14 @@ body {
 }
 
 .ContainWrapper .PageTitle {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 .ContainWrapper .PageTitle label {
-    color: black;
+    /*color: black;
     font-weight: bold;
     font-size: 13px;
     letter-spacing: 2px;
-    word-spacing: 3px;
+    word-spacing: 3px;*/
 }
 
 /*login page div gradient*/
