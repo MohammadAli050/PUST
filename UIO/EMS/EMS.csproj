@@ -502,6 +502,7 @@
     <Content Include="Module\result\Report\RptFinalMark.aspx" />
     <Content Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx" />
     <Content Include="Module\result\Report\RptTabulationSheet.aspx" />
+    <Content Include="Module\result\Report\RptTabulationSheetV2.aspx" />
     <Content Include="Module\result\Report\Test.aspx" />
     <Content Include="Module\result\ResultHistoryUpload.aspx" />
     <Content Include="Module\schedular\ClassRoutine.aspx" />
@@ -1026,6 +1027,13 @@
     <Compile Include="Module\result\Report\RptTabulationSheet.aspx.designer.cs">
       <DependentUpon>RptTabulationSheet.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Module\result\Report\RptTabulationSheetV2.aspx.cs">
+      <DependentUpon>RptTabulationSheetV2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\result\Report\RptTabulationSheetV2.aspx.designer.cs">
+      <DependentUpon>RptTabulationSheetV2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Module\result\Report\Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1369,6 +1377,7 @@
     <Content Include="Module\AdmitCard\RptStudentAdmitCard.rdlc" />
     <Content Include="Module\admin\RptExamAttendanceTopSheet.rdlc" />
     <Content Include="Module\result\Report\RptFinalMark.rdlc" />
+    <Content Include="Module\result\Report\RptTabulationSheetV2.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BAO\BAO\BAO.EMS.csproj">

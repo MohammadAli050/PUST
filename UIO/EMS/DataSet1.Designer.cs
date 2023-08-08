@@ -44,6 +44,8 @@ namespace EMS {
         
         private GetFirstExaminerFinalAssessmentMarkBySectionIdDataTable tableGetFirstExaminerFinalAssessmentMarkBySectionId;
         
+        private GetTabulationSheetDataByHeldInIdNewDataTable tableGetTabulationSheetDataByHeldInIdNew;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -101,6 +103,9 @@ namespace EMS {
                 }
                 if ((ds.Tables["GetFirstExaminerFinalAssessmentMarkBySectionId"] != null)) {
                     base.Tables.Add(new GetFirstExaminerFinalAssessmentMarkBySectionIdDataTable(ds.Tables["GetFirstExaminerFinalAssessmentMarkBySectionId"]));
+                }
+                if ((ds.Tables["GetTabulationSheetDataByHeldInIdNew"] != null)) {
+                    base.Tables.Add(new GetTabulationSheetDataByHeldInIdNewDataTable(ds.Tables["GetTabulationSheetDataByHeldInIdNew"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -222,6 +227,16 @@ namespace EMS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public GetTabulationSheetDataByHeldInIdNewDataTable GetTabulationSheetDataByHeldInIdNew {
+            get {
+                return this.tableGetTabulationSheetDataByHeldInIdNew;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -317,6 +332,9 @@ namespace EMS {
                 if ((ds.Tables["GetFirstExaminerFinalAssessmentMarkBySectionId"] != null)) {
                     base.Tables.Add(new GetFirstExaminerFinalAssessmentMarkBySectionIdDataTable(ds.Tables["GetFirstExaminerFinalAssessmentMarkBySectionId"]));
                 }
+                if ((ds.Tables["GetTabulationSheetDataByHeldInIdNew"] != null)) {
+                    base.Tables.Add(new GetTabulationSheetDataByHeldInIdNewDataTable(ds.Tables["GetTabulationSheetDataByHeldInIdNew"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -410,6 +428,12 @@ namespace EMS {
                     this.tableGetFirstExaminerFinalAssessmentMarkBySectionId.InitVars();
                 }
             }
+            this.tableGetTabulationSheetDataByHeldInIdNew = ((GetTabulationSheetDataByHeldInIdNewDataTable)(base.Tables["GetTabulationSheetDataByHeldInIdNew"]));
+            if ((initTable == true)) {
+                if ((this.tableGetTabulationSheetDataByHeldInIdNew != null)) {
+                    this.tableGetTabulationSheetDataByHeldInIdNew.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -440,6 +464,8 @@ namespace EMS {
             base.Tables.Add(this.tableGetTopSheetStudentListBySectionId);
             this.tableGetFirstExaminerFinalAssessmentMarkBySectionId = new GetFirstExaminerFinalAssessmentMarkBySectionIdDataTable();
             base.Tables.Add(this.tableGetFirstExaminerFinalAssessmentMarkBySectionId);
+            this.tableGetTabulationSheetDataByHeldInIdNew = new GetTabulationSheetDataByHeldInIdNewDataTable();
+            base.Tables.Add(this.tableGetTabulationSheetDataByHeldInIdNew);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -499,6 +525,12 @@ namespace EMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeGetFirstExaminerFinalAssessmentMarkBySectionId() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeGetTabulationSheetDataByHeldInIdNew() {
             return false;
         }
         
@@ -586,6 +618,9 @@ namespace EMS {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void GetFirstExaminerFinalAssessmentMarkBySectionIdRowChangeEventHandler(object sender, GetFirstExaminerFinalAssessmentMarkBySectionIdRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void GetTabulationSheetDataByHeldInIdNewRowChangeEventHandler(object sender, GetTabulationSheetDataByHeldInIdNewRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5085,6 +5120,574 @@ namespace EMS {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class GetTabulationSheetDataByHeldInIdNewDataTable : global::System.Data.TypedTableBase<GetTabulationSheetDataByHeldInIdNewRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnStudentID;
+            
+            private global::System.Data.DataColumn columnRoll;
+            
+            private global::System.Data.DataColumn columnFullName;
+            
+            private global::System.Data.DataColumn columnHall;
+            
+            private global::System.Data.DataColumn columnFormalCode;
+            
+            private global::System.Data.DataColumn columnVersionCode;
+            
+            private global::System.Data.DataColumn columnTitle;
+            
+            private global::System.Data.DataColumn columnCourseCredit;
+            
+            private global::System.Data.DataColumn columnObtainedTotalMarks;
+            
+            private global::System.Data.DataColumn columnObtainedGrade;
+            
+            private global::System.Data.DataColumn columnObtainedGPA;
+            
+            private global::System.Data.DataColumn columnPointSecured;
+            
+            private global::System.Data.DataColumn columnSessionWithReAdd;
+            
+            private global::System.Data.DataColumn columnReAddStatus;
+            
+            private global::System.Data.DataColumn columnContinuosAssesment;
+            
+            private global::System.Data.DataColumn columnFinalMark;
+            
+            private global::System.Data.DataColumn columnTotalPointSecured;
+            
+            private global::System.Data.DataColumn columnCreditTaken;
+            
+            private global::System.Data.DataColumn columnCreditEarned;
+            
+            private global::System.Data.DataColumn columnGPA;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTabulationSheetDataByHeldInIdNewDataTable() {
+                this.TableName = "GetTabulationSheetDataByHeldInIdNew";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal GetTabulationSheetDataByHeldInIdNewDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected GetTabulationSheetDataByHeldInIdNewDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StudentIDColumn {
+                get {
+                    return this.columnStudentID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RollColumn {
+                get {
+                    return this.columnRoll;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FullNameColumn {
+                get {
+                    return this.columnFullName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HallColumn {
+                get {
+                    return this.columnHall;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FormalCodeColumn {
+                get {
+                    return this.columnFormalCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VersionCodeColumn {
+                get {
+                    return this.columnVersionCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TitleColumn {
+                get {
+                    return this.columnTitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CourseCreditColumn {
+                get {
+                    return this.columnCourseCredit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ObtainedTotalMarksColumn {
+                get {
+                    return this.columnObtainedTotalMarks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ObtainedGradeColumn {
+                get {
+                    return this.columnObtainedGrade;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ObtainedGPAColumn {
+                get {
+                    return this.columnObtainedGPA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PointSecuredColumn {
+                get {
+                    return this.columnPointSecured;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SessionWithReAddColumn {
+                get {
+                    return this.columnSessionWithReAdd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ReAddStatusColumn {
+                get {
+                    return this.columnReAddStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ContinuosAssesmentColumn {
+                get {
+                    return this.columnContinuosAssesment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FinalMarkColumn {
+                get {
+                    return this.columnFinalMark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalPointSecuredColumn {
+                get {
+                    return this.columnTotalPointSecured;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CreditTakenColumn {
+                get {
+                    return this.columnCreditTaken;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CreditEarnedColumn {
+                get {
+                    return this.columnCreditEarned;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GPAColumn {
+                get {
+                    return this.columnGPA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTabulationSheetDataByHeldInIdNewRow this[int index] {
+                get {
+                    return ((GetTabulationSheetDataByHeldInIdNewRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetTabulationSheetDataByHeldInIdNewRowChangeEventHandler GetTabulationSheetDataByHeldInIdNewRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetTabulationSheetDataByHeldInIdNewRowChangeEventHandler GetTabulationSheetDataByHeldInIdNewRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetTabulationSheetDataByHeldInIdNewRowChangeEventHandler GetTabulationSheetDataByHeldInIdNewRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetTabulationSheetDataByHeldInIdNewRowChangeEventHandler GetTabulationSheetDataByHeldInIdNewRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddGetTabulationSheetDataByHeldInIdNewRow(GetTabulationSheetDataByHeldInIdNewRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTabulationSheetDataByHeldInIdNewRow AddGetTabulationSheetDataByHeldInIdNewRow(
+                        int ID, 
+                        int StudentID, 
+                        string Roll, 
+                        string FullName, 
+                        string Hall, 
+                        string FormalCode, 
+                        string VersionCode, 
+                        string Title, 
+                        decimal CourseCredit, 
+                        decimal ObtainedTotalMarks, 
+                        string ObtainedGrade, 
+                        decimal ObtainedGPA, 
+                        decimal PointSecured, 
+                        string SessionWithReAdd, 
+                        int ReAddStatus, 
+                        decimal ContinuosAssesment, 
+                        decimal FinalMark, 
+                        decimal TotalPointSecured, 
+                        decimal CreditTaken, 
+                        decimal CreditEarned, 
+                        decimal GPA) {
+                GetTabulationSheetDataByHeldInIdNewRow rowGetTabulationSheetDataByHeldInIdNewRow = ((GetTabulationSheetDataByHeldInIdNewRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID,
+                        StudentID,
+                        Roll,
+                        FullName,
+                        Hall,
+                        FormalCode,
+                        VersionCode,
+                        Title,
+                        CourseCredit,
+                        ObtainedTotalMarks,
+                        ObtainedGrade,
+                        ObtainedGPA,
+                        PointSecured,
+                        SessionWithReAdd,
+                        ReAddStatus,
+                        ContinuosAssesment,
+                        FinalMark,
+                        TotalPointSecured,
+                        CreditTaken,
+                        CreditEarned,
+                        GPA};
+                rowGetTabulationSheetDataByHeldInIdNewRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGetTabulationSheetDataByHeldInIdNewRow);
+                return rowGetTabulationSheetDataByHeldInIdNewRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                GetTabulationSheetDataByHeldInIdNewDataTable cln = ((GetTabulationSheetDataByHeldInIdNewDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new GetTabulationSheetDataByHeldInIdNewDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnStudentID = base.Columns["StudentID"];
+                this.columnRoll = base.Columns["Roll"];
+                this.columnFullName = base.Columns["FullName"];
+                this.columnHall = base.Columns["Hall"];
+                this.columnFormalCode = base.Columns["FormalCode"];
+                this.columnVersionCode = base.Columns["VersionCode"];
+                this.columnTitle = base.Columns["Title"];
+                this.columnCourseCredit = base.Columns["CourseCredit"];
+                this.columnObtainedTotalMarks = base.Columns["ObtainedTotalMarks"];
+                this.columnObtainedGrade = base.Columns["ObtainedGrade"];
+                this.columnObtainedGPA = base.Columns["ObtainedGPA"];
+                this.columnPointSecured = base.Columns["PointSecured"];
+                this.columnSessionWithReAdd = base.Columns["SessionWithReAdd"];
+                this.columnReAddStatus = base.Columns["ReAddStatus"];
+                this.columnContinuosAssesment = base.Columns["ContinuosAssesment"];
+                this.columnFinalMark = base.Columns["FinalMark"];
+                this.columnTotalPointSecured = base.Columns["TotalPointSecured"];
+                this.columnCreditTaken = base.Columns["CreditTaken"];
+                this.columnCreditEarned = base.Columns["CreditEarned"];
+                this.columnGPA = base.Columns["GPA"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnStudentID = new global::System.Data.DataColumn("StudentID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStudentID);
+                this.columnRoll = new global::System.Data.DataColumn("Roll", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoll);
+                this.columnFullName = new global::System.Data.DataColumn("FullName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFullName);
+                this.columnHall = new global::System.Data.DataColumn("Hall", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHall);
+                this.columnFormalCode = new global::System.Data.DataColumn("FormalCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFormalCode);
+                this.columnVersionCode = new global::System.Data.DataColumn("VersionCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVersionCode);
+                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitle);
+                this.columnCourseCredit = new global::System.Data.DataColumn("CourseCredit", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCourseCredit);
+                this.columnObtainedTotalMarks = new global::System.Data.DataColumn("ObtainedTotalMarks", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObtainedTotalMarks);
+                this.columnObtainedGrade = new global::System.Data.DataColumn("ObtainedGrade", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObtainedGrade);
+                this.columnObtainedGPA = new global::System.Data.DataColumn("ObtainedGPA", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObtainedGPA);
+                this.columnPointSecured = new global::System.Data.DataColumn("PointSecured", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPointSecured);
+                this.columnSessionWithReAdd = new global::System.Data.DataColumn("SessionWithReAdd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSessionWithReAdd);
+                this.columnReAddStatus = new global::System.Data.DataColumn("ReAddStatus", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReAddStatus);
+                this.columnContinuosAssesment = new global::System.Data.DataColumn("ContinuosAssesment", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContinuosAssesment);
+                this.columnFinalMark = new global::System.Data.DataColumn("FinalMark", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFinalMark);
+                this.columnTotalPointSecured = new global::System.Data.DataColumn("TotalPointSecured", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalPointSecured);
+                this.columnCreditTaken = new global::System.Data.DataColumn("CreditTaken", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCreditTaken);
+                this.columnCreditEarned = new global::System.Data.DataColumn("CreditEarned", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCreditEarned);
+                this.columnGPA = new global::System.Data.DataColumn("GPA", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGPA);
+                this.columnID.AllowDBNull = false;
+                this.columnStudentID.AllowDBNull = false;
+                this.columnRoll.AllowDBNull = false;
+                this.columnRoll.MaxLength = 2147483647;
+                this.columnFullName.MaxLength = 2147483647;
+                this.columnHall.AllowDBNull = false;
+                this.columnHall.MaxLength = 2147483647;
+                this.columnFormalCode.MaxLength = 50;
+                this.columnVersionCode.MaxLength = 50;
+                this.columnTitle.MaxLength = 150;
+                this.columnCourseCredit.AllowDBNull = false;
+                this.columnObtainedGrade.MaxLength = 2147483647;
+                this.columnSessionWithReAdd.AllowDBNull = false;
+                this.columnSessionWithReAdd.MaxLength = 31;
+                this.columnReAddStatus.AllowDBNull = false;
+                this.columnContinuosAssesment.AllowDBNull = false;
+                this.columnFinalMark.AllowDBNull = false;
+                this.columnTotalPointSecured.AllowDBNull = false;
+                this.columnCreditTaken.AllowDBNull = false;
+                this.columnCreditEarned.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTabulationSheetDataByHeldInIdNewRow NewGetTabulationSheetDataByHeldInIdNewRow() {
+                return ((GetTabulationSheetDataByHeldInIdNewRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new GetTabulationSheetDataByHeldInIdNewRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(GetTabulationSheetDataByHeldInIdNewRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.GetTabulationSheetDataByHeldInIdNewRowChanged != null)) {
+                    this.GetTabulationSheetDataByHeldInIdNewRowChanged(this, new GetTabulationSheetDataByHeldInIdNewRowChangeEvent(((GetTabulationSheetDataByHeldInIdNewRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.GetTabulationSheetDataByHeldInIdNewRowChanging != null)) {
+                    this.GetTabulationSheetDataByHeldInIdNewRowChanging(this, new GetTabulationSheetDataByHeldInIdNewRowChangeEvent(((GetTabulationSheetDataByHeldInIdNewRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.GetTabulationSheetDataByHeldInIdNewRowDeleted != null)) {
+                    this.GetTabulationSheetDataByHeldInIdNewRowDeleted(this, new GetTabulationSheetDataByHeldInIdNewRowChangeEvent(((GetTabulationSheetDataByHeldInIdNewRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.GetTabulationSheetDataByHeldInIdNewRowDeleting != null)) {
+                    this.GetTabulationSheetDataByHeldInIdNewRowDeleting(this, new GetTabulationSheetDataByHeldInIdNewRowChangeEvent(((GetTabulationSheetDataByHeldInIdNewRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveGetTabulationSheetDataByHeldInIdNewRow(GetTabulationSheetDataByHeldInIdNewRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "GetTabulationSheetDataByHeldInIdNewDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class GetAllRegisteredStudentListByHeldInIdRow : global::System.Data.DataRow {
@@ -8514,6 +9117,414 @@ namespace EMS {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class GetTabulationSheetDataByHeldInIdNewRow : global::System.Data.DataRow {
+            
+            private GetTabulationSheetDataByHeldInIdNewDataTable tableGetTabulationSheetDataByHeldInIdNew;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal GetTabulationSheetDataByHeldInIdNewRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableGetTabulationSheetDataByHeldInIdNew = ((GetTabulationSheetDataByHeldInIdNewDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableGetTabulationSheetDataByHeldInIdNew.IDColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int StudentID {
+                get {
+                    return ((int)(this[this.tableGetTabulationSheetDataByHeldInIdNew.StudentIDColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.StudentIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Roll {
+                get {
+                    return ((string)(this[this.tableGetTabulationSheetDataByHeldInIdNew.RollColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.RollColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FullName {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTabulationSheetDataByHeldInIdNew.FullNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FullName\' in table \'GetTabulationSheetDataByHeldInIdNew\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.FullNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Hall {
+                get {
+                    return ((string)(this[this.tableGetTabulationSheetDataByHeldInIdNew.HallColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.HallColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FormalCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTabulationSheetDataByHeldInIdNew.FormalCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FormalCode\' in table \'GetTabulationSheetDataByHeldInIdNew\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.FormalCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VersionCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTabulationSheetDataByHeldInIdNew.VersionCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VersionCode\' in table \'GetTabulationSheetDataByHeldInIdNew\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.VersionCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Title {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTabulationSheetDataByHeldInIdNew.TitleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Title\' in table \'GetTabulationSheetDataByHeldInIdNew\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.TitleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CourseCredit {
+                get {
+                    return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.CourseCreditColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.CourseCreditColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ObtainedTotalMarks {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedTotalMarksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ObtainedTotalMarks\' in table \'GetTabulationSheetDataByHeldI" +
+                                "nIdNew\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedTotalMarksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ObtainedGrade {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedGradeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ObtainedGrade\' in table \'GetTabulationSheetDataByHeldInIdNe" +
+                                "w\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedGradeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ObtainedGPA {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedGPAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ObtainedGPA\' in table \'GetTabulationSheetDataByHeldInIdNew\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedGPAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PointSecured {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.PointSecuredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PointSecured\' in table \'GetTabulationSheetDataByHeldInIdNew" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.PointSecuredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SessionWithReAdd {
+                get {
+                    return ((string)(this[this.tableGetTabulationSheetDataByHeldInIdNew.SessionWithReAddColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.SessionWithReAddColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ReAddStatus {
+                get {
+                    return ((int)(this[this.tableGetTabulationSheetDataByHeldInIdNew.ReAddStatusColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.ReAddStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ContinuosAssesment {
+                get {
+                    return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.ContinuosAssesmentColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.ContinuosAssesmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal FinalMark {
+                get {
+                    return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.FinalMarkColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.FinalMarkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TotalPointSecured {
+                get {
+                    return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.TotalPointSecuredColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.TotalPointSecuredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CreditTaken {
+                get {
+                    return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.CreditTakenColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.CreditTakenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CreditEarned {
+                get {
+                    return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.CreditEarnedColumn]));
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.CreditEarnedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal GPA {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableGetTabulationSheetDataByHeldInIdNew.GPAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GPA\' in table \'GetTabulationSheetDataByHeldInIdNew\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTabulationSheetDataByHeldInIdNew.GPAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFullNameNull() {
+                return this.IsNull(this.tableGetTabulationSheetDataByHeldInIdNew.FullNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFullNameNull() {
+                this[this.tableGetTabulationSheetDataByHeldInIdNew.FullNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFormalCodeNull() {
+                return this.IsNull(this.tableGetTabulationSheetDataByHeldInIdNew.FormalCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFormalCodeNull() {
+                this[this.tableGetTabulationSheetDataByHeldInIdNew.FormalCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVersionCodeNull() {
+                return this.IsNull(this.tableGetTabulationSheetDataByHeldInIdNew.VersionCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVersionCodeNull() {
+                this[this.tableGetTabulationSheetDataByHeldInIdNew.VersionCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTitleNull() {
+                return this.IsNull(this.tableGetTabulationSheetDataByHeldInIdNew.TitleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTitleNull() {
+                this[this.tableGetTabulationSheetDataByHeldInIdNew.TitleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsObtainedTotalMarksNull() {
+                return this.IsNull(this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedTotalMarksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetObtainedTotalMarksNull() {
+                this[this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedTotalMarksColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsObtainedGradeNull() {
+                return this.IsNull(this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedGradeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetObtainedGradeNull() {
+                this[this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedGradeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsObtainedGPANull() {
+                return this.IsNull(this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedGPAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetObtainedGPANull() {
+                this[this.tableGetTabulationSheetDataByHeldInIdNew.ObtainedGPAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPointSecuredNull() {
+                return this.IsNull(this.tableGetTabulationSheetDataByHeldInIdNew.PointSecuredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPointSecuredNull() {
+                this[this.tableGetTabulationSheetDataByHeldInIdNew.PointSecuredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGPANull() {
+                return this.IsNull(this.tableGetTabulationSheetDataByHeldInIdNew.GPAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGPANull() {
+                this[this.tableGetTabulationSheetDataByHeldInIdNew.GPAColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -8839,6 +9850,40 @@ namespace EMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public GetFirstExaminerFinalAssessmentMarkBySectionIdRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class GetTabulationSheetDataByHeldInIdNewRowChangeEvent : global::System.EventArgs {
+            
+            private GetTabulationSheetDataByHeldInIdNewRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTabulationSheetDataByHeldInIdNewRowChangeEvent(GetTabulationSheetDataByHeldInIdNewRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTabulationSheetDataByHeldInIdNewRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -10841,6 +11886,207 @@ namespace EMS.DataSet1TableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             DataSet1.GetFirstExaminerFinalAssessmentMarkBySectionIdDataTable dataTable = new DataSet1.GetFirstExaminerFinalAssessmentMarkBySectionIdDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class GetTabulationSheetDataByHeldInIdNewTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public GetTabulationSheetDataByHeldInIdNewTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "GetTabulationSheetDataByHeldInIdNew";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("StudentID", "StudentID");
+            tableMapping.ColumnMappings.Add("Roll", "Roll");
+            tableMapping.ColumnMappings.Add("FullName", "FullName");
+            tableMapping.ColumnMappings.Add("Hall", "Hall");
+            tableMapping.ColumnMappings.Add("FormalCode", "FormalCode");
+            tableMapping.ColumnMappings.Add("VersionCode", "VersionCode");
+            tableMapping.ColumnMappings.Add("Title", "Title");
+            tableMapping.ColumnMappings.Add("CourseCredit", "CourseCredit");
+            tableMapping.ColumnMappings.Add("ObtainedTotalMarks", "ObtainedTotalMarks");
+            tableMapping.ColumnMappings.Add("ObtainedGrade", "ObtainedGrade");
+            tableMapping.ColumnMappings.Add("ObtainedGPA", "ObtainedGPA");
+            tableMapping.ColumnMappings.Add("PointSecured", "PointSecured");
+            tableMapping.ColumnMappings.Add("SessionWithReAdd", "SessionWithReAdd");
+            tableMapping.ColumnMappings.Add("ReAddStatus", "ReAddStatus");
+            tableMapping.ColumnMappings.Add("ContinuosAssesment", "ContinuosAssesment");
+            tableMapping.ColumnMappings.Add("FinalMark", "FinalMark");
+            tableMapping.ColumnMappings.Add("TotalPointSecured", "TotalPointSecured");
+            tableMapping.ColumnMappings.Add("CreditTaken", "CreditTaken");
+            tableMapping.ColumnMappings.Add("CreditEarned", "CreditEarned");
+            tableMapping.ColumnMappings.Add("GPA", "GPA");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Connection String"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.GetTabulationSheetDataByHeldInIdNew";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HeldInId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.GetTabulationSheetDataByHeldInIdNewDataTable dataTable, global::System.Nullable<int> HeldInId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((HeldInId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(HeldInId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.GetTabulationSheetDataByHeldInIdNewDataTable GetData(global::System.Nullable<int> HeldInId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((HeldInId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(HeldInId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            DataSet1.GetTabulationSheetDataByHeldInIdNewDataTable dataTable = new DataSet1.GetTabulationSheetDataByHeldInIdNewDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
