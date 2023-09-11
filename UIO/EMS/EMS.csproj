@@ -84,11 +84,13 @@
     <Reference Include="DocumentFormat.OpenXml">
       <HintPath>..\..\packages\IMP DLL\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\UCAM\DAL\bin\Debug\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UCAM\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\UCAM\DAL\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UCAM\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="ExcelPackage">
       <HintPath>..\..\packages\IMP DLL\ExcelPackage.dll</HintPath>
@@ -100,7 +102,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\..\BUP_AFFiliated_UCAM\trunk\Trunk\BUP_Affiliated_Master\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <HintPath>..\..\..\..\bup_ucam.git\trunk\MIU_UCAM\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -501,6 +503,8 @@
     <Content Include="Module\result\Report\RptExamResultReport.aspx" />
     <Content Include="Module\result\Report\RptFinalMark.aspx" />
     <Content Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx" />
+    <Content Include="Module\result\Report\RptStudentTabulation.aspx" />
+    <Content Include="Module\result\Report\RptStudentTabulation.js" />
     <Content Include="Module\result\Report\RptTabulationSheet.aspx" />
     <Content Include="Module\result\Report\RptTabulationSheetV2.aspx" />
     <Content Include="Module\result\Report\Test.aspx" />
@@ -1019,6 +1023,13 @@
     </Compile>
     <Compile Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx.designer.cs">
       <DependentUpon>RptFirstSecondAndThirdExaminerMark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\result\Report\RptStudentTabulation.aspx.cs">
+      <DependentUpon>RptStudentTabulation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\result\Report\RptStudentTabulation.aspx.designer.cs">
+      <DependentUpon>RptStudentTabulation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RptTabulationSheet.aspx.cs">
       <DependentUpon>RptTabulationSheet.aspx</DependentUpon>
