@@ -1,7 +1,6 @@
 ﻿$(document).ready(function () {
     $("#ctl00_MainContainer_Button1").click(function () {
         event.preventDefault();
-        $("#btnPrint").show();
         var stdRoll = $("#Text1").val()
         $.ajax({
             type: "POST",
@@ -14,6 +13,8 @@
                 var data = JSON.parse(r.d)
 
                 console.log(data)
+                $("#btnPrint").show();
+
 
                 var studentInfo = data.studentInfo[0];
                 var academicInfo = data.academicInfo;

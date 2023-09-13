@@ -13,22 +13,23 @@
                 border: 1px solid black;
                 height: 1.5rem;
                 width: 1%;
-            }   
-                   
-         .footers td:empty{
-             width:50px;
-         }    
+            }
+
+        .footers td:empty {
+            width: 50px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContainer" runat="server">
     <div class="container-fluid" style="margin-top: 10vh">
+        <h2>Student Tabulation Sheet</h2><br />
         <div class="row">
             <div class="col-4">
                 <span>Student Roll:</span>
                 <input id="Text1" type="text" style="width: 70%" />
             </div>
             <div class="col-4">
-                <asp:Button ID="Button1" runat="server" Text="Button" CssClass="btn-info" />
+                <asp:Button ID="Button1" runat="server" Text="Load" CssClass="btn btn-info" />
             </div>
         </div>
     </div>
@@ -39,6 +40,6 @@
     <br />
 
     <div class="d-flex flex-row-reverse">
-        <button class="btn btn-success" id="btnPrint" onclick="printFunct()" style="display:none">Print</button>
+        <button class="btn btn-success" id="btnPrint" onclick="printFunct()" style="display: none">Print</button>
     </div>
 </asp:Content>
