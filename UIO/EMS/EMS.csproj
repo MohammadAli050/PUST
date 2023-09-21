@@ -497,12 +497,16 @@
     <Content Include="Module\result\FinalExamExaminerResultSubmit.aspx" />
     <Content Include="Module\result\ExamCommitteeDashboard2.aspx" />
     <Content Include="Module\result\MarkEntryRelatedDeadlineSetup.aspx" />
+    <Content Include="Module\result\Report\RptAcademicGradeSheet.aspx" />
+    <Content Include="Module\result\Report\RptAcademicGradeSheet.js" />
     <Content Include="Module\result\Report\RptConsolidatedMarksSheet.aspx" />
     <Content Include="Module\result\Report\RptContinuousAssessment.aspx" />
     <Content Include="Module\result\Report\RPTExamMarkEntry.aspx" />
     <Content Include="Module\result\Report\RptExamResultReport.aspx" />
     <Content Include="Module\result\Report\RptFinalMark.aspx" />
     <Content Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx" />
+    <Content Include="Module\result\Report\RptSemesterResult.aspx" />
+    <Content Include="Module\result\Report\RptSemesterResult.js" />
     <Content Include="Module\result\Report\RptStudentTabulation.aspx" />
     <Content Include="Module\result\Report\RptStudentTabulation.js" />
     <Content Include="Module\result\Report\RptTabulationSheet.aspx" />
@@ -982,6 +986,13 @@
     <Compile Include="Module\result\MarkEntryRelatedDeadlineSetup.aspx.designer.cs">
       <DependentUpon>MarkEntryRelatedDeadlineSetup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Module\result\Report\RptAcademicGradeSheet.aspx.cs">
+      <DependentUpon>RptAcademicGradeSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\result\Report\RptAcademicGradeSheet.aspx.designer.cs">
+      <DependentUpon>RptAcademicGradeSheet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Module\result\Report\RptConsolidatedMarksSheet.aspx.cs">
       <DependentUpon>RptConsolidatedMarksSheet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1023,6 +1034,13 @@
     </Compile>
     <Compile Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx.designer.cs">
       <DependentUpon>RptFirstSecondAndThirdExaminerMark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\result\Report\RptSemesterResult.aspx.cs">
+      <DependentUpon>RptSemesterResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\result\Report\RptSemesterResult.aspx.designer.cs">
+      <DependentUpon>RptSemesterResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RptStudentTabulation.aspx.cs">
       <DependentUpon>RptStudentTabulation.aspx</DependentUpon>

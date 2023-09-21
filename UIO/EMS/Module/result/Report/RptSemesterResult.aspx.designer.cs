@@ -10,7 +10,7 @@
 namespace EMS.Module.result.Report {
     
     
-    public partial class RptStudentTabulation {
+    public partial class RptSemesterResult {
         
         /// <summary>
         /// LoadingImage control.
@@ -49,12 +49,30 @@ namespace EMS.Module.result.Report {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDD;
         
         /// <summary>
-        /// Button1 control.
+        /// ucDepartment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::EMS.UserControls.DepartmentUserControl ucDepartment;
+        
+        /// <summary>
+        /// ucProgram control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UserControl_ProgramUserControl ucProgram;
+        
+        /// <summary>
+        /// ddlHeldIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlHeldIn;
     }
 }

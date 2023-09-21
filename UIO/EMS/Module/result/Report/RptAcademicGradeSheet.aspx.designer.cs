@@ -10,7 +10,7 @@
 namespace EMS.Module.result.Report {
     
     
-    public partial class RptStudentTabulation {
+    public partial class RptAcademicGradeSheet {
         
         /// <summary>
         /// LoadingImage control.
@@ -49,12 +49,21 @@ namespace EMS.Module.result.Report {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDD;
         
         /// <summary>
-        /// Button1 control.
+        /// Text1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox Text1;
+        
+        /// <summary>
+        /// btnLoad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLoad;
     }
 }

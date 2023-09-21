@@ -1234,6 +1234,7 @@ function examControllerSig(year1, year2) {
 
 function printFunct() {
 
+    event.preventDefault();
 
     var element = $("#reportTable").html();
 
@@ -1249,4 +1250,7 @@ function printFunct() {
 
     mywindow.document.write(typeElement)
     mywindow.document.close();
+    mywindow.onload = function () {
+        mywindow.print();
+    };
 }
