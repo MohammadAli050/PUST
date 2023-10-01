@@ -505,6 +505,8 @@
     <Content Include="Module\result\Report\RptExamResultReport.aspx" />
     <Content Include="Module\result\Report\RptFinalMark.aspx" />
     <Content Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx" />
+    <Content Include="Module\result\Report\RptGradeSheetProvisional.aspx" />
+    <Content Include="Module\result\Report\RptGradeSheetProvisional.js" />
     <Content Include="Module\result\Report\RptSemesterResult.aspx" />
     <Content Include="Module\result\Report\RptSemesterResult.js" />
     <Content Include="Module\result\Report\RptStudentTabulation.aspx" />
@@ -1034,6 +1036,13 @@
     </Compile>
     <Compile Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx.designer.cs">
       <DependentUpon>RptFirstSecondAndThirdExaminerMark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\result\Report\RptGradeSheetProvisional.aspx.cs">
+      <DependentUpon>RptGradeSheetProvisional.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\result\Report\RptGradeSheetProvisional.aspx.designer.cs">
+      <DependentUpon>RptGradeSheetProvisional.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\result\Report\RptSemesterResult.aspx.cs">
       <DependentUpon>RptSemesterResult.aspx</DependentUpon>
