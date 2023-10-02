@@ -281,12 +281,12 @@ $(document).ready(function () {
 
         else {
             $('#dept1').val($("#department").val());
-            dept1function($("#department").val(),0)
+            dept1function($("#department").val(), 0)
             $('#dept2').val($("#department").val());
-            dept2function($("#department").val(),0)
+            dept2function($("#department").val(), 0)
 
             $('#dept3').val($("#department").val());
-            dept3function($("#department").val(),0)
+            dept3function($("#department").val(), 0)
 
         }
 
@@ -420,235 +420,232 @@ $(document).ready(function () {
                             $("#tablebody").children().remove();
 
 
-                        var dept = $("#department option:selected").val()
-                        var year = $("#year option:selected").val()
-                        var prog = $("#program option:selected").val()
+                            var dept = $("#department option:selected").val()
+                            var year = $("#year option:selected").val()
+                            var prog = $("#program option:selected").val()
 
-                        var sem = $("#semester option:selected").val()
-                        var shal = $("#exam option:selected").val()
-                        var session = $("#session option:selected").val();
+                            var sem = $("#semester option:selected").val()
+                            var shal = $("#exam option:selected").val()
+                            var session = $("#session option:selected").val();
 
 
-                        //backend load code
-                        var showDsp = showhideUser(RoleId);
-                        examTable(prog, year, sem, shal, session, showDsp);
-
-                        $('#myModal1').modal('toggle');
-                        $('.modal-backdrop').remove();
-                    })
+                            //backend load code
+                            var showDsp = showhideUser(RoleId);
+                            examTable(prog, year, sem, shal, session, showDsp);
+                            $("#myModal1").modal('toggle');
+                            $('.modal-backdrop').remove();
+                        })
                     }
 
-            },
+                },
                 error: function (r) {
                     console.log("error");
                 }
-        })
+            })
         }
-    else {
+        else {
             swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: 'Held In not Selected',
-    footer: 'Choose Held In'
-})
-return;
-}
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Held In not Selected',
+                footer: 'Choose Held In'
+            })
+            return;
+        }
+        showhideUser(RoleId)
+    })
+
+    //add committee bulk save
+    $("#savemodal").click(function () {
+        var deptid1 = $("#dept1 option:selected").val();
+        var deptid2 = $("#dept2 option:selected").val();
+        var deptid3 = $("#dept3 option:selected").val();
+        var deptid4 = $("#dept4 option:selected").val();
+        var chairman = $("#chairman option:selected").val();
+        var mbmone = $("#mbmone option:selected").val();
+        var mbmtwo = $("#mbmtwo option:selected").val();
+        var extmbm = $("#extmbm option:selected").val();
+
+        var relId = $("#hdnRelationID").val();
+        var SetId = $("#hdnSetupID").val();
+        var btnId = $("#hdnbtn").val();
+        var tablerow = $("#newtable tr").length
+        var relationid;
+        var listString = '';
+
+        let SendList = [];
+        if (btnId == 1) {
+            for (i = 0; i < tablerow; i++) {
+                if ($('#checkBox' + i).is(":checked")) {
+
+                    relationid = parseInt($('#checkBox' + i).val())
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "ExamSetupNewVersion.aspx/GetExamCommitteeByRelationId",
+                        data: "{'RelationId':'" + relationid + "' }",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.d != null) {
+                                var parsed = JSON.parse(data.d);
+                                $("#hdnRelationID").val(parsed.HeldInProgramRelationId);
+                                $("#hdnSetupID").val(parsed.ID);
+
+                                var newList = {
+                                    "Id": parsed.ID,
+                                    "HeldInProgramRelationId": parsed.HeldInProgramRelationId,
+                                    "ExamCommitteeChairmanDeptId": deptid1,
+                                    "ExamCommitteeChairmanId": chairman,
+                                    "ExamCommitteeMemberOneDeptId": deptid2,
+                                    "ExamCommitteeMemberOneId": mbmone,
+                                    "ExamCommitteeMemberTwoDeptId": deptid3,
+                                    "ExamCommitteeMemberTwoId": mbmtwo,
+                                    "ExamCommitteeExternalMemberDeptId": 0,
+                                    "ExamCommitteeExternalMemberId": extmbm,
+                                    "IsActive": null,
+                                    "Attribute1": "Attribute",
+                                    "Attribute2": "Attribute",
+                                    "Attribute3": "Attribute",
+                                    "CreatedBy": null,
+                                    "CreatedDate": null,
+                                    "ModifiedBy": null,
+                                    "ModifiedDate": null,
+
+                                }
+
+                                SendList.push(newList);
+
+                                listString = JSON.stringify(SendList);
+
+                                $.ajax({
+                                    type: "POST",
+                                    contentType: "application/json; charset=utf-8",
+                                    url: "ExamSetupNewVersion.aspx/SaveUpdateExamCommittees",
+                                    data: "{'receiveListString':'" + listString + "'}",
+                                    dataType: "json",
+                                    success: function (data) {
+
+                                        $('#dept1').prop('selectedIndex', 0);
+                                        $('#dept2').prop('selectedIndex', 0);
+                                        $('#dept3').prop('selectedIndex', 0);
+                                        $('#dept4').prop('selectedIndex', 0);
+                                        $('#chairman').prop('selectedIndex', 0);
+                                        $('#mbmone').prop('selectedIndex', 0);
+                                        $('#mbmtwo').prop('selectedIndex', 0);
+                                        $('#extmbm').prop('selectedIndex', 0);
+
+                                        $("#tablebody").children().remove();
+
+                                        var dept = $("#department option:selected").val()
+                                        var year = $("#year option:selected").val()
+                                        var prog = $("#program option:selected").val()
+
+                                        var sem = $("#semester option:selected").val()
+                                        var shal = $("#exam option:selected").val()
+                                        var session = $("#session option:selected").val();
 
 
+                                        //backend load code
+                                        var showDsp = showhideUser(RoleId);
+                                        examTable(prog, year, sem, shal, session, showDsp)
 
-})
+                                    },
+                                    error: function (r) {
+                                        console.log("error");
+                                    }
+                                })
 
-//add committee bulk save
-$("#savemodal").click(function () {
-    var deptid1 = $("#dept1 option:selected").val();
-    var deptid2 = $("#dept2 option:selected").val();
-    var deptid3 = $("#dept3 option:selected").val();
-    var deptid4 = $("#dept4 option:selected").val();
-    var chairman = $("#chairman option:selected").val();
-    var mbmone = $("#mbmone option:selected").val();
-    var mbmtwo = $("#mbmtwo option:selected").val();
-    var extmbm = $("#extmbm option:selected").val();
+                                SendList = [];
 
-    var relId = $("#hdnRelationID").val();
-    var SetId = $("#hdnSetupID").val();
-    var btnId = $("#hdnbtn").val();
-    var tablerow = $("#newtable tr").length
-    var relationid;
-    var listString = '';
+                            }
+                            else {
+                                $("#hdnRelationID").val(relationid);
 
-    let SendList = [];
-    if (btnId == 1) {
-        for (i = 0; i < tablerow; i++) {
-            if ($('#checkBox' + i).is(":checked")) {
+                                var newList = {
+                                    "Id": 0,
+                                    "HeldInProgramRelationId": relationid,
+                                    "ExamCommitteeChairmanDeptId": deptid1,
+                                    "ExamCommitteeChairmanId": chairman,
+                                    "ExamCommitteeMemberOneDeptId": deptid2,
+                                    "ExamCommitteeMemberOneId": mbmone,
+                                    "ExamCommitteeMemberTwoDeptId": deptid3,
+                                    "ExamCommitteeMemberTwoId": mbmtwo,
+                                    "ExamCommitteeExternalMemberDeptId": 0,
+                                    "ExamCommitteeExternalMemberId": extmbm,
+                                    "IsActive": null,
+                                    "Attribute1": "Attribute",
+                                    "Attribute2": "Attribute",
+                                    "Attribute3": "Attribute",
+                                    "CreatedBy": null,
+                                    "CreatedDate": null,
+                                    "ModifiedBy": null,
+                                    "ModifiedDate": null,
 
-                relationid = parseInt($('#checkBox' + i).val())
-                $.ajax({
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    url: "ExamSetupNewVersion.aspx/GetExamCommitteeByRelationId",
-                    data: "{'RelationId':'" + relationid + "' }",
-                    dataType: "json",
-                    success: function (data) {
-                        if (data.d != null) {
-                            var parsed = JSON.parse(data.d);
-                            $("#hdnRelationID").val(parsed.HeldInProgramRelationId);
-                            $("#hdnSetupID").val(parsed.ID);
+                                }
 
-                            var newList = {
-                                "Id": parsed.ID,
-                                "HeldInProgramRelationId": parsed.HeldInProgramRelationId,
-                                "ExamCommitteeChairmanDeptId": deptid1,
-                                "ExamCommitteeChairmanId": chairman,
-                                "ExamCommitteeMemberOneDeptId": deptid2,
-                                "ExamCommitteeMemberOneId": mbmone,
-                                "ExamCommitteeMemberTwoDeptId": deptid3,
-                                "ExamCommitteeMemberTwoId": mbmtwo,
-                                "ExamCommitteeExternalMemberDeptId": 0,
-                                "ExamCommitteeExternalMemberId": extmbm,
-                                "IsActive": null,
-                                "Attribute1": "Attribute",
-                                "Attribute2": "Attribute",
-                                "Attribute3": "Attribute",
-                                "CreatedBy": null,
-                                "CreatedDate": null,
-                                "ModifiedBy": null,
-                                "ModifiedDate": null,
+                                SendList.push(newList);
+
+                                listString = JSON.stringify(SendList);
+
+                                $.ajax({
+                                    type: "POST",
+                                    contentType: "application/json; charset=utf-8",
+                                    url: "ExamSetupNewVersion.aspx/SaveUpdateExamCommittees",
+                                    data: "{'receiveListString':'" + listString + "'}",
+                                    dataType: "json",
+                                    success: function (data) {
+
+                                        $('#dept1').prop('selectedIndex', 0);
+                                        $('#dept2').prop('selectedIndex', 0);
+                                        $('#dept3').prop('selectedIndex', 0);
+                                        $('#dept4').prop('selectedIndex', 0);
+                                        $('#chairman').prop('selectedIndex', 0);
+                                        $('#mbmone').prop('selectedIndex', 0);
+                                        $('#mbmtwo').prop('selectedIndex', 0);
+                                        $('#extmbm').prop('selectedIndex', 0);
+
+                                        $("#tablebody").children().remove();
+
+                                        var dept = $("#department option:selected").val()
+                                        var year = $("#year option:selected").val()
+                                        var prog = $("#program option:selected").val()
+
+                                        var sem = $("#semester option:selected").val()
+                                        var shal = $("#exam option:selected").val()
+                                        var session = $("#session option:selected").val();
+
+
+                                        //backend load code
+                                        var showDsp = showhideUser(RoleId);
+                                        examTable(prog, year, sem, shal, session, showDsp)
+                                    },
+                                    error: function (r) {
+                                        console.log("error");
+                                    }
+                                })
+
+                                SendList = [];
+
 
                             }
 
-                            SendList.push(newList);
-
-                            listString = JSON.stringify(SendList);
-
-                            $.ajax({
-                                type: "POST",
-                                contentType: "application/json; charset=utf-8",
-                                url: "ExamSetupNewVersion.aspx/SaveUpdateExamCommittees",
-                                data: "{'receiveListString':'" + listString + "'}",
-                                dataType: "json",
-                                success: function (data) {
-
-                                    $('#dept1').prop('selectedIndex', 0);
-                                    $('#dept2').prop('selectedIndex', 0);
-                                    $('#dept3').prop('selectedIndex', 0);
-                                    $('#dept4').prop('selectedIndex', 0);
-                                    $('#chairman').prop('selectedIndex', 0);
-                                    $('#mbmone').prop('selectedIndex', 0);
-                                    $('#mbmtwo').prop('selectedIndex', 0);
-                                    $('#extmbm').prop('selectedIndex', 0);
-
-                                    $("#tablebody").children().remove();
-
-                                    var dept = $("#department option:selected").val()
-                                    var year = $("#year option:selected").val()
-                                    var prog = $("#program option:selected").val()
-
-                                    var sem = $("#semester option:selected").val()
-                                    var shal = $("#exam option:selected").val()
-                                    var session = $("#session option:selected").val();
-
-
-                                    //backend load code
-                                    var showDsp = showhideUser(RoleId);
-                                    examTable(prog, year, sem, shal, session, showDsp)
-
-                                },
-                                error: function (r) {
-                                    console.log("error");
-                                }
-                            })
-
-                            SendList = [];
-
                         }
-                        else {
-                            $("#hdnRelationID").val(relationid);
-
-                            var newList = {
-                                "Id": 0,
-                                "HeldInProgramRelationId": relationid,
-                                "ExamCommitteeChairmanDeptId": deptid1,
-                                "ExamCommitteeChairmanId": chairman,
-                                "ExamCommitteeMemberOneDeptId": deptid2,
-                                "ExamCommitteeMemberOneId": mbmone,
-                                "ExamCommitteeMemberTwoDeptId": deptid3,
-                                "ExamCommitteeMemberTwoId": mbmtwo,
-                                "ExamCommitteeExternalMemberDeptId": 0,
-                                "ExamCommitteeExternalMemberId": extmbm,
-                                "IsActive": null,
-                                "Attribute1": "Attribute",
-                                "Attribute2": "Attribute",
-                                "Attribute3": "Attribute",
-                                "CreatedBy": null,
-                                "CreatedDate": null,
-                                "ModifiedBy": null,
-                                "ModifiedDate": null,
-
-                            }
-
-                            SendList.push(newList);
-
-                            listString = JSON.stringify(SendList);
-
-                            $.ajax({
-                                type: "POST",
-                                contentType: "application/json; charset=utf-8",
-                                url: "ExamSetupNewVersion.aspx/SaveUpdateExamCommittees",
-                                data: "{'receiveListString':'" + listString + "'}",
-                                dataType: "json",
-                                success: function (data) {
-
-                                    $('#dept1').prop('selectedIndex', 0);
-                                    $('#dept2').prop('selectedIndex', 0);
-                                    $('#dept3').prop('selectedIndex', 0);
-                                    $('#dept4').prop('selectedIndex', 0);
-                                    $('#chairman').prop('selectedIndex', 0);
-                                    $('#mbmone').prop('selectedIndex', 0);
-                                    $('#mbmtwo').prop('selectedIndex', 0);
-                                    $('#extmbm').prop('selectedIndex', 0);
-
-                                    $("#tablebody").children().remove();
-
-                                    var dept = $("#department option:selected").val()
-                                    var year = $("#year option:selected").val()
-                                    var prog = $("#program option:selected").val()
-
-                                    var sem = $("#semester option:selected").val()
-                                    var shal = $("#exam option:selected").val()
-                                    var session = $("#session option:selected").val();
-
-
-                                    //backend load code
-                                    var showDsp = showhideUser(RoleId);
-                                    examTable(prog, year, sem, shal, session, showDsp)
-                                },
-                                error: function (r) {
-                                    console.log("error");
-                                }
-                            })
-
-                            SendList = [];
-
-
+                    })
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'Committee Edited'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $('#myModal').modal('toggle');
+                            $('.modal-backdrop').remove();
                         }
-
-                    }
-                })
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: 'Committee Edited'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $('#myModal').modal('toggle');
-                $('.modal-backdrop').remove();
-            }
-        })
+                    })
                 }
-}
+            }
 
-}
-else {
+        }
+        else {
             var newList = {
                 "Id": SetId,
                 "HeldInProgramRelationId": relId,
@@ -669,70 +666,72 @@ else {
                 "ModifiedBy": null,
                 "ModifiedDate": null,
 
-                }
+            }
             SendList.push(newList);
 
-var listString = JSON.stringify(SendList);
+            var listString = JSON.stringify(SendList);
 
-$.ajax({
-    type: "POST",
-    contentType: "application/json; charset=utf-8",
-    url: "ExamSetupNewVersion.aspx/SaveUpdateExamCommittees",
-    data: "{'receiveListString':'" + listString + "'}",
-    dataType: "json",
-    success: function (data) {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "ExamSetupNewVersion.aspx/SaveUpdateExamCommittees",
+                data: "{'receiveListString':'" + listString + "'}",
+                dataType: "json",
+                success: function (data) {
 
-        $('#dept1').prop('selectedIndex', 0);
-        $('#dept2').prop('selectedIndex', 0);
-        $('#dept3').prop('selectedIndex', 0);
-        $('#dept4').prop('selectedIndex', 0);
-        $('#chairman').prop('selectedIndex', 0);
-        $('#mbmone').prop('selectedIndex', 0);
-        $('#mbmtwo').prop('selectedIndex', 0);
-        $('#extmbm').prop('selectedIndex', 0);
+                    $('#dept1').prop('selectedIndex', 0);
+                    $('#dept2').prop('selectedIndex', 0);
+                    $('#dept3').prop('selectedIndex', 0);
+                    $('#dept4').prop('selectedIndex', 0);
+                    $('#chairman').prop('selectedIndex', 0);
+                    $('#mbmone').prop('selectedIndex', 0);
+                    $('#mbmtwo').prop('selectedIndex', 0);
+                    $('#extmbm').prop('selectedIndex', 0);
 
-        if (data != '') {
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: 'Committee Edited'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $('#myModal').modal('toggle');
-            $('.modal-backdrop').remove();
+                    if (data != '') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: 'Committee Edited'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $('#myModal').modal('toggle');
+                                $('.modal-backdrop').remove();
+                            }
+                        })
+                    }
+
+                    $("#tablebody").children().remove();
+
+
+                    var dept = $("#department option:selected").val()
+                    var year = $("#year option:selected").val()
+                    var prog = $("#program option:selected").val()
+
+                    var sem = $("#semester option:selected").val()
+                    var shal = $("#exam option:selected").val()
+                    var session = $("#session option:selected").val();
+
+
+                    //backend load code
+                    var showDsp = showhideUser(RoleId);
+                    examTable(prog, year, sem, shal, session, showDsp)
+                },
+                error: function (r) {
+                    console.log("error");
+                }
+            })
         }
+        $("#all").prop("checked", false);
+
+        showhideUser(RoleId)
     })
-}
-
-$("#tablebody").children().remove();
-
-
-var dept = $("#department option:selected").val()
-var year = $("#year option:selected").val()
-var prog = $("#program option:selected").val()
-
-var sem = $("#semester option:selected").val()
-var shal = $("#exam option:selected").val()
-var session = $("#session option:selected").val();
-
-
-//backend load code
-var showDsp = showhideUser(RoleId);
-examTable(prog, year, sem, shal, session, showDsp)
-},
-error: function (r) {
-    console.log("error");
-}
-})
-}
-$("#all").prop("checked", false);
-})
 
 
 
-$("#all").click(function () {
-    $('input:checkbox').not(this).prop('checked', this.checked);
-});
+    $("#all").click(function () {
+        $('input:checkbox').not(this).prop('checked', this.checked);
+    });
 
 })
 
@@ -940,7 +939,7 @@ function dept3function(val, val1) {
 function dept4function(val, val1) {
     $('#extmbm').children().remove();
     if (val == 0) {
-        $('#extmbm').prop('disabled',true);
+        $('#extmbm').prop('disabled', true);
     }
     else {
         $('#extmbm').prop('disabled', false);
@@ -1150,78 +1149,78 @@ function deleteFunction(val) {
         if (result.isConfirmed) {
 
             $.ajax({
-        type: "POST",
-    contentType: "application/json; charset=utf-8",
-    url: "ExamSetupNewVersion.aspx/GetExamByRelationId",
-    data: "{'RelationId':'" + val + "' }",
-    dataType: "json",
-    success: function (data) {
-        var parsed = JSON.parse(data.d);
-        let SendList = [];
-        var newList = {
-            "Id": parsed.Id,
-            "ExamHeldInId": parsed.ExamHeldInId,
-            "YearNo": parsed.YearNo,
-            "SemesterNo": parsed.SemesterNo,
-            "ProgramId": parsed.ProgramId,
-            "Remarks": "Remark",
-            "IsActive": false,
-            "IsDeleted": true,
-            "Attribute1": null,
-            "Attribute2": null,
-            "Attribute3": "Attribute",
-            "Attribute4": "Attribute",
-            "Attribute5": "Attribute",
-            "CreatedBy": parsed.CreatedBy,
-            "CreatedDate": parsed.CreatedDate,
-            "ModifiedBy": null,
-            "ModifiedDate": null,
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "ExamSetupNewVersion.aspx/GetExamByRelationId",
+                data: "{'RelationId':'" + val + "' }",
+                dataType: "json",
+                success: function (data) {
+                    var parsed = JSON.parse(data.d);
+                    let SendList = [];
+                    var newList = {
+                        "Id": parsed.Id,
+                        "ExamHeldInId": parsed.ExamHeldInId,
+                        "YearNo": parsed.YearNo,
+                        "SemesterNo": parsed.SemesterNo,
+                        "ProgramId": parsed.ProgramId,
+                        "Remarks": "Remark",
+                        "IsActive": false,
+                        "IsDeleted": true,
+                        "Attribute1": null,
+                        "Attribute2": null,
+                        "Attribute3": "Attribute",
+                        "Attribute4": "Attribute",
+                        "Attribute5": "Attribute",
+                        "CreatedBy": parsed.CreatedBy,
+                        "CreatedDate": parsed.CreatedDate,
+                        "ModifiedBy": null,
+                        "ModifiedDate": null,
+                    }
+
+                    SendList.push(newList);
+
+                    var listString = JSON.stringify(SendList);
+
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "ExamSetupNewVersion.aspx/SaveUpdateHeldInAndProgramRelation",
+                        data: "{'receiveListString':'" + listString + "'}",
+                        dataType: "json",
+                        success: function (data) {
+
+
+                            Swal.fire(
+                                'Deleted!',
+                                'Exam is deleted',
+                                'success'
+                           ).then((result) => {
+                               if (result.isConfirmed) {
+                                   var dept = $("#department option:selected").val()
+                                   var year = $("#year option:selected").val()
+                                   var prog = $("#program option:selected").val()
+
+                                   var sem = $("#semester option:selected").val()
+                                   var shal = $("#exam option:selected").val()
+                                   var session = $("#session option:selected").val();
+                                   var showDsp = showhideUser(RoleId);
+
+                                   //backend load code
+                                   var showDsp = showhideUser(RoleId);
+                                   examTable(prog, year, sem, shal, session, showDsp)
+                               }
+                           })
+
+                        },
+                        error: function (r) {
+                            console.log("error");
+                        }
+                    })
+
+                }
+            })
         }
-
-        SendList.push(newList);
-
-        var listString = JSON.stringify(SendList);
-
-        $.ajax({
-            type: "POST",
-            contentType: "application/json; charset=utf-8",
-            url: "ExamSetupNewVersion.aspx/SaveUpdateHeldInAndProgramRelation",
-            data: "{'receiveListString':'" + listString + "'}",
-            dataType: "json",
-            success: function (data) {
-
-
-                Swal.fire(
-                    'Deleted!',
-                    'Exam is deleted',
-                    'success'
-               ).then((result) => {
-                   if (result.isConfirmed) {
-                       var dept = $("#department option:selected").val()
-                var year = $("#year option:selected").val()
-                var prog = $("#program option:selected").val()
-
-                var sem = $("#semester option:selected").val()
-                var shal = $("#exam option:selected").val()
-                var session = $("#session option:selected").val();
-                var showDsp = showhideUser(RoleId);
-
-                //backend load code
-                var showDsp = showhideUser(RoleId);
-                examTable(prog, year, sem, shal, session, showDsp)
-            }
-        })
-
-    },
-    error: function (r) {
-        console.log("error");
-    }
-})
-
-}
-})
-}
-})
+    })
 
 }
 
@@ -1260,14 +1259,13 @@ function showhideUser(val) {
         $("#addnewcommittee").hide();
         $("#addnew").show();
         dsp = "none";
+        $(".editcombtn").hide();
     }
     else {
         $("#addnewcommittee").show();
         $("#addnew").show();
-        dsp = "block";
+        $(".editcombtn").show();
     }
-
-    return dsp;
 
 }
 
@@ -1298,6 +1296,7 @@ function examTable(prog, year, sem, shal, session, showDsp) {
             else {
 
                 $("#newtable").show();
+                $("#tablebody").children().remove();
                 var relationid
                 var rows = '';
                 var sl = 1;
@@ -1315,23 +1314,25 @@ function examTable(prog, year, sem, shal, session, showDsp) {
                     var MemberTwoName = parsed[i].MemberTwoName; //$(this).find("MemberTwoName").text();
                     var ExternalName = parsed[i].ExternalName; //$(this).find("ExternalName").text();
 
-                    var ChairmanCode=parsed[i].ChairmanCode;
+                    var ChairmanCode = parsed[i].ChairmanCode;
                     var MemberOneCode = parsed[i].MemberOneCode;
-                    var MemberTwoCode = parsed[i].MemberTwoCode; 
+                    var MemberTwoCode = parsed[i].MemberTwoCode;
 
-                    if(ChairmanCode!=null && ChairmanCode!="")
-                        ChairmanName="("+ChairmanCode+")"+ChairmanName;
-                    if(MemberOneCode!=null && MemberOneCode!="")
-                        MemberOneName="("+MemberOneCode+")"+MemberOneName;
-                    if(MemberTwoCode!=null && MemberTwoCode!="")
-                        MemberTwoName="("+MemberTwoCode+")"+MemberTwoName;
+                    if (ChairmanCode != null && ChairmanCode != "")
+                        ChairmanName = "(" + ChairmanCode + ")" + ChairmanName;
+                    if (MemberOneCode != null && MemberOneCode != "")
+                        MemberOneName = "(" + MemberOneCode + ")" + MemberOneName;
+                    if (MemberTwoCode != null && MemberTwoCode != "")
+                        MemberTwoName = "(" + MemberTwoCode + ")" + MemberTwoName;
 
                     editcomval = parsed[i]
 
-                    rows += "<tr><td>" + sl + "</td><td><input type='checkbox' id='checkBox" + sl + "' value='" + parsed[i].RelationId + "' /></td><td><strong>" + programname + "</strong><br/>" + parsed[i].ExamName + "</td><td><strong>Year: </strong>" + yearno + "<br /><strong>Semester: </strong>" + SemesterNo + " <br /><strong>Exam Year: </strong>" + ExamYear + "<br /><strong>Session: </strong>" + ExamSession + "</td><td><strong>Chairman: </strong>" + ChairmanName + "<br /><strong>Member 1: </strong>" + MemberOneName + "<br /><strong>Member 2: </strong>" + MemberTwoName + "<br /><strong>External: </strong>" + ExternalName + "</td><td>" + parsed[i].ChairmanDept + "<br/>" + parsed[i].MemberOneDept + "<br/>" + parsed[i].MemberTwoDept + "<br/>" + parsed[i].ExternalDept + "<br/>" + parsed[i].ExternalDesg + "<br/>" + parsed[i].ExternalUniversity + "</td><td><a href='' class='btn btn-success' data-toggle='modal' data-target='#myModal1' id='editexam" + sl + "' onclick='editexam(" + parsed[i].RelationId + "," + ExamYear + "," + JSON.stringify(ExamSession) + ")' style='width:95%'>Edit Exam</a><br/><a href='' class='btn btn-info' data-toggle='modal' data-target='#myModal' onclick='editcom(" + JSON.stringify(editcomval) + ")' style='margin-top:5px;display: " + showDsp + "'>Edit Committee</a><br/><a href='' class='btn btn-danger' id='deletebtn" + sl + "' onClick='deleteFunction(" + parsed[i].RelationId + ")' style='width: 96%;'>Delete</a></td></tr>";
+                    rows += "<tr><td>" + sl + "</td><td><input type='checkbox' id='checkBox" + sl + "' value='" + parsed[i].RelationId + "' /></td><td><strong>" + programname + "</strong><br/>" + parsed[i].ExamName + "</td><td><strong>Year: </strong>" + yearno + "<br /><strong>Semester: </strong>" + SemesterNo + " <br /><strong>Exam Year: </strong>" + ExamYear + "<br /><strong>Session: </strong>" + ExamSession + "</td><td><strong>Chairman: </strong>" + ChairmanName + "<br /><strong>Member 1: </strong>" + MemberOneName + "<br /><strong>Member 2: </strong>" + MemberTwoName + "<br /><strong>External: </strong>" + ExternalName + "</td><td>" + parsed[i].ChairmanDept + "<br/>" + parsed[i].MemberOneDept + "<br/>" + parsed[i].MemberTwoDept + "<br/>" + parsed[i].ExternalDept + "<br/>" + parsed[i].ExternalDesg + "<br/>" + parsed[i].ExternalUniversity + "</td><td><a href='' class='btn btn-success' data-toggle='modal' data-target='#myModal1' id='editexam" + sl + "' onclick='editexam(" + parsed[i].RelationId + "," + ExamYear + "," + JSON.stringify(ExamSession) + ")' style='width:95%'>Edit Exam</a><br/><a href='' class='btn btn-info editcombtn' data-toggle='modal' data-target='#myModal' onclick='editcom(" + JSON.stringify(editcomval) + ")' style='margin-top:5px;display: none'>Edit Committee</a><br/><a href='' class='btn btn-danger' id='deletebtn" + sl + "' onClick='deleteFunction(" + parsed[i].RelationId + ")' style='width: 96%;'>Delete</a></td></tr>";
 
                     sl = sl + 1;
                 }
+
+                showhideUser(RoleId);
                 $('#tablebody').append(rows);
                 for (i = 1; i <= sl; i++) {
                     if (RoleId == 11) {
