@@ -111,6 +111,17 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                   <td class="td" align="left" style="width: 82px">
+                                        <asp:Label ID="lblSequence" runat="server" Text="Sequnce" ForeColor="#FF6600"></asp:Label>
+                                    </td>
+                                    <td align="left" class="td">
+                                        <asp:TextBox ID="txtSequence" runat="server" Width="345px"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfvSequence" runat="server" 
+                                            ControlToValidate="txtSequence" ErrorMessage="Sequence can not be empty" 
+                                            ToolTip="Sequence can not be empty" ValidationGroup="vgMenu">*</asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td class="td" colspan="2" align="left">
                                         <asp:CheckBox ID="chkSysAdmnAcs" runat="server" ForeColor="#FF6600" 
                                             Text="System Admin Accessible" />

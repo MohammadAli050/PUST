@@ -169,7 +169,8 @@ namespace LogicLayer.DataLogic.SQLRepository
             db.AddInParameter(cmd, "CreatedDate", DbType.DateTime, menu.CreatedDate);
             db.AddInParameter(cmd, "ModifiedBy", DbType.Int32, menu.ModifiedBy);
             db.AddInParameter(cmd, "ModifiedDate", DbType.DateTime, menu.ModifiedDate);
-           
+            db.AddInParameter(cmd, "Sequence", DbType.Int32, menu.Sequence);
+
             return db;
         }
 
@@ -186,6 +187,7 @@ namespace LogicLayer.DataLogic.SQLRepository
             .Map(m => m.CreatedDate).ToColumn("CreatedDate")
             .Map(m => m.ModifiedBy).ToColumn("ModifiedBy")
             .Map(m => m.ModifiedDate).ToColumn("ModifiedDate")
+            .Map(m => m.Sequence).ToColumn("Sequence")
             
             .Build();
 

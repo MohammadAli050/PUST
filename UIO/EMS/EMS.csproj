@@ -460,6 +460,7 @@
     <Content Include="Module\admin\StudentReAdmission.aspx" />
     <Content Include="Module\admin\TabulatorSetup.aspx" />
     <Content Include="Module\admin\TeacherManagement.aspx" />
+    <Content Include="Module\admin\TestWebPage.aspx" />
     <Content Include="Module\admin\User.aspx" />
     <Content Include="Module\admin\UserControl.aspx" />
     <Content Include="Module\admin\UserControlForUVuser.aspx" />
@@ -722,6 +723,13 @@
     </Compile>
     <Compile Include="Module\admin\TeacherManagement.aspx.designer.cs">
       <DependentUpon>TeacherManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\admin\TestWebPage.aspx.cs">
+      <DependentUpon>TestWebPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\admin\TestWebPage.aspx.designer.cs">
+      <DependentUpon>TestWebPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\admin\User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>

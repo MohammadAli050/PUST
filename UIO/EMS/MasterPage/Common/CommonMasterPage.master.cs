@@ -115,7 +115,8 @@ public partial class CommonMasterPage : BaseMasterPage
     {
         if (menuList != null && menuList.Count > 0)
         {
-            menuList = menuList.OrderBy(m => m.Name).ToList();
+            //menuList = menuList.OrderBy(m => m.Name).ToList();
+            menuList = menuList.OrderBy(m => m.Sequence).ToList();
 
             foreach (LogicLayer.BusinessObjects.Menu menu in menuList)
             {

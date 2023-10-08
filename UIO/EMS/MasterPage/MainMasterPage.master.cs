@@ -76,7 +76,9 @@ public partial class MainMasterPage : BaseMasterPage
         menuList = menuList.Where(x => x.Menu_ID != 356 && x.Menu_ID != 437).ToList();
         if (menuList != null && menuList.Count > 0)
         {
-            menuList = menuList.OrderBy(m => m.Name).ToList();
+            //menuList = menuList.OrderBy(m => m.Name).ToList();
+            menuList = menuList.OrderBy(m => m.Sequence).ToList();
+
 
             foreach (LogicLayer.BusinessObjects.Menu menu in menuList)
             {

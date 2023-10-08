@@ -59,6 +59,7 @@ public partial class Admin_Menu : BasePage
 
         txtName.Text = menu.Name;
         txtURL.Text = menu.URL;
+        txtSequence.Text = menu.Sequence.ToString();
         chkSysAdmnAcs.Checked = menu.IsSysAdminAccesible;
 
         if (base.IsSessionVariableExists(SESSIONMENU))
@@ -134,7 +135,7 @@ public partial class Admin_Menu : BasePage
                 {
                     parentNode.ChildNodes.Add(node);
                 }
-            } 
+            }
         }
     }
     private void ChangeTreeSelection(TreeNode parentNode, string selectionValue)
@@ -186,7 +187,7 @@ public partial class Admin_Menu : BasePage
             //{
             //    Response.Redirect("~/Security/Login.aspx");
             //}
-                
+
             if (!IsPostBack)
             {
                 LoadRoot();
@@ -311,19 +312,20 @@ public partial class Admin_Menu : BasePage
             TreeNode node = new TreeNode();
 
 
-            if (menu.Parent!= null)
+            if (menu.Parent != null)
             {
                 if (chkSysAdmnAcs.Checked && !menu.Parent.IsSysAdminAccesible)
                 {
                     Utilities.ShowMassage(this.lblErr, Color.Blue, "Please make parent Sys Admin Accesible first.");
                     return;
-                } 
+                }
             }
 
             menu.Name = txtName.Text;
             //menu.MenuKey = txtMenuKey.Text;
             menu.URL = txtURL.Text;
             menu.IsSysAdminAccesible = chkSysAdmnAcs.Checked;
+            menu.Sequence = Convert.ToInt32(txtSequence.Text);
 
             bool isNew = false;
             if (menu.Id == 0)
@@ -403,6 +405,6 @@ public partial class Admin_Menu : BasePage
         {
             Utilities.ShowMassage(this.lblErr, Color.Red, Ex.Message);
         }
-    } 
+    }
     #endregion
 }

@@ -19,5 +19,6 @@ namespace LogicLayer.BusinessObjects
         public DateTime CreatedDate { get; set; }
         public int ModifiedBy { get; set; }
         public Nullable<DateTime> ModifiedDate { get; set; }
+        public int Sequence { get; set; }
     }
 }
