@@ -28,11 +28,11 @@ namespace EMS.Module.result.Report
                 divDD.Visible = true;
                 try
                 {
-                    if (Request.QueryString["d"].ToString() != "")
+                    if (Request.QueryString.AllKeys.Contains("d") == true)
                     {
-                        if (Request.QueryString["p"].ToString() != "")
+                        if (Request.QueryString.AllKeys.Contains("p") == true)
                         {
-                            if (Request.QueryString["h"].ToString() != "")
+                            if (Request.QueryString.AllKeys.Contains("h") == true)
                             {
                                 int departmentId = Convert.ToInt32(Request.QueryString["d"].ToString());
                                 ucDepartment.SelectedValue(departmentId);
