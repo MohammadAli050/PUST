@@ -74,7 +74,6 @@
     <Compile Include="BusinessLogic\ExamMarkDetailsManager.cs" />
     <Compile Include="BusinessLogic\ExamMarkEquationColumnOrderManager.cs" />
     <Compile Include="BusinessLogic\ExamMarkFirstSecondThirdExaminerManager.cs" />
-    <Compile Include="BusinessLogic\ExamMarkManager.cs" />
     <Compile Include="BusinessLogic\ExamMarkMasterManager.cs" />
     <Compile Include="BusinessLogic\ExamMarkQuestionManager.cs" />
     <Compile Include="BusinessLogic\ExamMarkSubmissionDateManager.cs" />
