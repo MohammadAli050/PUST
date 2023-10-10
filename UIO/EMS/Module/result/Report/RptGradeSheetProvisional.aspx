@@ -79,7 +79,7 @@
 
     <div class="row">
         <div class="col-sm-12" style="font-size: 12pt; margin-top: 10pt;">
-            <label><b style="color: black; font-size: 26px">Semester Result Sheet</b></label>
+            <label><b style="color: black; font-size: 26px">Provisional GradeSheet</b></label>
         </div>
     </div>
     <div id="divProgress" style="display: none; z-index: 100000000; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
@@ -96,18 +96,18 @@
             <div class="card" runat="server" id="divDD">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                             <b>Choose Department</b>
                             <br />
                             <uc1:DepartmentUserControl runat="server" ID="ucDepartment" OnDepartmentSelectedIndexChanged="ucDepartment_DepartmentSelectedIndexChanged" />
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                             <b>Choose Program</b>
                             <br />
                             <uc1:ProgramUserControl runat="server" ID="ucProgram" OnProgramSelectedIndexChanged="ucProgram_ProgramSelectedIndexChanged" />
                             <%--="ucProgram_ProgramSelectedIndexChanged"--%>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                             <script type="text/javascript">
                                 Sys.Application.add_load(initdropdown);
                             </script>
@@ -115,12 +115,16 @@
                             <br />
                             <asp:DropDownList ID="ddlHeldIn" runat="server" CssClass="form-control" AutoPostBack="true"></asp:DropDownList>
                             <%--OnSelectedIndexChanged="ddlHeldIn_SelectedIndexChanged"--%>
-                        </div>
+                        </div>                        
+                    </div>
+                    <br />
+                    <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-3">
-                            <input type="text" id="rollInput" placeholder="Input Roll" />
+                            <b>Input Roll</b>
+                            <br />
+                            <input type="text" class="form-control" id="rollInput" placeholder="Input Roll" />
                         </div>
                     </div>
-
                     <div class="row" style="margin-top: 10px">
 
                         <div class="col-lg-3 col-md-3 col-sm-3">

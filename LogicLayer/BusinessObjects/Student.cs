@@ -75,6 +75,13 @@ namespace LogicLayer.BusinessObjects
                 return BasicInfo.FullName;
             }
         }
+        public string FatherName
+        {
+            get
+            {
+                return BasicInfo.FatherName;
+            }
+        }
         public Batch Batch
         {
             get

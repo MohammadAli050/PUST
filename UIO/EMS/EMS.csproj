@@ -108,6 +108,9 @@
       <Private>True</Private>
       <HintPath>..\..\UCAM\packages\Microsoft.SqlServer.Types.11.0.0\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\..\..\bup_ucam.git\trunk\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.dll</HintPath>
@@ -460,7 +463,6 @@
     <Content Include="Module\admin\StudentReAdmission.aspx" />
     <Content Include="Module\admin\TabulatorSetup.aspx" />
     <Content Include="Module\admin\TeacherManagement.aspx" />
-    <Content Include="Module\admin\TestWebPage.aspx" />
     <Content Include="Module\admin\User.aspx" />
     <Content Include="Module\admin\UserControl.aspx" />
     <Content Include="Module\admin\UserControlForUVuser.aspx" />
@@ -499,12 +501,14 @@
     <Content Include="Module\result\ExamCommitteeDashboard2.aspx" />
     <Content Include="Module\result\MarkEntryRelatedDeadlineSetup.aspx" />
     <Content Include="Module\result\Report\RptAcademicGradeSheet.aspx" />
+    <Content Include="Module\result\Report\RptFinalTableCGPAWise.aspx" />
     <Content Include="Module\result\Report\RptAcademicGradeSheet.js" />
     <Content Include="Module\result\Report\RptConsolidatedMarksSheet.aspx" />
     <Content Include="Module\result\Report\RptContinuousAssessment.aspx" />
     <Content Include="Module\result\Report\RPTExamMarkEntry.aspx" />
     <Content Include="Module\result\Report\RptExamResultReport.aspx" />
     <Content Include="Module\result\Report\RptFinalMark.aspx" />
+    <Content Include="Module\result\Report\RptFinalTableCGPAWise.js" />
     <Content Include="Module\result\Report\RptFirstSecondAndThirdExaminerMark.aspx" />
     <Content Include="Module\result\Report\RptGradeSheetProvisional.aspx" />
     <Content Include="Module\result\Report\RptGradeSheetProvisional.js" />
@@ -525,6 +529,7 @@
     <Content Include="Module\student\Report\RptStudentList.aspx" />
     <Content Include="Module\student\Result\ResultProcess.aspx" />
     <Content Include="Module\student\Result\ResultSheet.aspx" />
+    <Content Include="Module\student\RptStudentGradeProcess.aspx" />
     <Content Include="Module\student\RptStudentApplicationForm.aspx" />
     <Content Include="Module\student\StudentApplicationForm.aspx" />
     <Content Include="Module\student\StudentExcelUpload.aspx" />
@@ -724,13 +729,6 @@
     <Compile Include="Module\admin\TeacherManagement.aspx.designer.cs">
       <DependentUpon>TeacherManagement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Module\admin\TestWebPage.aspx.cs">
-      <DependentUpon>TestWebPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Module\admin\TestWebPage.aspx.designer.cs">
-      <DependentUpon>TestWebPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Module\admin\User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -827,6 +825,7 @@
     <Compile Include="Module\CommonMethodForChekingRoleExistsInApprovalMatrix.cs" />
     <Compile Include="Module\CommonMethodForFacultyDepartmentProgramBatch.cs" />
     <Compile Include="Module\CommonMethodsForGetHeldIn.cs" />
+    <Compile Include="Module\CommonMethodsForResultPublishAndProcess.cs" />
     <Compile Include="Module\FormFillUp\FormFillUpApplicationManage.aspx.cs">
       <DependentUpon>FormFillUpApplicationManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1003,6 +1002,13 @@
     <Compile Include="Module\result\Report\RptAcademicGradeSheet.aspx.designer.cs">
       <DependentUpon>RptAcademicGradeSheet.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Module\result\Report\RptFinalTableCGPAWise.aspx.cs">
+      <DependentUpon>RptFinalTableCGPAWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\result\Report\RptFinalTableCGPAWise.aspx.designer.cs">
+      <DependentUpon>RptFinalTableCGPAWise.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Module\result\Report\RptConsolidatedMarksSheet.aspx.cs">
       <DependentUpon>RptConsolidatedMarksSheet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1149,6 +1155,13 @@
     </Compile>
     <Compile Include="Module\student\Result\ResultSheet.aspx.designer.cs">
       <DependentUpon>ResultSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\student\RptStudentGradeProcess.aspx.cs">
+      <DependentUpon>RptStudentGradeProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\student\RptStudentGradeProcess.aspx.designer.cs">
+      <DependentUpon>RptStudentGradeProcess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\RptStudentApplicationForm.aspx.cs">
       <DependentUpon>RptStudentApplicationForm.aspx</DependentUpon>
