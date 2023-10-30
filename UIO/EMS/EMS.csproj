@@ -532,6 +532,7 @@
     <Content Include="Module\student\RptStudentGradeProcess.aspx" />
     <Content Include="Module\student\RptStudentApplicationForm.aspx" />
     <Content Include="Module\student\StudentApplicationForm.aspx" />
+    <Content Include="Module\student\StudentAttendancePercentageSetup.aspx" />
     <Content Include="Module\student\StudentExcelUpload.aspx" />
     <Content Include="Module\student\StudentInformationMigration.aspx" />
     <Content Include="Module\student\StudentManagementNewVersion.aspx" />
@@ -1176,6 +1177,13 @@
     </Compile>
     <Compile Include="Module\student\StudentApplicationForm.aspx.designer.cs">
       <DependentUpon>StudentApplicationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Module\student\StudentAttendancePercentageSetup.aspx.cs">
+      <DependentUpon>StudentAttendancePercentageSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Module\student\StudentAttendancePercentageSetup.aspx.designer.cs">
+      <DependentUpon>StudentAttendancePercentageSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\student\StudentExcelUpload.aspx.cs">
       <DependentUpon>StudentExcelUpload.aspx</DependentUpon>

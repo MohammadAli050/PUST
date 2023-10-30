@@ -119,6 +119,7 @@
     <Compile Include="BusinessLogic\ShareProgramInSectionManager.cs" />
     <Compile Include="BusinessLogic\StudentAdditionalInfoManager.cs" />
     <Compile Include="BusinessLogic\StudentApplicationFormManager.cs" />
+    <Compile Include="BusinessLogic\StudentAttendancePercentageStatusManager.cs" />
     <Compile Include="BusinessLogic\StudentCourseHistoryManager.cs" />
     <Compile Include="BusinessLogic\StudentManager.cs" />
     <Compile Include="BusinessLogic\TimeSlotPlanManager.cs" />
@@ -257,6 +258,7 @@
     <Compile Include="BusinessObjects\ShareProgramInSection.cs" />
     <Compile Include="BusinessObjects\Student.cs" />
     <Compile Include="BusinessObjects\StudentAdditionalInfo.cs" />
+    <Compile Include="BusinessObjects\StudentAttendancePercentageStatus.cs" />
     <Compile Include="BusinessObjects\StudentCourseHistory.cs" />
     <Compile Include="BusinessObjects\StudentMigrationObj.cs" />
     <Compile Include="BusinessObjects\StudentsCourseMarks.cs" />
@@ -380,6 +382,7 @@
     <Compile Include="DataLogic\IRepository\IVNodeSetRepository.cs" />
     <Compile Include="DataLogic\IRepository\IYearRepository.cs" />
     <Compile Include="DataLogic\IRepository\IYearSectionRepository.cs" />
+    <Compile Include="DataLogic\IRepository\IStudentAttendancePercentageStatusRepository.cs" />
     <Compile Include="DataLogic\SQLRepository\SQLAcademicCalenderRepository.cs" />
     <Compile Include="DataLogic\DAFactory\RepositoryManager.cs" />
     <Compile Include="DataLogic\SQLRepository\SQLAcademicCalenderSectionRepository.cs" />
@@ -452,6 +455,7 @@
     <Compile Include="DataLogic\SQLRepository\SQLShareProgramInSectionRepository.cs" />
     <Compile Include="DataLogic\SQLRepository\SqlStudentAdditionalInfoRepository.cs" />
     <Compile Include="DataLogic\SQLRepository\SQLStudentApplicationFormRepository.cs" />
+    <Compile Include="DataLogic\SQLRepository\SqlStudentAttendancePercentageStatusRepository.cs" />
     <Compile Include="DataLogic\SQLRepository\SQLStudentCourseHistoryRepository.cs" />
     <Compile Include="DataLogic\SQLRepository\SQLStudentRepository.cs" />
     <Compile Include="DataLogic\SQLRepository\SQLTimeSlotPlanRepository.cs" />

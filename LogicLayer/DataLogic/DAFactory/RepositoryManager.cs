@@ -820,5 +820,14 @@ namespace LogicLayer.DataLogic.DAFactory
             }
         }
 
+        public static IStudentAttendancePercentageStatusRepository StudentAttendancePercentageStatus_Repository
+        {
+            get
+            {
+                IStudentAttendancePercentageStatusRepository repository = new SqlStudentAttendancePercentageStatusRepository();
+                return repository;
+            }
+        }
+
     }
 }
