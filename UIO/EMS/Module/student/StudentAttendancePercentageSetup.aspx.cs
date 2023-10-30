@@ -105,8 +105,8 @@ namespace EMS.Module.student
                 ucProgram.LoadDropdownByDepartmentId(departmentId);
                 LoadHeldInInformation();
                 //ClearReportView();
-                //gvStudentList.DataSource = null;
-                //gvStudentList.DataBind();
+                gvStudentList.DataSource = null;
+                gvStudentList.DataBind();
             }
             catch (Exception)
             {
@@ -119,8 +119,8 @@ namespace EMS.Module.student
             {
                 LoadCourse();
                 LoadHeldInInformation();
-                //gvStudentList.DataSource = null;
-                //gvStudentList.DataBind();
+                gvStudentList.DataSource = null;
+                gvStudentList.DataBind();
                 //ClearReportView();
             }
             catch (Exception ex)
@@ -132,15 +132,15 @@ namespace EMS.Module.student
         {
             LoadCourse();
             //ClearReportView();
-            //gvStudentList.DataSource = null;
-            //gvStudentList.DataBind();
+            gvStudentList.DataSource = null;
+            gvStudentList.DataBind();
         }
 
         protected void ddlCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
             //ClearReportView();
-            //gvStudentList.DataSource = null;
-            //gvStudentList.DataBind();
+            gvStudentList.DataSource = null;
+            gvStudentList.DataBind();
         }
 
         //private void ClearReportView()
@@ -237,8 +237,8 @@ namespace EMS.Module.student
                 {
 
                 }
-                //gvStudentList.DataSource = null;
-                //gvStudentList.DataBind();
+                gvStudentList.DataSource = null;
+                gvStudentList.DataBind();
             }
             catch { }
         }
