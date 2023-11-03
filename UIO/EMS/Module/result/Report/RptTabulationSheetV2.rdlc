@@ -1540,7 +1540,6 @@
                             </Border>
                           </Style>
                         </Rectangle>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1917,7 +1916,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Sum(Fields!TotalPointSecured.Value)</Value>
+                                                    <Value>=Fields!TotalPointSecured.Value</Value>
                                                     <Style />
                                                   </TextRun>
                                                 </TextRuns>
@@ -1949,7 +1948,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Sum(Fields!CreditEarned.Value)</Value>
+                                                    <Value>=Fields!CreditEarned.Value</Value>
                                                     <Style />
                                                   </TextRun>
                                                 </TextRuns>
@@ -2019,7 +2018,9 @@
                                                     <Style />
                                                   </TextRun>
                                                 </TextRuns>
-                                                <Style />
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
                                               </Paragraph>
                                             </Paragraphs>
                                             <rd:DefaultName>Textbox28</rd:DefaultName>
@@ -2034,6 +2035,7 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                     </TablixCells>
@@ -2342,7 +2344,9 @@
                                                     <Style />
                                                   </TextRun>
                                                 </TextRuns>
-                                                <Style />
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
                                               </Paragraph>
                                             </Paragraphs>
                                             <rd:DefaultName>Textbox49</rd:DefaultName>
@@ -2646,7 +2650,7 @@
                                             <Paragraph>
                                               <TextRuns>
                                                 <TextRun>
-                                                  <Value>Total Cr. hrs.</Value>
+                                                  <Value>Total Point Secured</Value>
                                                   <Style>
                                                     <FontWeight>Bold</FontWeight>
                                                   </Style>
@@ -2882,7 +2886,7 @@
                               <DataSetName>DataSet1</DataSetName>
                               <Top>0.04688in</Top>
                               <Height>2.65624in</Height>
-                              <Width>8.6979in</Width>
+                              <Width>8.69791in</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>

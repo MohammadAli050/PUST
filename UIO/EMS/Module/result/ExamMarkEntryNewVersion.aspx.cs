@@ -1952,7 +1952,7 @@ namespace EMS.Module.result
                                 }
 
                                 #region Check If Third Examiner Is Required Then No need to do Final Submit. Else Need To Transfer Average Mark Into Exammark Details Table and do Final Submit
-                                if (StudentHasDiffGreaterThan20 > 0) // This section will go for third examiner. So do not need to do anything
+                                if (StudentHasDiffGreaterThan20 >= 0) // This section will go for third examiner. So do not need to do anything
                                 {
                                     IsFinalSubmit = false;
                                 }
