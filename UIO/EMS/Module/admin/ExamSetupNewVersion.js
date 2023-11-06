@@ -81,49 +81,51 @@ $(document).ready(function () {
                 $("#dept1").append($("<option></option>").val(parsed[i].DeptID).html(parsed[i].DetailedName));
                 $("#dept2").append($("<option></option>").val(parsed[i].DeptID).html(parsed[i].DetailedName));
                 $("#dept3").append($("<option></option>").val(parsed[i].DeptID).html(parsed[i].DetailedName));
+                $("#dept4").append($("<option></option>").val(parsed[i].DeptID).html(parsed[i].DetailedName));
+                $("#dept7").append($("<option></option>").val(parsed[i].DeptID).html(parsed[i].DetailedName));
             }
         }
 
     });
 
 
-    $.ajax({
-        type: "POST",
-        contentType: "application/json; charset=utf-8",
-        url: "ExamSetupNewVersion.aspx/GetExternalDept",
-        data: "{'abc':'" + Number(0) + "' }",
-        dataType: "json",
-        success: function (data) {
-            var parsed = JSON.parse(data.d)
-            //console.log(parsed)
-            for (i = 0; i < parsed.length; i++) {
-                $("#dept4").append($("<option></option>").val(parsed[i]).html(parsed[i]));
-            }
-        },
-        error: function (r) {
-            console.log(r.d)
-        }
-    })
+    //$.ajax({
+    //    type: "POST",
+    //    contentType: "application/json; charset=utf-8",
+    //    url: "ExamSetupNewVersion.aspx/GetExternalDept",
+    //    data: "{'abc':'" + Number(0) + "' }",
+    //    dataType: "json",
+    //    success: function (data) {
+    //        var parsed = JSON.parse(data.d)
+    //        //console.log(parsed)
+    //        for (i = 0; i < parsed.length; i++) {
+    //            $("#dept4").append($("<option></option>").val(parsed[i]).html(parsed[i]));
+    //        }
+    //    },
+    //    error: function (r) {
+    //        console.log(r.d)
+    //    }
+    //})
 
-    //External Call ID
-    $.ajax({
-        type: "POST",
-        contentType: "application/json; charset=utf-8",
-        url: "ExamSetupNewVersion.aspx/GetExternalFacultyByDeptId",
-        data: "{'Dept':'" + Number(0) + "' }",
-        dataType: "json",
-        success: function (data) {
+    ////External Call ID
+    //$.ajax({
+    //    type: "POST",
+    //    contentType: "application/json; charset=utf-8",
+    //    url: "ExamSetupNewVersion.aspx/GetExternalFacultyByDeptId",
+    //    data: "{'Dept':'" + Number(0) + "' }",
+    //    dataType: "json",
+    //    success: function (data) {
 
-            var parsed = JSON.parse(data.d);
-            //console.log(parsed)            
-            for (i = 0; i < parsed.length; i++) {
-                $("#extmbm").append('<option value="0" selected="selected">Select</option>')
-                $("#extmbm").append($("<option></option>").val(parsed[i].ExternalId).html(parsed[i].Name));
+    //        var parsed = JSON.parse(data.d);
+    //        //console.log(parsed)            
+    //        for (i = 0; i < parsed.length; i++) {
+    //            $("#extmbm").append('<option value="0" selected="selected">Select</option>')
+    //            $("#extmbm").append($("<option></option>").val(parsed[i].ExternalId).html(parsed[i].Name));
 
-            }
-        }
+    //        }
+    //    }
 
-    });
+    //});
 
 
     //Year list api call
@@ -266,16 +268,19 @@ $(document).ready(function () {
         $("#chairman").children().remove();
         $("#mbmone").children().remove();
         $("#mbmtwo").children().remove();
+        $("#mbmthree").children().remove();
         $("#extmbm").children().remove();
 
         if ($("#department").val() == "0") {
             $('#dept1').prop('selectedIndex', 0);
             $('#dept2').prop('selectedIndex', 0);
             $('#dept3').prop('selectedIndex', 0);
+            $('#dept7').prop('selectedIndex', 0);
             $('#dept4').prop('selectedIndex', 0);
             $('#chairman').prop('selectedIndex', 0);
             $('#mbmone').prop('selectedIndex', 0);
             $('#mbmtwo').prop('selectedIndex', 0);
+            $('#mbmthree').prop('selectedIndex', 0);
             $('#extmbm').prop('selectedIndex', 0);
         }
 
@@ -288,6 +293,9 @@ $(document).ready(function () {
             $('#dept3').val($("#department").val());
             dept3function($("#department").val(), 0)
 
+            $('#dept7').val($("#department").val());
+            dept7function($("#department").val(), 0)
+
         }
 
 
@@ -296,6 +304,7 @@ $(document).ready(function () {
         $('#chairman').append('<option value="0" selected="selected">Select</option>');
         $('#mbmone').append('<option value="0" selected="selected">Select</option>');
         $('#mbmtwo').append('<option value="0" selected="selected">Select</option>');
+        $('#mbmthree').append('<option value="0" selected="selected">Select</option>');
         $('#extmbm').append('<option value="0" selected="selected">Select</option>');
 
     })
@@ -460,10 +469,12 @@ $(document).ready(function () {
         var deptid1 = $("#dept1 option:selected").val();
         var deptid2 = $("#dept2 option:selected").val();
         var deptid3 = $("#dept3 option:selected").val();
+        var deptid7 = $("#dept7 option:selected").val();
         var deptid4 = $("#dept4 option:selected").val();
         var chairman = $("#chairman option:selected").val();
         var mbmone = $("#mbmone option:selected").val();
         var mbmtwo = $("#mbmtwo option:selected").val();
+        var mbmthree = $("#mbmthree option:selected").val();
         var extmbm = $("#extmbm option:selected").val();
 
         var relId = $("#hdnRelationID").val();
@@ -500,6 +511,8 @@ $(document).ready(function () {
                                     "ExamCommitteeMemberOneId": mbmone,
                                     "ExamCommitteeMemberTwoDeptId": deptid3,
                                     "ExamCommitteeMemberTwoId": mbmtwo,
+                                    "ExamCommitteeMemberThreeDeptId":deptid7,
+                                    "ExamCommitteeMemberThreeId":mbmthree,
                                     "ExamCommitteeExternalMemberDeptId": 0,
                                     "ExamCommitteeExternalMemberId": extmbm,
                                     "IsActive": null,
@@ -528,10 +541,12 @@ $(document).ready(function () {
                                         $('#dept1').prop('selectedIndex', 0);
                                         $('#dept2').prop('selectedIndex', 0);
                                         $('#dept3').prop('selectedIndex', 0);
+                                        $('#dept7').prop('selectedIndex', 0);
                                         $('#dept4').prop('selectedIndex', 0);
                                         $('#chairman').prop('selectedIndex', 0);
                                         $('#mbmone').prop('selectedIndex', 0);
                                         $('#mbmtwo').prop('selectedIndex', 0);
+                                        $('#mbmthree').prop('selectedIndex', 0);
                                         $('#extmbm').prop('selectedIndex', 0);
 
                                         $("#tablebody").children().remove();
@@ -570,6 +585,8 @@ $(document).ready(function () {
                                     "ExamCommitteeMemberOneId": mbmone,
                                     "ExamCommitteeMemberTwoDeptId": deptid3,
                                     "ExamCommitteeMemberTwoId": mbmtwo,
+                                    "ExamCommitteeMemberThreeDeptId":deptid7,
+                                    "ExamCommitteeMemberThreeId":mbmthree,
                                     "ExamCommitteeExternalMemberDeptId": 0,
                                     "ExamCommitteeExternalMemberId": extmbm,
                                     "IsActive": null,
@@ -598,10 +615,12 @@ $(document).ready(function () {
                                         $('#dept1').prop('selectedIndex', 0);
                                         $('#dept2').prop('selectedIndex', 0);
                                         $('#dept3').prop('selectedIndex', 0);
+                                        $('#dept7').prop('selectedIndex', 0);
                                         $('#dept4').prop('selectedIndex', 0);
                                         $('#chairman').prop('selectedIndex', 0);
                                         $('#mbmone').prop('selectedIndex', 0);
                                         $('#mbmtwo').prop('selectedIndex', 0);
+                                        $('#mbmthree').prop('selectedIndex', 0);
                                         $('#extmbm').prop('selectedIndex', 0);
 
                                         $("#tablebody").children().remove();
@@ -655,6 +674,8 @@ $(document).ready(function () {
                 "ExamCommitteeMemberOneId": mbmone,
                 "ExamCommitteeMemberTwoDeptId": deptid3,
                 "ExamCommitteeMemberTwoId": mbmtwo,
+                "ExamCommitteeMemberThreeDeptId":deptid7,
+                "ExamCommitteeMemberThreeId":mbmthree,
                 "ExamCommitteeExternalMemberDeptId": 0,
                 "ExamCommitteeExternalMemberId": extmbm,
                 "IsActive": null,
@@ -682,10 +703,12 @@ $(document).ready(function () {
                     $('#dept1').prop('selectedIndex', 0);
                     $('#dept2').prop('selectedIndex', 0);
                     $('#dept3').prop('selectedIndex', 0);
+                    $('#dept7').prop('selectedIndex', 0);
                     $('#dept4').prop('selectedIndex', 0);
                     $('#chairman').prop('selectedIndex', 0);
                     $('#mbmone').prop('selectedIndex', 0);
                     $('#mbmtwo').prop('selectedIndex', 0);
+                    $('#mbmthree').prop('selectedIndex', 0);
                     $('#extmbm').prop('selectedIndex', 0);
 
                     if (data != '') {
@@ -948,8 +971,8 @@ function dept4function(val, val1) {
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
-        url: "ExamSetupNewVersion.aspx/GetExternalFacultyByDeptId",
-        data: "{'Dept':'" + val + "' }",
+        url: "ExamSetupNewVersion.aspx/GetFacultyByDeptId",
+        data: "{'DeptId':'" + val + "' }",
         dataType: "json",
         success: function (data) {
             var parsed = JSON.parse(data.d);
@@ -964,6 +987,40 @@ function dept4function(val, val1) {
                 else {
                     $("#extmbm").append($("<option></option>").val(parsed[i].ExternalId).html(parsed[i].Name));
                 }
+            }
+            $('.select2').select2();
+
+        }
+
+    });
+}
+
+
+function dept7function(val, val1) {
+    $('#mbmthree').children().remove();
+    var deptVal = val;
+
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: "ExamSetupNewVersion.aspx/GetFacultyByDeptId",
+        data: "{'DeptId':'" + parseInt(val) + "' }",
+        dataType: "json",
+        success: function (data) {
+            var parsed = JSON.parse(data.d)
+            $("#mbmthree").empty();
+            if (val1 == 0) {
+                $("#mbmthree").append('<option value="0" selected="selected">Select</option>')
+            }
+            for (i = 0; i < parsed.length; i++) {
+
+                if (parsed[i].EmployeeId == val1) {
+                    $("#mbmthree").append($("<option selected></option>").val(parsed[i].EmployeeId).html(parsed[i].CodeAndName));
+                }
+                else {
+                    $("#mbmthree").append($("<option></option>").val(parsed[i].EmployeeId).html(parsed[i].CodeAndName));
+                }
+
             }
             $('.select2').select2();
 
@@ -1048,6 +1105,14 @@ function editcom(val) {
                     dept3function(parsed.ExamCommitteeMemberTwoDeptId, parsed.ExamCommitteeMemberTwoId);
 
                 }
+                if (val.MemberThreeName == "") {
+                    $("#dept7").val($("#department").val());
+                }
+                else {
+                    $("#dept7").val(parsed.ExamCommitteeMemberTwoDeptId);
+                    dept7function(parsed.ExamCommitteeMemberTwoDeptId, parsed.ExamCommitteeMemberTwoId);
+
+                }
                 if (val.ExternalName == "") {
                     dept4function(0, 0);
                 }
@@ -1079,6 +1144,8 @@ function editcom(val) {
             dept2function($("#department").val(), 0)
             $("#dept3").val($("#department").val());
             dept3function($("#department").val(), 0);
+            $("#dept7").val($("#department").val());
+            dept7function($("#department").val(), 0);
             dept4function(0, 0);
         }
     })
@@ -1313,10 +1380,12 @@ function examTable(prog, year, sem, shal, session, showDsp) {
                     var MemberOneName = parsed[i].MemberOneName; //$(this).find("MemberOneName").text();
                     var MemberTwoName = parsed[i].MemberTwoName; //$(this).find("MemberTwoName").text();
                     var ExternalName = parsed[i].ExternalName; //$(this).find("ExternalName").text();
+                    var MemberThreeName = parsed[i].MemberThreeName;
 
                     var ChairmanCode = parsed[i].ChairmanCode;
                     var MemberOneCode = parsed[i].MemberOneCode;
                     var MemberTwoCode = parsed[i].MemberTwoCode;
+                    var MemberThreeCode = parsed[i].MemberThreeCode;
 
                     if (ChairmanCode != null && ChairmanCode != "")
                         ChairmanName = "(" + ChairmanCode + ")" + ChairmanName;
@@ -1324,10 +1393,12 @@ function examTable(prog, year, sem, shal, session, showDsp) {
                         MemberOneName = "(" + MemberOneCode + ")" + MemberOneName;
                     if (MemberTwoCode != null && MemberTwoCode != "")
                         MemberTwoName = "(" + MemberTwoCode + ")" + MemberTwoName;
+                    if (MemberThreeCode != null && MemberThreeCode != "")
+                        MemberThreeCode = "(" + MemberThreeCode + ")" + MemberThreeCode;
 
                     editcomval = parsed[i]
 
-                    rows += "<tr><td>" + sl + "</td><td><input type='checkbox' id='checkBox" + sl + "' value='" + parsed[i].RelationId + "' /></td><td><strong>" + programname + "</strong><br/>" + parsed[i].ExamName + "</td><td><strong>Year: </strong>" + yearno + "<br /><strong>Semester: </strong>" + SemesterNo + " <br /><strong>Exam Year: </strong>" + ExamYear + "<br /><strong>Session: </strong>" + ExamSession + "</td><td><strong>Chairman: </strong>" + ChairmanName + "<br /><strong>Member 1: </strong>" + MemberOneName + "<br /><strong>Member 2: </strong>" + MemberTwoName + "<br /><strong>External: </strong>" + ExternalName + "</td><td>" + parsed[i].ChairmanDept + "<br/>" + parsed[i].MemberOneDept + "<br/>" + parsed[i].MemberTwoDept + "<br/>" + parsed[i].ExternalDept + "<br/>" + parsed[i].ExternalDesg + "<br/>" + parsed[i].ExternalUniversity + "</td><td><a href='' class='btn btn-success' data-toggle='modal' data-target='#myModal1' id='editexam" + sl + "' onclick='editexam(" + parsed[i].RelationId + "," + ExamYear + "," + JSON.stringify(ExamSession) + ")' style='width:95%'>Edit Exam</a><br/><a href='' class='btn btn-info editcombtn' data-toggle='modal' data-target='#myModal' onclick='editcom(" + JSON.stringify(editcomval) + ")' style='margin-top:5px;display: none'>Edit Committee</a><br/><a href='' class='btn btn-danger' id='deletebtn" + sl + "' onClick='deleteFunction(" + parsed[i].RelationId + ")' style='width: 96%;'>Delete</a></td></tr>";
+                    rows += "<tr><td>" + sl + "</td><td><input type='checkbox' id='checkBox" + sl + "' value='" + parsed[i].RelationId + "' /></td><td><strong>" + programname + "</strong><br/>" + parsed[i].ExamName + "</td><td><strong>Year: </strong>" + yearno + "<br /><strong>Semester: </strong>" + SemesterNo + " <br /><strong>Exam Year: </strong>" + ExamYear + "<br /><strong>Session: </strong>" + ExamSession + "</td><td><strong>Chairman: </strong>" + ChairmanName + "<br /><strong>Member 1: </strong>" + MemberOneName + "<br /><strong>Member 2: </strong>" + MemberTwoName + "<br /><strong>Member 3: </strong>"+MemberThreeName+"<br /><strong>External: </strong>" + ExternalName + "</td><td>" + parsed[i].ChairmanDept + "<br/>" + parsed[i].MemberOneDept + "<br/>" + parsed[i].MemberTwoDept + "<br/>" + parsed[i].MemberThreeDept + "<br/>" + parsed[i].ExternalDept + "<br/>" + parsed[i].ExternalDesg + "<br/>" + parsed[i].ExternalUniversity + "</td><td><a href='' class='btn btn-success' data-toggle='modal' data-target='#myModal1' id='editexam" + sl + "' onclick='editexam(" + parsed[i].RelationId + "," + ExamYear + "," + JSON.stringify(ExamSession) + ")' style='width:95%'>Edit Exam</a><br/><a href='' class='btn btn-info editcombtn' data-toggle='modal' data-target='#myModal' onclick='editcom(" + JSON.stringify(editcomval) + ")' style='margin-top:5px;display: none'>Edit Committee</a><br/><a href='' class='btn btn-danger' id='deletebtn" + sl + "' onClick='deleteFunction(" + parsed[i].RelationId + ")' style='width: 96%;'>Delete</a></td></tr>";
 
                     sl = sl + 1;
                 }

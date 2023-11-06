@@ -230,6 +230,21 @@
                             <div class="row">
                                 <div class="col-6">
                                     Choose Department
+                                    <select class="custom-select" name="Department" id="dept7" onchange="dept7function(this.value,0)">
+                                        <option value="0">Select</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    Choose Member Three
+                                    <select class="select2" name="MemberThree" id="mbmthree">
+                                        <option value="0">Select</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-6">
+                                    Choose Department
                                     <select class="custom-select" name="Department" id="dept4" onchange="dept4function(this.value,0)">
                                         <option value="0">Select</option>
                                     </select>

@@ -309,6 +309,9 @@ namespace EMS.Module.admin
                             ExistingObj.ExamCommitteeExternalMemberDeptId = receiveObj.ExamCommitteeExternalMemberDeptId;
                             ExistingObj.ExamCommitteeExternalMemberId = receiveObj.ExamCommitteeExternalMemberId;
 
+                            ExistingObj.ExamCommitteeMemberThreeDeptId = receiveObj.ExamCommitteeMemberThreeDeptId;
+                            ExistingObj.ExamCommitteeMemberThreeId = receiveObj.ExamCommitteeMemberThreeId;
+
                             ExistingObj.ModifiedBy = -12;
                             ExistingObj.ModifiedDate = DateTime.Now;
 
@@ -337,6 +340,9 @@ namespace EMS.Module.admin
 
                         NewObj.ExamCommitteeExternalMemberDeptId = receiveObj.ExamCommitteeExternalMemberDeptId;
                         NewObj.ExamCommitteeExternalMemberId = receiveObj.ExamCommitteeExternalMemberId;
+
+                        NewObj.ExamCommitteeMemberTwoDeptId = receiveObj.ExamCommitteeMemberThreeDeptId;
+                        NewObj.ExamCommitteeMemberThreeId = receiveObj.ExamCommitteeMemberThreeId;
 
 
                         NewObj.CreatedBy = -12;
