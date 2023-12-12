@@ -260,11 +260,11 @@
 
                 <div class="row">
                  <div class="col-lg-2 col-md-2 col-sm-2">
-                        <b>Teacher ID</b>
+                        <b>Employee ID</b>
                         <asp:TextBox ID="txtSearchCode" runat="server" CssClass="form-control" />
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2">
-                        <b>Teacher Name</b>
+                        <b>Employee Name</b>
                         <asp:TextBox ID="txtSearchTeacherName" runat="server" CssClass="form-control" />
 
                     </div>
@@ -494,7 +494,7 @@
                                                     <asp:DropDownList runat="server" ID="ddlTeacherType" CssClass="form-control"></asp:DropDownList>
                                                 </div>
                                                 <div class="col-lg-3 col-md-3 col-sm-3">
-                                                    <b>Teacher Code</b>
+                                                    <b>Employee Code</b>
                                                     <asp:TextBox runat="server" ID="txtTeacherCode" CssClass="form-control" />
                                                     <asp:Label runat="server" ID="lblValidationStat" ForeColor="Crimson" />
                                                 </div>
