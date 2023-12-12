@@ -20,7 +20,7 @@
         <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamTemplate" Width="1.5" PointX="11.75" PointY="5.75" />
         <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamTemplateItem" Width="1.5" PointX="6.75" PointY="11.75" />
         <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamHeldInAndProgramRelation" Width="1.5" PointX="12.375" PointY="9.75" />
-        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamSetupWithExamCommittee" Width="1.5" PointX="14.375" PointY="7.75" />
+        <EntityTypeShape EntityType="MBSTU_UCAMModel.ExamSetupWithExamCommittee" Width="2.625" PointX="25.375" PointY="3.75" />
         <EntityTypeShape EntityType="MBSTU_UCAMModel.StudentYearSemesterHistory" Width="1.5" PointX="14.375" PointY="13.75" />
         <EntityTypeShape EntityType="MBSTU_UCAMModel.StudentCourseHistory" Width="1.5" PointX="16.375" PointY="0.75" />
         <EntityTypeShape EntityType="MBSTU_UCAMModel.RegistrationWorksheet" Width="1.5" PointX="16.375" PointY="9.75" />

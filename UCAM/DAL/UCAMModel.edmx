@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BRUR_UCAMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BRUR_UCAMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AcademicCalender">
           <Key>
             <PropertyRef Name="AcademicCalenderID" />
@@ -486,6 +486,7 @@
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedBy" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ResultPublishedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="ExamMarkDetails">
           <Key>
@@ -617,6 +618,8 @@
           <Property Name="ExamCommitteeMemberOneId" Type="int" />
           <Property Name="ExamCommitteeMemberTwoDeptId" Type="int" />
           <Property Name="ExamCommitteeMemberTwoId" Type="int" />
+          <Property Name="ExamCommitteeMemberThreeDeptId" Type="int" />
+          <Property Name="ExamCommitteeMemberThreeId" Type="int" />
           <Property Name="ExamCommitteeExternalMemberDeptId" Type="int" />
           <Property Name="ExamCommitteeExternalMemberId" Type="int" />
           <Property Name="IsActive" Type="bit" />
@@ -1768,6 +1771,8 @@ warning 6002: The table/view 'PABNA.dbo.ProgramType' does not have a primary key
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ExamCommitteeMemberThreeDeptId" Type="Int32" />
+          <Property Name="ExamCommitteeMemberThreeId" Type="Int32" />
         </EntityType>
         <EntityType Name="StudentYearSemesterHistory">
           <Key>
@@ -2580,6 +2585,7 @@ warning 6002: The table/view 'PABNA.dbo.ProgramType' does not have a primary key
           <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ResultPublishedDate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="ExamAttendanceInformation">
           <Key>
@@ -3058,6 +3064,8 @@ warning 6002: The table/view 'PABNA.dbo.ProgramType' does not have a primary key
           <EntitySetMapping Name="ExamSetupWithExamCommittees">
             <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamSetupWithExamCommittee">
               <MappingFragment StoreEntitySet="ExamSetupWithExamCommittees">
+                <ScalarProperty Name="ExamCommitteeMemberThreeId" ColumnName="ExamCommitteeMemberThreeId" />
+                <ScalarProperty Name="ExamCommitteeMemberThreeDeptId" ColumnName="ExamCommitteeMemberThreeDeptId" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -3894,6 +3902,7 @@ warning 6002: The table/view 'PABNA.dbo.ProgramType' does not have a primary key
           <EntitySetMapping Name="ExamMarkDateRangeSetups">
             <EntityTypeMapping TypeName="MBSTU_UCAMModel.ExamMarkDateRangeSetup">
               <MappingFragment StoreEntitySet="ExamMarkDateRangeSetup">
+                <ScalarProperty Name="ResultPublishedDate" ColumnName="ResultPublishedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
