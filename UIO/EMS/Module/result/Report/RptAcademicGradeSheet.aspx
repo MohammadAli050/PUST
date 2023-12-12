@@ -111,8 +111,9 @@
             </ContentTemplate>
         </asp:UpdatePanel>
         <br />
-
-        <button class="btn btn-secondary w-50" id="print" onclick="printFunction()" style="display: none">Print</button>
+        <div class="col-4">
+            <button class="btn btn-secondary w-50" id="print" onclick="printFunction()" style="display: none">Print</button>
+        </div>
         <br />
 
         <div id="header"></div>

@@ -789,18 +789,36 @@ function printFunction() {
                     +footer
                    + "</table>"
     var typeElement = "";
-    var mywindow = window.open("", "PRINT", 1600, 1600)
-    typeElement += '<!DOCTYPE html><html>';
-    typeElement += '<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script><style>body{margin-top:30px}table{font-size:10px}.academic{border-collapse: collapse;} .academic th,.academic td{border:1px solid black;}.mainTable td table{vertical-align:top;width:100%;height:30%;white-space:nowrap}.mainTable td{padding:0 15px 5px 0;}.mainTable tr{margin:10px}footer span {font-family: serif;font-size: 20px;}footer label {font-family: serif;font-size: 20px;}</style><title>Rpt Student Academic Grade Sheet</title></head>';
-    typeElement += '<body >'
-    typeElement += '<div class="container-fluid">'
-    typeElement += fronttable
-    typeElement += "<br/>"
-    typeElement += backTable
-    typeElement += '</div>'
-    typeElement += '</body></html>'
-    mywindow.document.write(typeElement)
+    var mywindow = window.open("", "PRINT", 1600, 1600);
+    var typeElement = '<!DOCTYPE html><html>';
+    typeElement += '<head>';
+    typeElement += '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">';
+    typeElement += '<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>';
+    typeElement += '<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>';
+    typeElement += '<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>';
+    typeElement += '<style>';
+    typeElement += 'body{margin-top:30px}table{font-size:10px}.academic{border-collapse: collapse;}';
+    typeElement += '.academic th, .academic td{border:1px solid black;}.mainTable td table{vertical-align:top;width:100%;height:30%;white-space:nowrap}';
+    typeElement += '.mainTable td{padding:0 15px 5px 0;}.mainTable tr{margin:10px}';
+    typeElement += 'footer span {font-family: serif;font-size: 20px;}';
+    typeElement += 'footer label {font-family: serif;font-size: 20px;}';
+    typeElement += '@media print {tfoot {page-break-after: always;}}';
+    typeElement += '</style>';
+    typeElement += '<title>Rpt Student Academic Grade Sheet</title>';
+    typeElement += '</head>';
+    typeElement += '<body>';
+    typeElement += '<div class="container-fluid">';
+    typeElement += fronttable;
+    typeElement += '</div>';
+    typeElement += '<div style="page-break-before: always;"></div>';
+    typeElement += '<div class="container-fluid">';
+    typeElement += backTable;
+    typeElement += '</div>';
+    typeElement += '</body></html>';
+
+    mywindow.document.write(typeElement);
     mywindow.document.close();
+
     mywindow.onload = function () {
         mywindow.print();
     };

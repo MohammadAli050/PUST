@@ -14,6 +14,7 @@
 
                 console.log(data)
                 $("#btnPrint").show();
+                $('#showHide').css('display', 'block');
 
 
                 var studentInfo = data.studentInfo[0];
@@ -129,7 +130,7 @@
                 + "</table>"
 
 
-                var universityInfo = '<table class="text-center">'
+                var universityInfo = '<table class="text-center" style="white-space:nowrap">'
                                             + '<tr>'
                                             + '    <td>'
                                             + '      <img src="../../../Images/PABNA_logo.png"  style="width:12%"/>'
@@ -137,7 +138,12 @@
                                             + '</tr>'
                                             + '<tr>'
                                             + '  <td>'
-                                            + '    <h2>PABNA UNIVERSITY OF SCIENCE AND TECHNOLOGY</h2>'
+                                            + '    <h2>PABNA UNIVERSITY OF</h2>'
+                                            + ' </td>'
+                                            + '</tr>'
+                                            + '<tr>'
+                                            + '  <td>'
+                                            + '    <h2>SCIENCE AND TECHNOLOGY</h2>'
                                             + ' </td>'
                                             + '</tr>'
                                             + '<tr>'
@@ -504,8 +510,8 @@
 
                     if (i == 0) {
                         FirstYearTable += "<td class='text-center' colspan='2'>Total</td>"
-                        FirstYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>SGPA</td>"
-                        FirstYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>Remarks</td>"
+                        FirstYearTable += "<td rowspan='2' class='rotated-cell'>SGPA</td>"
+                        FirstYearTable += "<td rowspan='2' class='rotated-cell'>Remarks</td>"
                     }
                     else if (i == 1) {
                         FirstYearTable += "<td class='text-center'>Points Secured</td>"
@@ -547,9 +553,9 @@
                     }
                     if (i == 0) {
                         FirstYearTable += "<td class='text-center' colspan='2'>Total</td>"
-                        FirstYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>SGPA</td>"
-                        FirstYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>CGPA 1-2</td>"
-                        FirstYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>Remarks</td>"
+                        FirstYearTable += "<td rowspan='2' class='rotated-cell'>SGPA</td>"
+                        FirstYearTable += "<td rowspan='2' class='rotated-cell'>CGPA 1-2</td>"
+                        FirstYearTable += "<td rowspan='2' class='rotated-cell'>Remarks</td>"
                     }
                     if (i == 1) {
                         FirstYearTable += "<td class='text-center'>Points Secured</td>"
@@ -643,9 +649,9 @@
 
                     if (i == 0) {
                         SecondYearTable += "<td class='text-center' colspan='2'>Total</td>"
-                        SecondYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>SGPA</td>"
-                        SecondYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>CGPA 2-1</td>"
-                        SecondYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>Remarks</td>"
+                        SecondYearTable += "<td rowspan='2' class='rotated-cell'>SGPA</td>"
+                        SecondYearTable += "<td rowspan='2' class='rotated-cell'>CGPA 2-1</td>"
+                        SecondYearTable += "<td rowspan='2' class='rotated-cell'>Remarks</td>"
                     }
                     else if (i == 1) {
                         SecondYearTable += "<td class='text-center'>Points Secured</td>"
@@ -688,9 +694,9 @@
                     }
                     if (i == 0) {
                         SecondYearTable += "<td class='text-center' colspan='2'>Total</td>"
-                        SecondYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>SGPA</td>"
-                        SecondYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>CGPA 2-2</td>"
-                        SecondYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>Remarks</td>"
+                        SecondYearTable += "<td rowspan='2' class='rotated-cell'>SGPA</td>"
+                        SecondYearTable += "<td rowspan='2' class='rotated-cell'>CGPA 2-2</td>"
+                        SecondYearTable += "<td rowspan='2' class='rotated-cell'>Remarks</td>"
                     }
                     if (i == 1) {
                         SecondYearTable += "<td class='text-center'>Points Secured</td>"
@@ -749,7 +755,7 @@
                                     + "<thead>"
                                         + "<tr>"
                                             + "<th class='text-center' colspan='" + (list3rdYear1stSem.length + 7) + "'>Third Year First Semester</th>"
-                                            + "<th class='text-center' colspan='" + (list3rdYear1stSem.length + 5) + "'>Third Year Second Semester</th>"
+                                            + "<th class='text-center' colspan='" + (list3rdYear1stSem.length + 6) + "'>Third Year Second Semester</th>"
                                         + "<tr>"
                                     + "</thead><tbody>"
                 for (i = 0; i < tablecoloum.length; i++) {
@@ -784,9 +790,9 @@
 
                     if (i == 0) {
                         ThirdYearTable += "<td class='text-center' colspan='2'>Total</td>"
-                        ThirdYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>SGPA</td>"
-                        ThirdYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>CGPA 3-1</td>"
-                        ThirdYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>Remarks</td>"
+                        ThirdYearTable += "<td rowspan='2' class='rotated-cell'>SGPA</td>"
+                        ThirdYearTable += "<td rowspan='2' class='rotated-cell'>CGPA 3-1</td>"
+                        ThirdYearTable += "<td rowspan='2' class='rotated-cell'>Remarks</td>"
                     }
                     else if (i == 1) {
                         ThirdYearTable += "<td class='text-center'>Points Secured</td>"
@@ -829,9 +835,9 @@
                     }
                     if (i == 0) {
                         ThirdYearTable += "<td class='text-center' colspan='2'>Total</td>"
-                        ThirdYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>SGPA</td>"
-                        ThirdYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>CGPA 3-2</td>"
-                        ThirdYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>Remarks</td>"
+                        ThirdYearTable += "<td rowspan='2' class='rotated-cell'>SGPA</td>"
+                        ThirdYearTable += "<td rowspan='2' class='rotated-cell'>CGPA 3-2</td>"
+                        ThirdYearTable += "<td rowspan='2' class='rotated-cell'>Remarks</td>"
                     }
                     if (i == 1) {
                         ThirdYearTable += "<td class='text-center'>Points Secured</td>"
@@ -924,9 +930,9 @@
 
                     if (i == 0) {
                         FourthYearTable += "<td class='text-center' colspan='2'>Total</td>"
-                        FourthYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>SGPA</td>"
-                        FourthYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>CGPA 3-1</td>"
-                        FourthYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>Remarks</td>"
+                        FourthYearTable += "<td rowspan='2' class='rotated-cell'>SGPA</td>"
+                        FourthYearTable += "<td rowspan='2' class='rotated-cell'>CGPA 3-1</td>"
+                        FourthYearTable += "<td rowspan='2' class='rotated-cell'>Remarks</td>"
                     }
                     else if (i == 1) {
                         FourthYearTable += "<td class='text-center'>Points Secured</td>"
@@ -969,9 +975,9 @@
                     }
                     if (i == 0) {
                         FourthYearTable += "<td class='text-center' colspan='2'>Total</td>"
-                        FourthYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>SGPA</td>"
-                        FourthYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>CGPA 4-2</td>"
-                        FourthYearTable += "<td rowspan='2' style='transform: rotate(-90deg);white-space: nowrap;'>Remarks</td>"
+                        FourthYearTable += "<td rowspan='2' class='rotated-cell'>SGPA</td>"
+                        FourthYearTable += "<td rowspan='2' class='rotated-cell'>CGPA 4-2</td>"
+                        FourthYearTable += "<td rowspan='2' class='rotated-cell'>Remarks</td>"
                     }
                     if (i == 1) {
                         FourthYearTable += "<td class='text-center'>Points Secured</td>"
@@ -1060,9 +1066,9 @@
                                             + "<tr>"
                                                 + "<td>"
                                                     + "<div class='d-flex flex-row'>"                                                        
-                                                        + "<div class='p-2' style='width:35%'>" + SigTab1 + "</div>"
+                                                        + "<div class='' style='width:35%;padding-top: 8px;'>" + SigTab1 + "</div>"
                                                         + "<div class='p-2' style='width:35%'>" + sigMemberExam1 + "</div>"
-                                                        + "<div class='p-2' style='width:35%'>" + examController1 + "</div>"
+                                                        + "<div class='' style='width:35%;padding-top: 8px;'>" + examController1 + "</div>"
                                                     + "</div>"
                                                 + "</td>"
                                             + "</tr>"
@@ -1097,9 +1103,9 @@
                                             + "<tr>"
                                                 + "<td colspan = ''>"
                                                     + "<div class='d-flex flex-row'>"
-                                                        + "<div class='p-2' style='width:35%'>" + SigTab2 + "</div>"
+                                                        + "<div class='' style='width:35%;padding-top: 8px;'>" + SigTab2 + "</div>"
                                                         + "<div class='p-2' style='width:35%'>" + sigMemberExam2 + "</div>"
-                                                        + "<div class='p-2' style='width:35%'>" + examController2 + "</div>"
+                                                        + "<div class='' style='width:35%;padding-top: 8px;'>" + examController2 + "</div>"
                                                     + "</div>"
                                                 + "</td>"
                                             + "</tr>"
@@ -1241,7 +1247,7 @@ function printFunct() {
     var typeElement = "";
     var mywindow = window.open("", "PRINT", 1600, 2400)
     typeElement += '<!DOCTYPE html><html>';
-    typeElement += '<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script><style>body{margin-top:30px}table{font-size:15px}.academic{border-collapse: collapse;} .academic th, .academic td {border: 1px solid black;height: 1.5rem;width: 1%;}.footers td:empty{width:50px;}@media print{@page{size:landscape}}</style></head>';
+    typeElement += '<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script><style>body{margin-top:30px}table{font-size:15px}.academic{border-collapse: collapse;} .academic th, .academic td {border: 1px solid black;height: 1.5rem;width: 1%;}.footers td:empty{width:50px;} .rotated-cell {transform: rotate(-90deg); white-space: nowrap; padding: 5px; text-align:center;}@media print{@page{size:landscape}}</style></head>';
     typeElement += '<body >'
     typeElement += '<div class="container-fluid">'
     typeElement += element;

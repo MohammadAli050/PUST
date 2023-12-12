@@ -73,5 +73,11 @@ namespace EMS.Module.result.Report
             }
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            showHide.Visible = true;
+            UpdatePanel02.Update();
+        }
     }
 }

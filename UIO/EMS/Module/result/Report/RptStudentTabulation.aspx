@@ -19,6 +19,13 @@
         .footers td:empty {
             width: 50px;
         }
+
+        .rotated-cell {
+            transform: rotate(-90deg);
+            white-space: nowrap;
+            padding: 5px;
+            text-align:center;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContainer" runat="server">
@@ -49,12 +56,18 @@
                             <input id="Text1" type="text" style="width: 70%" />
                         </div>
                         <div class="col-4">
-                            <asp:Button ID="Button1" runat="server" Width="50%" Text="Load" CssClass="btn btn-info" />
+                            <asp:Button ID="Button1" runat="server" Width="50%" Text="Load" CssClass="btn btn-info" OnClick="Button1_Click" />
+                        </div>
+                        <div class="col-4" id="showHide" runat="server" visible="false">
+                            <button class="btn btn-secondary w-50" id="btnPrint1" onclick="printFunct()">Print</button>
                         </div>
                     </div>
                 </div>
             </div>
         </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="Button1" EventName="Click" />
+        </Triggers>
     </asp:UpdatePanel>
 
 
@@ -64,6 +77,9 @@
     <br />
 
     <div class="d-flex flex-row-reverse">
-        <button class="btn btn-success" id="btnPrint" onclick="printFunct()" style="display: none">Print</button>
+        <div class="col-4">
+            <button class="btn btn-secondary w-50" id="btnPrint" onclick="printFunct()" style="display: none">Print</button>
+
+        </div>
     </div>
 </asp:Content>
