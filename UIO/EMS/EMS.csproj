@@ -1546,10 +1546,8 @@
     <Content Include="Module\result\ExcelFiles\MarkSheetV2.xlsx" />
     <Content Include="Module\pdf\Test.pdf" />
     <Content Include="Module\result\ExcelFiles\SingleMarkSheet.xlsx" />
-    <Content Include="Upload\SampleExcel\SampleStudentMigrationFile.xlsx" />
     <None Include="Properties\PublishProfiles\MBSTU.pubxml" />
     <None Include="Properties\PublishProfiles\PABNA.pubxml" />
-    <Content Include="Upload\SampleExcel\SampleCourseMigrationFile.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1568,6 +1566,7 @@
     <Folder Include="Upload\Avatar\Teacher\" />
     <Folder Include="Upload\ReportEXCEL\" />
     <Folder Include="Upload\ReportPDF\" />
+    <Folder Include="Upload\SampleExcel\" />
     <Folder Include="Upload\Signature\" />
     <Folder Include="Upload\TempAvatar\" />
     <Folder Include="Upload\TempSignature\" />

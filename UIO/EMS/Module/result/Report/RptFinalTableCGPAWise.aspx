@@ -74,6 +74,57 @@
         .headerTable td {
             padding-right: 15px;
         }
+        .modalBackground {
+            background-color: Gray;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            z-index: 10000;
+        }
+
+        .dropdown {
+            width: 266px;
+        }
+
+        .select2-results__option {
+            line-height: 20px !important;
+            height: 34px !important;
+        }
+
+        .select2-container {
+            width: 306px !important;
+        }
+
+        .blink {
+            animation: blinker 0.6s linear infinite;
+            color: #1c87c9;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        #ctl00_MainContainer_ucDepartment_ddlDepartment, #ctl00_MainContainer_ucProgram_ddlProgram,
+        #ctl00_MainContainer_ddlCourse, #ctl00_MainContainer_ddlContinousExam, #ctl00_MainContainer_btnLoad, #ctl00_MainContainer_btnLoadReport {
+            height: 40px !important;
+            font-size:20px;
+        }
+
+        span.select2-selection.select2-selection--single {
+            height: 40px;
+        }
+
+        span.select2.select2-container.select2-container--default {
+            width: 100% !important;
+        }
+
+        .sweet-alert {
+            z-index: 10000000 !important;
+        }
     </style>
 
 </asp:Content>
@@ -127,7 +178,7 @@
                         <button class="btn btn-info w-100" onclick="loadFunction()">Load Report</button>
                     </div>
                     <div class="col-lg-4 col-md-5 col-sm-5">
-                        <button class="btn btn-secondary w-100" id="print" onclick="printFunction()" style="display: none">Print</button>
+                        <button class="btn btn-success w-50" id="print" onclick="printFunction()" style="display: none">Print</button>
                     </div>
                 </div>
             </div>

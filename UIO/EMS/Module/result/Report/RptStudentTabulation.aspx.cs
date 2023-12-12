@@ -18,7 +18,10 @@ namespace EMS.Module.result.Report
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                
+            }
         }
 
 
@@ -76,8 +79,8 @@ namespace EMS.Module.result.Report
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            showHide.Visible = true;
-            UpdatePanel02.Update();
+           
         }
+       
     }
 }

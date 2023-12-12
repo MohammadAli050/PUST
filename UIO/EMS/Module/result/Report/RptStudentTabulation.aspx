@@ -24,7 +24,7 @@
             transform: rotate(-90deg);
             white-space: nowrap;
             padding: 5px;
-            text-align:center;
+            text-align: center;
         }
     </style>
 </asp:Content>
@@ -52,23 +52,22 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-4">
-                            <lebel><b>Student Roll:</b></lebel>
-                            <input id="Text1" type="text" style="width: 70%" />
+                            <lebel><b>Student Roll</b></lebel>
+                            <input id="Text1" type="text" class="form-control" />
                         </div>
-                        <div class="col-4">
-                            <asp:Button ID="Button1" runat="server" Width="50%" Text="Load" CssClass="btn btn-info" OnClick="Button1_Click" />
-                        </div>
-                        <div class="col-4" id="showHide" runat="server" visible="false">
-                            <button class="btn btn-secondary w-50" id="btnPrint1" onclick="printFunct()">Print</button>
+                        <div class="col-4" style="margin-top: 20px">
+                            <asp:Button ID="Button1" runat="server" Width="50%" Text="Load" CssClass="btn btn-info" OnClick="Button1_Click" OnClientClick="loadFunction()" />
                         </div>
                     </div>
                 </div>
             </div>
         </ContentTemplate>
-        <Triggers>
-            <asp:AsyncPostBackTrigger ControlID="Button1" EventName="Click" />
-        </Triggers>
     </asp:UpdatePanel>
+
+    <div class="col-4" id="showHide" style="margin-top: 20px;display:none">
+        <button class="btn btn-success w-50" id="btnPrint1" onclick="printFunct()">Print</button>
+    </div>
+    <br />
 
 
     <div id="reportTable">
@@ -78,7 +77,7 @@
 
     <div class="d-flex flex-row-reverse">
         <div class="col-4">
-            <button class="btn btn-secondary w-50" id="btnPrint" onclick="printFunct()" style="display: none">Print</button>
+            <button class="btn btn-success w-50" id="btnPrint" onclick="printFunct()" style="display: none">Print</button>
 
         </div>
     </div>

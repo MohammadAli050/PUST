@@ -42,6 +42,58 @@
     </script>
     <script src="RptSemesterResult.js?v.1.02"></script>
     <style>
+
+        .modalBackground {
+            background-color: Gray;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            z-index: 10000;
+        }
+
+        .dropdown {
+            width: 266px;
+        }
+
+        .select2-results__option {
+            line-height: 20px !important;
+            height: 34px !important;
+        }
+
+        .select2-container {
+            width: 306px !important;
+        }
+
+        .blink {
+            animation: blinker 0.6s linear infinite;
+            color: #1c87c9;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        #ctl00_MainContainer_ucDepartment_ddlDepartment, #ctl00_MainContainer_ucProgram_ddlProgram,
+        #ctl00_MainContainer_ddlCourse, #ctl00_MainContainer_ddlContinousExam, #ctl00_MainContainer_btnLoad, #ctl00_MainContainer_btnLoadReport {
+            height: 40px !important;
+            font-size:20px;
+        }
+
+        span.select2-selection.select2-selection--single {
+            height: 40px;
+        }
+
+        span.select2.select2-container.select2-container--default {
+            width: 100% !important;
+        }
+
+        .sweet-alert {
+            z-index: 10000000 !important;
+        }
         #tableInfo {
             border-collapse: collapse;
         }
@@ -118,7 +170,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3">
                             <br />
                             <%--<asp:Button ID="btnLoadReport" runat="server" Text="Click Here To View Report" CssClass="btn-info w-100" OnClick="btnLoadReport_Click" />--%>
-                            <button class="btn btn-secondary w-100" id="btnPrint" onclick="printFunction()">Print</button>
+                            <button class="btn btn-success w-50" id="btnPrint" onclick="printFunction()">Print</button>
                         </div>
                     </div>
                 </div>

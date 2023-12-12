@@ -99,10 +99,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-4">
-                                <lebel><b>Student Roll:</b></lebel>
-                                <asp:TextBox ID="Text1" runat="server" Style="width: 70%"></asp:TextBox>
+                                <lebel><b>Student Roll</b></lebel>
+                                <asp:TextBox ID="Text1" runat="server" Cssclass="form-control"></asp:TextBox>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4" style="margin-top:20px">
                                 <asp:Button ID="btnLoad" runat="server" Width="50%" Text="Load" CssClass="btn btn-info" OnClientClick="loadFunction()" />
                             </div>
                         </div>
@@ -112,7 +112,7 @@
         </asp:UpdatePanel>
         <br />
         <div class="col-4">
-            <button class="btn btn-secondary w-50" id="print" onclick="printFunction()" style="display: none">Print</button>
+            <button class="btn btn-success w-50" id="print" onclick="printFunction()" style="display: none">Print</button>
         </div>
         <br />
 

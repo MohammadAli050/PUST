@@ -242,6 +242,15 @@
 
                 totalCredit = y1s1Credit + y1s2Credit + y2s1Credit + y2s2Credit + y3s1Credit + y3s2Credit + y4s1Credit + y4s2Credit;
 
+                var firstCGPA;
+                var secondCGPA;
+                var thirdCGPA;
+                var fourthCGPA;
+                var fifthCGPA;
+                var sixthCGPA;
+                var seventhCGPA;
+                var eigthCGPA;
+
                 //---------Create Table--------------------
 
                 //------------------First Table-----------------------------
@@ -281,15 +290,16 @@
                                                 + "</tr>"
                     }
                 }
+                firstCGPA = (parseFloat(y1s1gpa) / list1stYear1stSem.length).toFixed(2) == "NaN" ? 0 : (parseFloat(y1s1gpa) / list1stYear1stSem.length).toFixed(2)
                 FirstYearFirstSemTable += "</tbody>"
                                             + "<tfoot>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Credits Earned: " + parseFloat(y1s1Credit) + "</td>"
-                                                    + "<td colspan='3'>Semester GPA: " + parseFloat(y1s1gpa) + "</td>"
+                                                    + "<td colspan='2'>Credits Earned: <b>" + parseFloat(y1s1Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Semester GPA: <b>" + parseFloat(y1s1gpa) + "</b></td>"
                                                 + "</tr>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Cumulative Credits: " + (totalCredit - y1s2Credit - y2s1Credit - y2s2Credit - y3s1Credit - y3s2Credit - y4s1Credit - y4s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Cumulative Grade Points: " + (parseFloat(y1s1gpa) / list1stYear1stSem.length).toFixed(2) + "</td>"
+                                                    + "<td colspan='2'>Cumulative Credits: <b>" + (totalCredit - y1s2Credit - y2s1Credit - y2s2Credit - y3s1Credit - y3s2Credit - y4s1Credit - y4s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Cumulative Grade Points Avarage (CGPA) : <b>" + firstCGPA + "</b></td>"
                                                 + "</tr>"
                                             + "</tfoot>"
                                            + "</table>"
@@ -331,15 +341,16 @@
                                                 + "</tr>"
                     }
                 }
+                secondCGPA = ((y1s2gpa + y1s1gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length)).toFixed(2) == "NaN" ? 0 : ((y1s2gpa + y1s1gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length)).toFixed(2);
                 FirstYearSecondSemTable += "</tbody>"
                                             + "<tfoot>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Credits Earned: " + parseFloat(y1s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Semester GPA: " + parseFloat(y1s2gpa) + "</td>"
+                                                    + "<td colspan='2'>Credits Earned: <b>" + parseFloat(y1s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Semester GPA: <b>" + parseFloat(y1s2gpa) + "</b></td>"
                                                 + "</tr>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Cumulative Credits: " + (totalCredit - y2s1Credit - y2s2Credit - y3s1Credit - y3s2Credit - y4s1Credit - y4s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Cumulative Grade Points: " + ((y1s2gpa + y1s1gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length)).toFixed(2) + "</td>"
+                                                    + "<td colspan='2'>Cumulative Credits: <b>" + (totalCredit - y2s1Credit - y2s2Credit - y3s1Credit - y3s2Credit - y4s1Credit - y4s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Cumulative Grade Points Avarage (CGPA): <b>" + secondCGPA + "</b></td>"
                                                 + "</tr>"
                                             + "</tfoot>"
                                            + "</table>"
@@ -381,15 +392,16 @@
                                                 + "</tr>"
                     }
                 }
+                thirdCGPA = ((y1s2gpa + y1s1gpa + y2s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length)).toFixed(2) == "NaN" ? 0 : ((y1s2gpa + y1s1gpa + y2s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length)).toFixed(2);
                 SecondYearFirstTable += "</tbody>"
                                             + "<tfoot>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Credits Earned: " + parseFloat(y2s1gpa) + "</td>"
-                                                    + "<td colspan='3'>Semester GPA: " + parseFloat(y1s2gpa) + "</td>"
+                                                    + "<td colspan='2'>Credits Earned: <b>" + parseFloat(y2s1gpa) + "</b></td>"
+                                                    + "<td colspan='3'>Semester GPA: <b>" + parseFloat(y1s2gpa) + "</b></td>"
                                                 + "</tr>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Cumulative Credits: " + (totalCredit - y2s2Credit - y3s1Credit - y3s2Credit - y4s1Credit - y4s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Cumulative Grade Points: " + ((y1s2gpa + y1s1gpa + y2s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length)).toFixed(2) + "</td>"
+                                                    + "<td colspan='2'>Cumulative Credits: <b>" + (totalCredit - y2s2Credit - y3s1Credit - y3s2Credit - y4s1Credit - y4s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Cumulative Grade Points Avarage (CGPA): <b>" + thirdCGPA + "</b></td>"
                                                 + "</tr>"
                                             + "</tfoot>"
                                            + "</table>"
@@ -431,15 +443,16 @@
                                                 + "</tr>"
                     }
                 }
+                fourthCGPA = ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length)).toFixed(2) == "NaN" ? 0 : ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length)).toFixed(2);
                 SecondYearSecondTable += "</tbody>"
                                             + "<tfoot>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Credits Earned: " + parseFloat(y2s2gpa) + "</td>"
-                                                    + "<td colspan='3'>Semester GPA: " + parseFloat(y1s2gpa) + "</td>"
+                                                    + "<td colspan='2'>Credits Earned: <b>" + parseFloat(y2s2gpa) + "</b></td>"
+                                                    + "<td colspan='3'>Semester GPA: <b>" + parseFloat(y1s2gpa) + "</b></td>"
                                                 + "</tr>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Cumulative Credits: " + (totalCredit - y3s1Credit - y3s2Credit - y4s1Credit - y4s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Cumulative Grade Points: " + ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length)).toFixed(2) + "</td>"
+                                                    + "<td colspan='2'>Cumulative Credits: <b>" + (totalCredit - y3s1Credit - y3s2Credit - y4s1Credit - y4s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Cumulative Grade Points Avarage (CGPA): <b>" + fourthCGPA + "</b></td>"
                                                 + "</tr>"
                                             + "</tfoot>"
                                            + "</table>"
@@ -482,15 +495,16 @@
                                                 + "</tr>"
                     }
                 }
+                fifthCGPA = ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length)).toFixed(2) == "NaN" ? 0 : ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length)).toFixed(2)
                 ThirdYearFirstTable += "</tbody>"
                                             + "<tfoot>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Credits Earned: " + parseFloat(y3s1Credit) + "</td>"
-                                                    + "<td colspan='3'>Semester GPA: " + parseFloat(y3s1gpa) + "</td>"
+                                                    + "<td colspan='2'>Credits Earned: <b>" + parseFloat(y3s1Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Semester GPA: <b>" + parseFloat(y3s1gpa) + "<b></td>"
                                                 + "</tr>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Cumulative Credits: " + (totalCredit - y3s2Credit - y4s1Credit - y4s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Cumulative Grade Points: " + ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length)).toFixed(2) + "</td>"
+                                                    + "<td colspan='2'>Cumulative Credits: <b>" + (totalCredit - y3s2Credit - y4s1Credit - y4s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Cumulative Grade Points Avarage (CGPA): <b>" + fifthCGPA + "</b></td>"
                                                 + "</tr>"
                                             + "</tfoot>"
                                            + "</table>"
@@ -533,15 +547,16 @@
                                                 + "</tr>"
                     }
                 }
+                sixthCGPA = ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa + y3s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length + list3rdYear2ndSem.length)).toFixed(2) == "NaN" ? 0 : ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa + y3s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length + list3rdYear2ndSem.length)).toFixed(2)
                 ThirdYearSecondTable += "</tbody>"
                                             + "<tfoot>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Credits Earned: " + parseFloat(y3s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Semester GPA: " + parseFloat(y3s2gpa) + "</td>"
+                                                    + "<td colspan='2'>Credits Earned: <b>" + parseFloat(y3s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Semester GPA: <b>" + parseFloat(y3s2gpa) + "</b></td>"
                                                 + "</tr>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Cumulative Credits: " + (totalCredit - y4s1Credit - y4s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Cumulative Grade Points: " + ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa + y3s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length + list3rdYear2ndSem.length)).toFixed(2) + "</td>"
+                                                    + "<td colspan='2'>Cumulative Credits: <b>" + (totalCredit - y4s1Credit - y4s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Cumulative Grade Points Avarage (CGPA): <b>" + sixthCGPA + "</b></td>"
                                                 + "</tr>"
                                             + "</tfoot>"
                                            + "</table>"
@@ -584,15 +599,16 @@
                                                 + "</tr>"
                     }
                 }
+                seventhCGPA = ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa + y3s2gpa + y4s1gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length + list3rdYear2ndSem.length + list4thYear1stSem.length)).toFixed(2) == "NaN" ? 0 : ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa + y3s2gpa + y4s1gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length + list3rdYear2ndSem.length + list4thYear1stSem.length)).toFixed(2)
                 FourthYearFirstTable += "</tbody>"
                                             + "<tfoot>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Credits Earned: " + parseFloat(y4s1Credit) + "</td>"
-                                                    + "<td colspan='3'>Semester GPA: " + parseFloat(y4s1gpa) + "</td>"
+                                                    + "<td colspan='2'>Credits Earned: <b>" + parseFloat(y4s1Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Semester GPA: <b>" + parseFloat(y4s1gpa) + "</b></td>"
                                                 + "</tr>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Cumulative Credits: " + (totalCredit - y4s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Cumulative Grade Points: " + ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa + y3s2gpa + y4s1gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length + list3rdYear2ndSem.length + list4thYear1stSem.length)).toFixed(2) + "</td>"
+                                                    + "<td colspan='2'>Cumulative Credits: <b>" + (totalCredit - y4s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Cumulative Grade Points Avarage (CGPA): <b>" + seventhCGPA + "</b></td>"
                                                 + "</tr>"
                                             + "</tfoot>"
                                            + "</table>"
@@ -635,15 +651,17 @@
                                                 + "</tr>"
                     }
                 }
+                eigthCGPA = ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa + y3s2gpa + y4s1gpa + y4s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length + list3rdYear2ndSem.length + list4thYear1stSem.length + list4thYear2ndSem.length)).toFixed(2) == "NaN" ? 0 : ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa + y3s2gpa + y4s1gpa + y4s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length + list3rdYear2ndSem.length + list4thYear1stSem.length + list4thYear2ndSem.length)).toFixed(2)
+
                 FourthYearSecondTable += "</tbody>"
                                             + "<tfoot>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Credits Earned: " + parseFloat(y4s2Credit) + "</td>"
-                                                    + "<td colspan='3'>Semester GPA: " + parseFloat(y4s2gpa) + "</td>"
+                                                    + "<td colspan='2'>Credits Earned: <b>" + parseFloat(y4s2Credit) + "</b></td>"
+                                                    + "<td colspan='3'>Semester GPA: <b>" + parseFloat(y4s2gpa) + "</b></td>"
                                                 + "</tr>"
                                                 + "<tr>"
-                                                    + "<td colspan='2'>Cumulative Credits: " + (totalCredit) + "</td>"
-                                                    + "<td colspan='3'>Cumulative Grade Points: " + ((y1s2gpa + y1s1gpa + y2s2gpa + y2s2gpa + y3s1gpa + y3s2gpa + y4s1gpa + y4s2gpa) / (list1stYear1stSem.length + list1stYear2ndSem.length + list2ndYear1stSem.length + list2ndYear2ndSem.length + list3rdYear1stSem.length + list3rdYear2ndSem.length + list4thYear1stSem.length + list4thYear2ndSem.length)).toFixed(2) + "</td>"
+                                                    + "<td colspan='2'>Cumulative Credits: <b>" + (totalCredit) + "</b></td>"
+                                                    + "<td colspan='3'>Cumulative Grade Points Avarage (CGPA): <b>" + eigthCGPA + "</b></td>"
                                                 + "</tr>"
                                             + "</tfoot>"
                                            + "</table>"

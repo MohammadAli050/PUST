@@ -25,6 +25,7 @@ namespace EMS.Module.result.Report
             if (!IsPostBack)
             {
                 ucDepartment.LoadDropDownListWithUserAccess(UserObj.Id, UserObj.RoleID);
+                ucDepartment_DepartmentSelectedIndexChanged(null, null);
                 LoadHeldInInformation();
                 divDD.Visible = true;
                 try
